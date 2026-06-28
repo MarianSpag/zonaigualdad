@@ -249,6 +249,78 @@ document.querySelectorAll('a[href^="#"]').forEach(function(a){
 </script>
 
 
+<!-- ===================== RELEVAMIENTOS · 3ER RELEVAMIENTO ABIERTO ===================== -->
+
+<style>
+.relev { background: #030405; border-top: 1px solid #111; padding: 6rem 2.5rem; position: relative; overflow: hidden; }
+.relev::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, #E11481 0%, #DF062C 14%, #EC8D0B 28%, #FCCC1C 42%, #27A237 56%, #2497D1 70%, #0B6DA8 84%, #7F217B 100%); }
+.relev-inner { max-width: 1120px; margin: 0 auto; display: grid; grid-template-columns: 1.1fr 1fr; gap: 4rem; align-items: center; }
+.relev-left { display: flex; flex-direction: column; }
+.relev-label { font-size: 10px; letter-spacing: 4px; text-transform: uppercase; color: #444; margin-bottom: 1rem; font-family: 'Roboto', sans-serif; }
+.relev-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(52px, 6vw, 76px); letter-spacing: 2px; color: #fff; line-height: .95; margin-bottom: 1.5rem; }
+.relev-title .acc { color: #E11481; }
+.relev-desc { font-size: 15px; color: #aaa; font-weight: 300; line-height: 1.75; margin-bottom: 2rem; font-family: 'Roboto', sans-serif; }
+.relev-desc strong { color: #fff; font-weight: 700; }
+.relev-ctas { display: flex; gap: 12px; flex-wrap: wrap; }
+.relev-cta { background: #E11481; color: #fff !important; text-decoration: none; padding: 14px 28px; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; font-weight: 700; font-family: 'Roboto', sans-serif; transition: background .2s; display: inline-flex; align-items: center; gap: 10px; }
+.relev-cta:hover { background: #fff; color: #E11481 !important; }
+.relev-cta-ghost { background: transparent; color: #fff !important; text-decoration: none; padding: 14px 28px; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; font-weight: 700; font-family: 'Roboto', sans-serif; border: 1px solid #444; transition: all .2s; }
+.relev-cta-ghost:hover { border-color: #fff; }
+.relev-right { display: flex; flex-direction: column; align-items: flex-start; }
+.relev-badge { display: inline-flex; align-items: center; gap: 8px; background: #E11481; color: #fff; padding: 8px 14px; font-size: 11px; letter-spacing: 3px; text-transform: uppercase; font-weight: 700; font-family: 'Roboto', sans-serif; margin-bottom: 1.5rem; }
+.relev-badge::before { content: ''; width: 8px; height: 8px; border-radius: 50%; background: #fff; animation: relev-pulse 1.8s ease-in-out infinite; }
+@keyframes relev-pulse { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: .5; transform: scale(.7); } }
+.relev-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: #1a1a1a; border: 1px solid #1a1a1a; width: 100%; }
+.relev-stat { background: #030405; padding: 1.75rem 1.5rem; border-top: 3px solid; }
+.relev-stat-num { font-family: 'Bebas Neue', sans-serif; font-size: 52px; line-height: 1; margin-bottom: .35rem; display: block; }
+.relev-stat-lbl { font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: #888; font-weight: 300; line-height: 1.45; font-family: 'Roboto', sans-serif; display: block; }
+@media (max-width: 1024px) {
+  .relev-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+}
+@media (max-width: 768px) {
+  .relev { padding: 4rem 1.5rem; }
+  .relev-ctas { flex-direction: column; }
+  .relev-cta, .relev-cta-ghost { justify-content: center; text-align: center; }
+  .relev-stat-num { font-size: 40px; }
+}
+</style>
+
+<section class="relev" id="relevamientos" aria-label="Tercer Relevamiento de juventudes LGBTIQ+ en Argentina">
+  <div class="relev-inner">
+    <div class="relev-left">
+      <div class="relev-label">Monitoreo continuo</div>
+      <h2 class="relev-title">RELEVAMIENTO<br><span class="acc">2026</span></h2>
+      <p class="relev-desc">Lanzamos el <strong>3er relevamiento sobre la situación actual de las juventudes LGBTIQ+ en Argentina</strong>. Es un monitoreo anual con el que producimos datos propios para visibilizar realidades, incidir en políticas públicas y disputar narrativas. Tu participación es anónima y lleva pocos minutos.</p>
+      <div class="relev-ctas">
+        <a href="https://forms.gle/cWXRmxdQZ6eqBvvt7" target="_blank" rel="noopener noreferrer" class="relev-cta">Participar de la encuesta →</a>
+        <a href="https://zonaigualdad.com.ar/relevamientos" class="relev-cta-ghost">Ver informes anteriores</a>
+      </div>
+    </div>
+    <div class="relev-right">
+      <span class="relev-badge">Encuesta abierta</span>
+      <div class="relev-stats">
+        <div class="relev-stat" style="border-color:#E11481">
+          <span class="relev-stat-num" style="color:#E11481">3°</span>
+          <span class="relev-stat-lbl">Relevamiento nacional</span>
+        </div>
+        <div class="relev-stat" style="border-color:#FCCC1C">
+          <span class="relev-stat-num" style="color:#FCCC1C">2</span>
+          <span class="relev-stat-lbl">Informes publicados</span>
+        </div>
+        <div class="relev-stat" style="border-color:#27A237">
+          <span class="relev-stat-num" style="color:#27A237">AR</span>
+          <span class="relev-stat-lbl">Alcance nacional</span>
+        </div>
+        <div class="relev-stat" style="border-color:#2497D1">
+          <span class="relev-stat-num" style="color:#2497D1">+</span>
+          <span class="relev-stat-lbl">Datos para incidencia</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
 <!-- ===================== MISIÓN & VISIÓN ===================== -->
 
 <style>
@@ -418,78 +490,6 @@ document.querySelectorAll('a[href^="#"]').forEach(function(a){
         <h3 class="eje-title" style="color:#2497D1">Fortalecimiento comunitario</h3>
         <p class="eje-desc">Formación de activistas, liderazgo joven y autonomía organizacional.</p>
       </article>
-    </div>
-  </div>
-</section>
-
-
-<!-- ===================== RELEVAMIENTOS · 3ER RELEVAMIENTO ABIERTO ===================== -->
-
-<style>
-.relev { background: #030405; border-top: 1px solid #111; padding: 6rem 2.5rem; position: relative; overflow: hidden; }
-.relev::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, #E11481 0%, #DF062C 14%, #EC8D0B 28%, #FCCC1C 42%, #27A237 56%, #2497D1 70%, #0B6DA8 84%, #7F217B 100%); }
-.relev-inner { max-width: 1120px; margin: 0 auto; display: grid; grid-template-columns: 1.1fr 1fr; gap: 4rem; align-items: center; }
-.relev-left { display: flex; flex-direction: column; }
-.relev-label { font-size: 10px; letter-spacing: 4px; text-transform: uppercase; color: #444; margin-bottom: 1rem; font-family: 'Roboto', sans-serif; }
-.relev-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(52px, 6vw, 76px); letter-spacing: 2px; color: #fff; line-height: .95; margin-bottom: 1.5rem; }
-.relev-title .acc { color: #E11481; }
-.relev-desc { font-size: 15px; color: #aaa; font-weight: 300; line-height: 1.75; margin-bottom: 2rem; font-family: 'Roboto', sans-serif; }
-.relev-desc strong { color: #fff; font-weight: 700; }
-.relev-ctas { display: flex; gap: 12px; flex-wrap: wrap; }
-.relev-cta { background: #E11481; color: #fff !important; text-decoration: none; padding: 14px 28px; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; font-weight: 700; font-family: 'Roboto', sans-serif; transition: background .2s; display: inline-flex; align-items: center; gap: 10px; }
-.relev-cta:hover { background: #fff; color: #E11481 !important; }
-.relev-cta-ghost { background: transparent; color: #fff !important; text-decoration: none; padding: 14px 28px; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; font-weight: 700; font-family: 'Roboto', sans-serif; border: 1px solid #444; transition: all .2s; }
-.relev-cta-ghost:hover { border-color: #fff; }
-.relev-right { display: flex; flex-direction: column; align-items: flex-start; }
-.relev-badge { display: inline-flex; align-items: center; gap: 8px; background: #E11481; color: #fff; padding: 8px 14px; font-size: 11px; letter-spacing: 3px; text-transform: uppercase; font-weight: 700; font-family: 'Roboto', sans-serif; margin-bottom: 1.5rem; }
-.relev-badge::before { content: ''; width: 8px; height: 8px; border-radius: 50%; background: #fff; animation: relev-pulse 1.8s ease-in-out infinite; }
-@keyframes relev-pulse { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: .5; transform: scale(.7); } }
-.relev-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: #1a1a1a; border: 1px solid #1a1a1a; width: 100%; }
-.relev-stat { background: #030405; padding: 1.75rem 1.5rem; border-top: 3px solid; }
-.relev-stat-num { font-family: 'Bebas Neue', sans-serif; font-size: 52px; line-height: 1; margin-bottom: .35rem; display: block; }
-.relev-stat-lbl { font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: #888; font-weight: 300; line-height: 1.45; font-family: 'Roboto', sans-serif; display: block; }
-@media (max-width: 1024px) {
-  .relev-inner { grid-template-columns: 1fr; gap: 2.5rem; }
-}
-@media (max-width: 768px) {
-  .relev { padding: 4rem 1.5rem; }
-  .relev-ctas { flex-direction: column; }
-  .relev-cta, .relev-cta-ghost { justify-content: center; text-align: center; }
-  .relev-stat-num { font-size: 40px; }
-}
-</style>
-
-<section class="relev" id="relevamientos" aria-label="Tercer Relevamiento de juventudes LGBTIQ+ en Argentina">
-  <div class="relev-inner">
-    <div class="relev-left">
-      <div class="relev-label">Monitoreo continuo</div>
-      <h2 class="relev-title">RELEVAMIENTO<br><span class="acc">2026</span></h2>
-      <p class="relev-desc">Lanzamos el <strong>3er relevamiento sobre la situación actual de las juventudes LGBTIQ+ en Argentina</strong>. Es un monitoreo anual con el que producimos datos propios para visibilizar realidades, incidir en políticas públicas y disputar narrativas. Tu participación es anónima y lleva pocos minutos.</p>
-      <div class="relev-ctas">
-        <a href="https://forms.gle/cWXRmxdQZ6eqBvvt7" target="_blank" rel="noopener noreferrer" class="relev-cta">Participar de la encuesta →</a>
-        <a href="https://zonaigualdad.com.ar/relevamientos" class="relev-cta-ghost">Ver informes anteriores</a>
-      </div>
-    </div>
-    <div class="relev-right">
-      <span class="relev-badge">Encuesta abierta</span>
-      <div class="relev-stats">
-        <div class="relev-stat" style="border-color:#E11481">
-          <span class="relev-stat-num" style="color:#E11481">3°</span>
-          <span class="relev-stat-lbl">Relevamiento nacional</span>
-        </div>
-        <div class="relev-stat" style="border-color:#FCCC1C">
-          <span class="relev-stat-num" style="color:#FCCC1C">2</span>
-          <span class="relev-stat-lbl">Informes publicados</span>
-        </div>
-        <div class="relev-stat" style="border-color:#27A237">
-          <span class="relev-stat-num" style="color:#27A237">AR</span>
-          <span class="relev-stat-lbl">Alcance nacional</span>
-        </div>
-        <div class="relev-stat" style="border-color:#2497D1">
-          <span class="relev-stat-num" style="color:#2497D1">+</span>
-          <span class="relev-stat-lbl">Datos para incidencia</span>
-        </div>
-      </div>
     </div>
   </div>
 </section>
