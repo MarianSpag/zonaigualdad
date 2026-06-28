@@ -1,0 +1,320 @@
+<style>
+.bib-page { background: #030405; min-height: 100vh; font-family: 'Roboto', sans-serif; }
+.znav { position: sticky; top: 0; z-index: 200; background: rgba(3,4,5,0.96); backdrop-filter: blur(12px); border-bottom: 1px solid #1a1a1a; display: flex; align-items: center; justify-content: space-between; padding: 0 2.5rem; height: 66px; }
+.znav-logo img { height: 40px; display: block; }
+.znav-links { display: flex; gap: 1.75rem; list-style: none; margin: 0; padding: 0; }
+.znav-links a { color: #777; text-decoration: none; font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; transition: color .2s; font-family: 'Roboto', sans-serif; }
+.znav-links a:hover { color: #fff; }
+.znav-btns { display: flex; gap: 10px; }
+.znav-sumate { background: transparent; color: #fff !important; border: 1px solid #444; padding: 10px 20px; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; font-family: 'Roboto', sans-serif; cursor: pointer; text-decoration: none; display: inline-block; }
+.znav-dona { background: #E11481; color: #fff !important; border: none; padding: 10px 20px; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; font-family: 'Roboto', sans-serif; font-weight: 700; cursor: pointer; text-decoration: none; display: inline-block; }
+.znav-sumate:hover { background: #E11481; border-color: #E11481; color: #fff !important; }
+.znav-dona:hover { background: #fff !important; color: #E11481 !important; }
+.znav-hamburger { display: none; background: transparent; border: none; cursor: pointer; flex-direction: column; gap: 5px; padding: 5px; }
+.znav-hamburger span { display: block; width: 24px; height: 2px; background: #fff; }
+.znav-mobile { display: none; position: fixed; inset: 0; top: 66px; background: #030405; z-index: 199; flex-direction: column; padding: 2rem 2.5rem; gap: 1.5rem; }
+.znav-mobile.open { display: flex; }
+.znav-mobile a { color: #777; text-decoration: none; font-size: 16px; letter-spacing: 2px; text-transform: uppercase; font-family: 'Roboto', sans-serif; border-bottom: 1px solid #111; padding-bottom: 1.5rem; }
+.znav-mobile-btns { display: flex; flex-direction: column; gap: 10px; margin-top: 1rem; }
+.bib-hero { padding: 6rem 2.5rem 4rem; max-width: 1120px; margin: 0 auto; }
+.bib-tag { font-size: 10px; letter-spacing: 4px; text-transform: uppercase; color: #444; margin-bottom: 1rem; font-family: 'Roboto', sans-serif; }
+.bib-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(52px,7vw,80px); letter-spacing: 2px; line-height: .95; margin-bottom: 4rem; color: #fff; }
+.bib-title .acc { color: #E11481; }
+/* ============ FEATURED / NUEVO LANZAMIENTO ============ */
+.bib-featured-wrap { padding: 0 2.5rem 5rem; max-width: 1120px; margin: 0 auto; }
+.bib-featured { position: relative; display: grid; grid-template-columns: 380px 1fr; gap: 2.5rem; padding: 2.5rem; background: linear-gradient(135deg, rgba(225,20,129,0.08) 0%, rgba(127,33,123,0.06) 100%); border: 1px solid #1a1a1a; overflow: hidden; }
+.bib-featured::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, #E11481 0%, #DF062C 14%, #EC8D0B 28%, #FCCC1C 42%, #27A237 56%, #2497D1 70%, #0B6DA8 84%, #7F217B 100%); }
+.bib-featured-cover { aspect-ratio: 2/3; background: #111; border: 1px solid #2a2a2a; overflow: hidden; position: relative; box-shadow: 0 20px 60px rgba(0,0,0,0.5), 0 0 0 1px rgba(225,20,129,0.15); }
+.bib-featured-cover img { width: 100%; height: 100%; object-fit: cover; }
+.bib-featured-cover-stripe { position: absolute; top: 0; left: 0; bottom: 0; width: 4px; background: #E11481; z-index: 1; }
+.bib-featured-content { display: flex; flex-direction: column; justify-content: center; }
+.bib-featured-badge { display: inline-flex; align-items: center; gap: 8px; align-self: flex-start; background: #E11481; color: #fff; padding: 6px 12px; font-size: 10px; letter-spacing: 3px; text-transform: uppercase; font-weight: 700; font-family: 'Roboto', sans-serif; margin-bottom: 1.5rem; }
+.bib-featured-badge::before { content: ''; width: 8px; height: 8px; border-radius: 50%; background: #fff; animation: pulse 1.8s ease-in-out infinite; }
+@keyframes pulse { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: .5; transform: scale(.7); } }
+.bib-featured-type { font-size: 10px; letter-spacing: 4px; text-transform: uppercase; color: #777; font-family: 'Roboto', sans-serif; margin-bottom: .75rem; }
+.bib-featured-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(32px, 4vw, 44px); letter-spacing: 1.5px; line-height: 1; color: #fff; margin-bottom: 1.25rem; }
+.bib-featured-title .acc { color: #E11481; }
+.bib-featured-desc { font-size: 14px; line-height: 1.6; color: #aaa; font-family: 'Roboto', sans-serif; font-weight: 300; margin-bottom: 1.75rem; max-width: 540px; }
+.bib-featured-ctas { display: flex; gap: 12px; flex-wrap: wrap; }
+.bib-featured-cta { background: #E11481; color: #fff !important; text-decoration: none; padding: 14px 28px; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; font-weight: 700; font-family: 'Roboto', sans-serif; transition: background .2s; display: inline-flex; align-items: center; gap: 10px; }
+.bib-featured-cta:hover { background: #fff; color: #E11481 !important; }
+.bib-featured-cta-ghost { background: transparent; color: #fff !important; text-decoration: none; padding: 14px 28px; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; font-weight: 700; font-family: 'Roboto', sans-serif; border: 1px solid #444; transition: all .2s; display: inline-flex; align-items: center; gap: 10px; }
+.bib-featured-cta-ghost:hover { border-color: #fff; }
+.bib-section { padding: 0 2.5rem 5rem; max-width: 1120px; margin: 0 auto; }
+.bib-section-header { display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem; padding-bottom: 1rem; border-bottom: 1px solid #1a1a1a; flex-wrap: wrap; }
+.bib-section-bar { width: 4px; height: 32px; flex-shrink: 0; }
+.bib-section-title { font-family: 'Bebas Neue', sans-serif; font-size: 28px; letter-spacing: 2px; color: #fff; }
+.bib-section-desc { font-size: 13px; color: #555; font-weight: 300; font-family: 'Roboto', sans-serif; margin-left: auto; }
+.bib-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1px; background: #030405; }
+.bib-card { background: #030405; padding: 1.5rem; display: flex; flex-direction: column; gap: .5rem; }
+.bib-card.proximamente { opacity: .4; }
+.bib-card-cover { width: 100%; aspect-ratio: 2/3; background: #111; border: 1px solid #1a1a1a; display: flex; align-items: center; justify-content: center; margin-bottom: .5rem; overflow: hidden; position: relative; }
+.bib-card-cover img { width: 100%; height: 100%; object-fit: cover; transition: transform .3s; }
+.bib-card:hover .bib-card-cover img { transform: scale(1.03); }
+.bib-card-cover-stripe { position: absolute; top: 0; left: 0; bottom: 0; width: 4px; z-index: 1; }
+.bib-card-cover-label { font-family: 'Bebas Neue', sans-serif; font-size: 14px; letter-spacing: 2px; color: #2a2a2a; }
+.bib-card-type { font-size: 9px; letter-spacing: 3px; text-transform: uppercase; color: #444; font-family: 'Roboto', sans-serif; }
+.bib-card-title { font-size: 13px; color: #ddd; line-height: 1.4; font-family: 'Roboto', sans-serif; flex: 1; }
+.bib-card-link { font-size: 11px; letter-spacing: 1px; text-transform: uppercase; text-decoration: none; font-weight: 700; margin-top: .5rem; display: inline-block; font-family: 'Roboto', sans-serif; transition: opacity .2s; }
+.bib-card-link:hover { opacity: .7; }
+.rainbow-bar { display: flex; height: 2px; width: 100%; }
+.rainbow-bar div { flex: 1; }
+.footer-p { background: #000; padding: 2rem 2.5rem; }
+.footer-p-inner { max-width: 1120px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+.footer-p-copy { font-size: 11px; color: #2a2a2a; letter-spacing: 1px; font-family: 'Roboto', sans-serif; }
+@media (max-width: 1024px) {
+  .bib-grid { grid-template-columns: repeat(2,1fr); }
+  .bib-featured { grid-template-columns: 280px 1fr; gap: 2rem; padding: 2rem; }
+}
+@media (max-width: 768px) {
+  .bib-hero { padding: 4rem 1.5rem 3rem; }
+  .bib-section, .bib-featured-wrap { padding: 0 1.5rem 3rem; }
+  .bib-title { font-size: 52px; }
+  .bib-grid { grid-template-columns: 1fr; }
+  .znav-links { display: none; }
+  .znav-hamburger { display: flex; }
+  .bib-featured { grid-template-columns: 1fr; padding: 1.5rem; gap: 1.5rem; }
+  .bib-featured-cover { max-width: 240px; margin: 0 auto; }
+  .bib-featured-ctas { flex-direction: column; }
+  .bib-featured-cta, .bib-featured-cta-ghost { justify-content: center; }
+}
+</style>
+<div class="bib-page">
+  <nav class="znav">
+    <a href="https://zonaigualdad.com.ar" style="text-decoration:none">
+      <img src="https://zonaigualdad.com.ar/wp-content/uploads/2026/03/Logo-Zona-blanco-sin-fondo-1.png" alt="Zona Igualdad" style="height:40px;display:block">
+    </a>
+    <ul class="znav-links">
+      <li><a href="https://zonaigualdad.com.ar/#quienes">Quiénes somos</a></li>
+      <li><a href="https://zonaigualdad.com.ar/#ejes">Trabajo</a></li>
+      <li><a href="https://action.allout.org/es/m/3362ba67/" target="_blank">Nombralo</a></li>
+      <li><a href="https://zonaigualdad.com.ar/#actividades">Actividades</a></li>
+      <li><a href="https://zonaigualdad.com.ar/biblioteca">Biblioteca</a></li>
+      <li><a href="https://zonaigualdad.com.ar/#contacto">Contacto</a></li>
+    </ul>
+    <div class="znav-btns">
+      <a class="znav-sumate" href="https://zonaigualdad.com.ar/sumate">Sumate</a>
+      <a class="znav-dona" href="https://zonaigualdad.com.ar/amigues">&#9825; Dona</a>
+      <button class="znav-hamburger" onclick="document.querySelector('.znav-mobile').classList.toggle('open')">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+  <div class="znav-mobile">
+    <a href="https://zonaigualdad.com.ar/#quienes">Quiénes somos</a>
+    <a href="https://zonaigualdad.com.ar/#ejes">Trabajo</a>
+    <a href="https://action.allout.org/es/m/3362ba67/" target="_blank">Nombralo</a>
+    <a href="https://zonaigualdad.com.ar/#actividades">Actividades</a>
+    <a href="https://zonaigualdad.com.ar/biblioteca">Biblioteca</a>
+    <a href="https://zonaigualdad.com.ar/#contacto">Contacto</a>
+    <div class="znav-mobile-btns">
+      <a class="znav-sumate" href="https://zonaigualdad.com.ar/sumate" style="text-align:center">Sumate</a>
+      <a class="znav-dona" href="https://zonaigualdad.com.ar/amigues" style="text-align:center">&#9825; Dona</a>
+    </div>
+  </div>
+  <div class="bib-hero">
+    <div class="bib-tag">Recursos</div>
+    <div class="bib-title">BIBLIOTECA<br><span class="acc">VIRTUAL</span></div>
+  </div>
+  <!-- ============ NUEVO LANZAMIENTO ============ -->
+  <div class="bib-featured-wrap">
+    <article class="bib-featured">
+      <a href="https://drive.google.com/file/d/1KaEuWdcaJlG2kPJjE0r9gDE3LavwS1mx/view?usp=sharing" target="_blank" class="bib-featured-cover">
+        <span class="bib-featured-cover-stripe"></span>
+        <img src="https://zonaigualdad.com.ar/wp-content/uploads/2026/06/INFORME-2026-Relevamiento-2025-sobre-la-situacion-de-las-personas-lgbt-en-Argentina.png" alt="2do Relevamiento sobre la situación de las juventudes LGBTIQ+ en Argentina">
+      </a>
+      <div class="bib-featured-content">
+        <span class="bib-featured-badge">Nuevo lanzamiento</span>
+        <div class="bib-featured-type">2do Relevamiento · 2026</div>
+        <h2 class="bib-featured-title">SITUACIÓN ACTUAL DE LAS JUVENTUDES <span class="acc">LGBTIQ+ EN ARGENTINA</span></h2>
+        <p class="bib-featured-desc">Segundo relevamiento de Zona Igualdad sobre la situación actual de las juventudes LGBTIQ+ en Argentina. Una actualización de datos clave para entender cómo viven, qué necesitan y cómo se organizan las juventudes de la diversidad sexual y de género en un escenario político adverso.</p>
+        <div class="bib-featured-ctas">
+          <a href="https://drive.google.com/file/d/1KaEuWdcaJlG2kPJjE0r9gDE3LavwS1mx/view?usp=sharing" target="_blank" class="bib-featured-cta">Leer el informe completo →</a>
+          <a href="https://drive.google.com/uc?export=download&id=1KaEuWdcaJlG2kPJjE0r9gDE3LavwS1mx" target="_blank" class="bib-featured-cta-ghost">Descargar PDF</a>
+        </div>
+      </div>
+    </article>
+  </div>
+  <!-- 1. INVESTIGACIONES Y RELEVAMIENTOS -->
+  <div class="bib-section">
+    <div class="bib-section-header">
+      <div class="bib-section-bar" style="background:#E11481"></div>
+      <div class="bib-section-title">Investigaciones y relevamientos</div>
+      <div class="bib-section-desc">Producción propia de datos e investigación</div>
+    </div>
+    <div class="bib-grid">
+      <div class="bib-card">
+        <div class="bib-card-cover"><div class="bib-card-cover-stripe" style="background:#E11481"></div><img src="https://zonaigualdad.com.ar/wp-content/uploads/2026/06/INFORME-2026-Relevamiento-2025-sobre-la-situacion-de-las-personas-lgbt-en-Argentina.png" alt="2do relevamiento"></div>
+        <div class="bib-card-type">Relevamiento</div>
+        <div class="bib-card-title">Situación de las juventudes LGBTIQ+ en Argentina — 2do relevamiento</div>
+        <a class="bib-card-link" href="https://drive.google.com/file/d/1KaEuWdcaJlG2kPJjE0r9gDE3LavwS1mx/view?usp=sharing" target="_blank" style="color:#E11481">Descargar →</a>
+      </div>
+      <div class="bib-card">
+        <div class="bib-card-cover"><div class="bib-card-cover-stripe" style="background:#E11481"></div><img src="https://drive.google.com/thumbnail?id=1-9BR48lDwdZjN3ffh23z_EKOPJdno8p6&sz=w400" alt="1er relevamiento"></div>
+        <div class="bib-card-type">Relevamiento</div>
+        <div class="bib-card-title">Situación de las juventudes LGBTIQ+ en Argentina — 1er relevamiento</div>
+        <a class="bib-card-link" href="https://drive.google.com/file/d/1-9BR48lDwdZjN3ffh23z_EKOPJdno8p6/view?usp=drive_link" target="_blank" style="color:#E11481">Descargar →</a>
+      </div>
+      <div class="bib-card">
+        <div class="bib-card-cover"><div class="bib-card-cover-stripe" style="background:#E11481"></div><img src="https://drive.google.com/thumbnail?id=1tr-dWFsdvoqvIfiqfHxJ0frPfznsxxnZ&sz=w400" alt="Apps de encuentro y comunidad LGBTIQ+"></div>
+        <div class="bib-card-type">Informe</div>
+        <div class="bib-card-title">Apps de encuentro y comunidad LGBTIQ+ — Vínculos en la era digital</div>
+        <a class="bib-card-link" href="https://drive.google.com/file/d/1tr-dWFsdvoqvIfiqfHxJ0frPfznsxxnZ/view?usp=sharing" target="_blank" style="color:#E11481">Descargar →</a>
+      </div>
+      <div class="bib-card">
+        <div class="bib-card-cover"><div class="bib-card-cover-stripe" style="background:#E11481"></div><img src="https://drive.google.com/thumbnail?id=1PiSoFhEoiCvKZmHer6cHRqxwDi6bN5vF&sz=w400" alt="Situación laboral trans"></div>
+        <div class="bib-card-type">Informe</div>
+        <div class="bib-card-title">Situación laboral de personas trans y no binarias</div>
+        <a class="bib-card-link" href="https://drive.google.com/file/d/1PiSoFhEoiCvKZmHer6cHRqxwDi6bN5vF/view?usp=drive_link" target="_blank" style="color:#E11481">Descargar →</a>
+      </div>
+      <div class="bib-card">
+        <div class="bib-card-cover"><div class="bib-card-cover-stripe" style="background:#E11481"></div><img src="https://drive.google.com/thumbnail?id=18juQZ07bpe5sIiW4E6KFtqMmoJpWfMDx&sz=w400" alt="Acceso salud"></div>
+        <div class="bib-card-type">Informe</div>
+        <div class="bib-card-title">Acceso a la salud de las personas trans y no binarias</div>
+        <a class="bib-card-link" href="https://drive.google.com/file/d/18juQZ07bpe5sIiW4E6KFtqMmoJpWfMDx/view?usp=drive_link" target="_blank" style="color:#E11481">Descargar →</a>
+      </div>
+      <div class="bib-card">
+        <div class="bib-card-cover"><div class="bib-card-cover-stripe" style="background:#E11481"></div><img src="https://drive.google.com/thumbnail?id=1jb4I6-_g_0pUdrp7fCRF7qVqlbKnaeCy&sz=w400" alt="Qué es de la vida"></div>
+        <div class="bib-card-type">Informe</div>
+        <div class="bib-card-title">¿Qué es de la vida de las juventudes LGBT+ en Argentina?</div>
+        <a class="bib-card-link" href="https://drive.google.com/file/d/1jb4I6-_g_0pUdrp7fCRF7qVqlbKnaeCy/view?usp=drive_link" target="_blank" style="color:#E11481">Leer →</a>
+      </div>
+      <div class="bib-card">
+        <div class="bib-card-cover"><div class="bib-card-cover-stripe" style="background:#E11481"></div><img src="https://drive.google.com/thumbnail?id=1LJKkm6Wy69sXbS9jfcpxq6PXSW8vxT0O&sz=w400" alt="Situación laboral LGBT"></div>
+        <div class="bib-card-type">Informe</div>
+        <div class="bib-card-title">Situación laboral de las personas LGBT+</div>
+        <a class="bib-card-link" href="https://drive.google.com/file/d/1LJKkm6Wy69sXbS9jfcpxq6PXSW8vxT0O/view?usp=drive_link" target="_blank" style="color:#E11481">Leer →</a>
+      </div>
+    </div>
+  </div>
+  <!-- 2. PRODUCCIONES PROPIAS -->
+  <div class="bib-section">
+    <div class="bib-section-header">
+      <div class="bib-section-bar" style="background:#EC8D0B"></div>
+      <div class="bib-section-title">Producciones propias</div>
+      <div class="bib-section-desc">Ensayos y reflexiones de producción propia</div>
+    </div>
+    <div class="bib-grid">
+      <div class="bib-card">
+        <div class="bib-card-cover"><div class="bib-card-cover-stripe" style="background:#EC8D0B"></div><img src="https://drive.google.com/thumbnail?id=1Hs8NQfTpDQQLqCmuKgZq96WXuvhbGjqW&sz=w400" alt="Crisis del género"></div>
+        <div class="bib-card-type">Ensayo</div>
+        <div class="bib-card-title">La crisis del género — Identidad NB</div>
+        <a class="bib-card-link" href="https://drive.google.com/file/d/1Hs8NQfTpDQQLqCmuKgZq96WXuvhbGjqW/view?usp=drive_link" target="_blank" style="color:#EC8D0B">Leer →</a>
+      </div>
+      <div class="bib-card">
+        <div class="bib-card-cover"><div class="bib-card-cover-stripe" style="background:#EC8D0B"></div><img src="https://drive.google.com/thumbnail?id=1x4Gg2GyWUEkcaXbUSivdetLnAy2YhOcy&sz=w400" alt="Identidades lesbianas"></div>
+        <div class="bib-card-type">Ensayo</div>
+        <div class="bib-card-title">Identidades lesbianas en crisis</div>
+        <a class="bib-card-link" href="https://drive.google.com/file/d/1YYIKv9zu0tI_P5CCYHamFfz_xQmR6MGF/view?usp=sharing" target="_blank" style="color:#EC8D0B">Leer →</a>
+      </div>
+    </div>
+  </div>
+  <!-- 3. GUÍAS DE DERECHOS -->
+  <div class="bib-section">
+    <div class="bib-section-header">
+      <div class="bib-section-bar" style="background:#2497D1"></div>
+      <div class="bib-section-title">Guías de derechos</div>
+      <div class="bib-section-desc">Materiales educativos y de consulta</div>
+    </div>
+    <div class="bib-grid">
+      <div class="bib-card">
+        <div class="bib-card-cover"><div class="bib-card-cover-stripe" style="background:#2497D1"></div><img src="https://drive.google.com/thumbnail?id=1U1NaxDcpTsHfrtSLjunWPVDLrcejgqLx&sz=w400" alt="Derechos Trans"></div>
+        <div class="bib-card-type">Guía</div>
+        <div class="bib-card-title">Derechos Trans en Argentina</div>
+        <a class="bib-card-link" href="https://drive.google.com/file/d/1U1NaxDcpTsHfrtSLjunWPVDLrcejgqLx/view?usp=drive_link" target="_blank" style="color:#2497D1">Leer →</a>
+      </div>
+      <div class="bib-card">
+        <div class="bib-card-cover"><div class="bib-card-cover-stripe" style="background:#2497D1"></div><img src="https://drive.google.com/thumbnail?id=1Vm1OlkgOHrfzG3LBLLcH2ThDpOy3xZOn&sz=w400" alt="Identidades NB"></div>
+        <div class="bib-card-type">Guía</div>
+        <div class="bib-card-title">Identidades No Binarias</div>
+        <a class="bib-card-link" href="https://drive.google.com/file/d/1Vm1OlkgOHrfzG3LBLLcH2ThDpOy3xZOn/view?usp=drive_link" target="_blank" style="color:#2497D1">Leer →</a>
+      </div>
+      <div class="bib-card">
+        <div class="bib-card-cover"><div class="bib-card-cover-stripe" style="background:#2497D1"></div><img src="https://drive.google.com/thumbnail?id=1pc1vGwfWkOO6Cr3TCQ3BmT-KXLRNLv-j&sz=w400" alt="Bisexualidad"></div>
+        <div class="bib-card-type">Guía</div>
+        <div class="bib-card-title">Bisexualidad 101</div>
+        <a class="bib-card-link" href="https://drive.google.com/file/d/1pc1vGwfWkOO6Cr3TCQ3BmT-KXLRNLv-j/view?usp=drive_link" target="_blank" style="color:#2497D1">Leer →</a>
+      </div>
+      <div class="bib-card">
+        <div class="bib-card-cover"><div class="bib-card-cover-stripe" style="background:#2497D1"></div><img src="https://drive.google.com/thumbnail?id=1YDJnulzvtw1Rgy3iejxAzVR205Ogwxpu&sz=w400" alt="Asexualidad Cap1"></div>
+        <div class="bib-card-type">Guía</div>
+        <div class="bib-card-title">Guía Asexualidad para principiantes — Cap. 1</div>
+        <a class="bib-card-link" href="https://drive.google.com/file/d/1YDJnulzvtw1Rgy3iejxAzVR205Ogwxpu/view?usp=drive_link" target="_blank" style="color:#2497D1">Leer →</a>
+      </div>
+      <div class="bib-card">
+        <div class="bib-card-cover"><div class="bib-card-cover-stripe" style="background:#2497D1"></div><img src="https://drive.google.com/thumbnail?id=1WOPxdGGdc_-KtbrAualD6EzDTZhatdGL&sz=w400" alt="Asexualidad Cap2"></div>
+        <div class="bib-card-type">Guía</div>
+        <div class="bib-card-title">Guía Asexualidad para principiantes — Cap. 2</div>
+        <a class="bib-card-link" href="https://drive.google.com/file/d/1WOPxdGGdc_-KtbrAualD6EzDTZhatdGL/view?usp=drive_link" target="_blank" style="color:#2497D1">Leer →</a>
+      </div>
+      <div class="bib-card">
+        <div class="bib-card-cover"><div class="bib-card-cover-stripe" style="background:#2497D1"></div><img src="https://drive.google.com/thumbnail?id=1kYjpfh-hgdas5FgVbUfwPv3GwJQ8uExN&sz=w400" alt="Asexualidad Cap3"></div>
+        <div class="bib-card-type">Guía</div>
+        <div class="bib-card-title">Guía Asexualidad para principiantes — Cap. 3</div>
+        <a class="bib-card-link" href="https://drive.google.com/file/d/1kYjpfh-hgdas5FgVbUfwPv3GwJQ8uExN/view?usp=drive_link" target="_blank" style="color:#2497D1">Leer →</a>
+      </div>
+      <div class="bib-card">
+        <div class="bib-card-cover"><div class="bib-card-cover-stripe" style="background:#2497D1"></div><img src="https://drive.google.com/thumbnail?id=1MfxWb3Kp8REUUWF47zGKTGJmcmyXGlQa&sz=w400" alt="Ley Identidad"></div>
+        <div class="bib-card-type">Guía</div>
+        <div class="bib-card-title">Ley de Identidad de Género</div>
+        <a class="bib-card-link" href="https://drive.google.com/file/d/1MfxWb3Kp8REUUWF47zGKTGJmcmyXGlQa/view?usp=drive_link" target="_blank" style="color:#2497D1">Leer →</a>
+      </div>
+      <div class="bib-card">
+        <div class="bib-card-cover"><div class="bib-card-cover-stripe" style="background:#2497D1"></div><img src="https://drive.google.com/thumbnail?id=16NaQGmMJhwHL0yo7jL9ODukyTH_-Eh9h&sz=w400" alt="DDHH Diversidad"></div>
+        <div class="bib-card-type">Material</div>
+        <div class="bib-card-title">Derechos Humanos y Diversidad Sexual</div>
+        <a class="bib-card-link" href="https://drive.google.com/file/d/16NaQGmMJhwHL0yo7jL9ODukyTH_-Eh9h/view?usp=drive_link" target="_blank" style="color:#2497D1">Leer →</a>
+      </div>
+      <div class="bib-card">
+        <div class="bib-card-cover"><div class="bib-card-cover-stripe" style="background:#2497D1"></div><img src="https://drive.google.com/thumbnail?id=1TdcrPzfPZeYC-2dTqVlOVujmyBzCnOg6&sz=w400" alt="Violencia mujeres"></div>
+        <div class="bib-card-type">Material</div>
+        <div class="bib-card-title">Violencia contra las mujeres</div>
+        <a class="bib-card-link" href="https://drive.google.com/file/d/1TdcrPzfPZeYC-2dTqVlOVujmyBzCnOg6/view?usp=drive_link" target="_blank" style="color:#2497D1">Leer →</a>
+      </div>
+      <div class="bib-card">
+        <div class="bib-card-cover"><div class="bib-card-cover-stripe" style="background:#2497D1"></div><img src="https://drive.google.com/thumbnail?id=16Iax381HQlPnL0aSLKJLnrrwR4Vhk0yq&sz=w400" alt="TRHA"></div>
+        <div class="bib-card-type">Material</div>
+        <div class="bib-card-title">TRHA en Argentina</div>
+        <a class="bib-card-link" href="https://drive.google.com/file/d/16Iax381HQlPnL0aSLKJLnrrwR4Vhk0yq/view?usp=drive_link" target="_blank" style="color:#2497D1">Leer →</a>
+      </div>
+    </div>
+  </div>
+  <!-- 4. FANZINE -->
+  <div class="bib-section">
+    <div class="bib-section-header">
+      <div class="bib-section-bar" style="background:#7F217B"></div>
+      <div class="bib-section-title">Fanzine "La bandera no se plancha"</div>
+      <div class="bib-section-desc">Publicación cultural propia</div>
+    </div>
+    <div class="bib-grid">
+      <div class="bib-card">
+        <div class="bib-card-cover"><div class="bib-card-cover-stripe" style="background:#7F217B"></div><img src="https://drive.google.com/thumbnail?id=1HXpMLovuuMXgJwhPvXdkBZKYrTgoJ5uI&sz=w400" alt="Fanzine 24 de Marzo"></div>
+        <div class="bib-card-type">Fanzine</div>
+        <div class="bib-card-title">Edición Especial 24 de Marzo</div>
+        <a class="bib-card-link" href="https://drive.google.com/file/d/1HXpMLovuuMXgJwhPvXdkBZKYrTgoJ5uI/view?usp=drive_link" target="_blank" style="color:#7F217B">Ver →</a>
+      </div>
+      <div class="bib-card">
+        <div class="bib-card-cover"><div class="bib-card-cover-stripe" style="background:#7F217B"></div><img src="https://drive.google.com/thumbnail?id=1a2XIsPjFWAIIgZQkFTF1a5hRYt1n1fWh&sz=w400" alt="Fanzine Carlos Jauregui"></div>
+        <div class="bib-card-type">Fanzine</div>
+        <div class="bib-card-title">Edición Especial Carlos Jauregui</div>
+        <a class="bib-card-link" href="https://drive.google.com/file/d/1a2XIsPjFWAIIgZQkFTF1a5hRYt1n1fWh/view?usp=drive_link" target="_blank" style="color:#7F217B">Ver →</a>
+      </div>
+      <div class="bib-card">
+        <div class="bib-card-cover"><div class="bib-card-cover-stripe" style="background:#7F217B"></div><img src="https://drive.google.com/thumbnail?id=1uNPCPsYT6A7bnsNcpYUQ8txXC1aPqqCN&sz=w400" alt="Fanzine Claudia Pia"></div>
+        <div class="bib-card-type">Fanzine</div>
+        <div class="bib-card-title">Edición Especial Claudia Pía Baudracco</div>
+        <a class="bib-card-link" href="https://drive.google.com/file/d/1uNPCPsYT6A7bnsNcpYUQ8txXC1aPqqCN/view?usp=drive_link" target="_blank" style="color:#7F217B">Ver →</a>
+      </div>
+    </div>
+  </div>
+  <div class="rainbow-bar">
+    <div style="background:#E11481"></div><div style="background:#DF062C"></div><div style="background:#EC8D0B"></div><div style="background:#FCCC1C"></div><div style="background:#27A237"></div><div style="background:#2497D1"></div><div style="background:#0B6DA8"></div><div style="background:#7F217B"></div>
+  </div>
+  <footer class="footer-p">
+    <div class="footer-p-inner">
+      <img src="https://zonaigualdad.com.ar/wp-content/uploads/2026/03/Logo-Zona-blanco-sin-fondo-1.png" alt="Zona Igualdad" style="height:36px;opacity:.5">
+      <div class="footer-p-copy">© 2026 Zona Igualdad · Organización civil sin fines de lucro · CABA, Argentina</div>
+      <div class="footer-p-copy">Sitio web creado por <a href="https://www.instagram.com/arche.latam/" target="_blank" style="color:#E11481;text-decoration:none;font-weight:700">Ar.ché</a> · <a href="https://www.linkedin.com/company/ar-ch%C3%A9-latam" target="_blank" style="color:#E11481;text-decoration:none;font-weight:700">LinkedIn</a></div>
+    </div>
+  </footer>
+</div>
