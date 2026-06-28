@@ -1,0 +1,210 @@
+<style>
+.rel-page { background: #030405; min-height: 100vh; font-family: 'Roboto', sans-serif; color: #fff; }
+.znav { position: sticky; top: 0; z-index: 200; background: rgba(3,4,5,0.96); backdrop-filter: blur(12px); border-bottom: 1px solid #1a1a1a; display: flex; align-items: center; justify-content: space-between; padding: 0 2.5rem; height: 66px; }
+.znav-links { display: flex; gap: 1.75rem; list-style: none; margin: 0; padding: 0; }
+.znav-links a { color: #777; text-decoration: none; font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; transition: color .2s; font-family: 'Roboto', sans-serif; }
+.znav-links a:hover { color: #fff; }
+.znav-btns { display: flex; gap: 10px; }
+.znav-sumate { background: transparent; color: #fff !important; border: 1px solid #444; padding: 10px 20px; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; font-family: 'Roboto', sans-serif; cursor: pointer; text-decoration: none; display: inline-block; }
+.znav-dona { background: #E11481; color: #fff !important; border: none; padding: 10px 20px; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; font-family: 'Roboto', sans-serif; font-weight: 700; cursor: pointer; text-decoration: none; display: inline-block; }
+.znav-sumate:hover { background: #E11481; border-color: #E11481; color: #fff !important; }
+.znav-dona:hover { background: #fff !important; color: #E11481 !important; }
+.znav-hamburger { display: none; background: transparent; border: none; cursor: pointer; flex-direction: column; gap: 5px; padding: 5px; }
+.znav-hamburger span { display: block; width: 24px; height: 2px; background: #fff; }
+.znav-mobile { display: none; position: fixed; inset: 0; top: 66px; background: #030405; z-index: 199; flex-direction: column; padding: 2rem 2.5rem; gap: 1.5rem; }
+.znav-mobile.open { display: flex; }
+.znav-mobile a { color: #777; text-decoration: none; font-size: 16px; letter-spacing: 2px; text-transform: uppercase; font-family: 'Roboto', sans-serif; border-bottom: 1px solid #111; padding-bottom: 1.5rem; }
+.znav-mobile-btns { display: flex; flex-direction: column; gap: 10px; margin-top: 1rem; }
+/* HERO */
+.rel-hero { padding: 6rem 2.5rem 3rem; max-width: 1120px; margin: 0 auto; }
+.rel-tag { font-size: 10px; letter-spacing: 4px; text-transform: uppercase; color: #444; margin-bottom: 1rem; font-family: 'Roboto', sans-serif; }
+.rel-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(48px,6.5vw,76px); letter-spacing: 2px; line-height: .95; margin-bottom: 1.5rem; color: #fff; }
+.rel-title .acc { color: #E11481; }
+.rel-lead { font-size: 16px; line-height: 1.7; color: #bbb; font-weight: 300; max-width: 760px; }
+/* INTRO / CONTEXTO */
+.rel-intro { padding: 0 2.5rem 4rem; max-width: 1120px; margin: 0 auto; }
+.rel-intro-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: #1a1a1a; border: 1px solid #1a1a1a; }
+.rel-intro-card { background: #030405; padding: 2rem 1.75rem; display: flex; flex-direction: column; gap: .75rem; }
+.rel-intro-num { font-family: 'Bebas Neue', sans-serif; font-size: 28px; color: #E11481; letter-spacing: 2px; }
+.rel-intro-h { font-family: 'Bebas Neue', sans-serif; font-size: 22px; letter-spacing: 1.5px; color: #fff; }
+.rel-intro-p { font-size: 13px; line-height: 1.6; color: #888; font-weight: 300; }
+/* SECTION HEADER */
+.rel-section { padding: 0 2.5rem 5rem; max-width: 1120px; margin: 0 auto; }
+.rel-section-header { display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem; padding-bottom: 1rem; border-bottom: 1px solid #1a1a1a; flex-wrap: wrap; }
+.rel-section-bar { width: 4px; height: 32px; flex-shrink: 0; }
+.rel-section-title { font-family: 'Bebas Neue', sans-serif; font-size: 28px; letter-spacing: 2px; color: #fff; }
+.rel-section-desc { font-size: 13px; color: #555; font-weight: 300; font-family: 'Roboto', sans-serif; margin-left: auto; }
+/* FORM EMBED */
+.rel-form-wrap { padding: 0 2.5rem 5rem; max-width: 1120px; margin: 0 auto; }
+.rel-form-box { position: relative; background: linear-gradient(135deg, rgba(225,20,129,0.08) 0%, rgba(127,33,123,0.06) 100%); border: 1px solid #1a1a1a; padding: 2.5rem; overflow: hidden; }
+.rel-form-box::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, #E11481 0%, #DF062C 14%, #EC8D0B 28%, #FCCC1C 42%, #27A237 56%, #2497D1 70%, #0B6DA8 84%, #7F217B 100%); }
+.rel-form-badge { display: inline-flex; align-items: center; gap: 8px; background: #E11481; color: #fff; padding: 6px 12px; font-size: 10px; letter-spacing: 3px; text-transform: uppercase; font-weight: 700; font-family: 'Roboto', sans-serif; margin-bottom: 1.25rem; }
+.rel-form-badge::before { content: ''; width: 8px; height: 8px; border-radius: 50%; background: #fff; animation: pulse 1.8s ease-in-out infinite; }
+@keyframes pulse { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: .5; transform: scale(.7); } }
+.rel-form-h { font-family: 'Bebas Neue', sans-serif; font-size: clamp(28px, 3.5vw, 38px); letter-spacing: 1.5px; color: #fff; margin-bottom: .75rem; line-height: 1; }
+.rel-form-h .acc { color: #E11481; }
+.rel-form-p { font-size: 14px; line-height: 1.6; color: #aaa; max-width: 720px; margin-bottom: 2rem; font-weight: 300; }
+.rel-form-iframe-wrap { background: #fff; border: 1px solid #2a2a2a; overflow: hidden; }
+.rel-form-iframe-wrap iframe { width: 100%; height: 1200px; border: 0; display: block; }
+.rel-form-fallback { margin-top: 1.25rem; font-size: 12px; color: #666; }
+.rel-form-fallback a { color: #E11481; text-decoration: none; font-weight: 700; }
+/* INFORMES PREVIOS */
+.rel-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 1px; background: #1a1a1a; border: 1px solid #1a1a1a; }
+.rel-card { background: #030405; padding: 2rem; display: grid; grid-template-columns: 140px 1fr; gap: 1.5rem; align-items: start; }
+.rel-card-cover { aspect-ratio: 2/3; background: #111; border: 1px solid #1a1a1a; overflow: hidden; position: relative; }
+.rel-card-cover-stripe { position: absolute; top: 0; left: 0; bottom: 0; width: 4px; background: #E11481; z-index: 1; }
+.rel-card-cover img { width: 100%; height: 100%; object-fit: cover; transition: transform .3s; }
+.rel-card:hover .rel-card-cover img { transform: scale(1.03); }
+.rel-card-body { display: flex; flex-direction: column; gap: .5rem; }
+.rel-card-num { font-family: 'Bebas Neue', sans-serif; font-size: 14px; letter-spacing: 3px; color: #E11481; }
+.rel-card-title { font-family: 'Bebas Neue', sans-serif; font-size: 22px; letter-spacing: 1px; color: #fff; line-height: 1.05; margin-bottom: .25rem; }
+.rel-card-desc { font-size: 13px; line-height: 1.55; color: #888; font-weight: 300; margin-bottom: .75rem; }
+.rel-card-ctas { display: flex; gap: 10px; flex-wrap: wrap; margin-top: .25rem; }
+.rel-card-cta { background: #E11481; color: #fff !important; text-decoration: none; padding: 10px 18px; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; font-weight: 700; transition: background .2s; }
+.rel-card-cta:hover { background: #fff; color: #E11481 !important; }
+.rel-card-cta-ghost { background: transparent; color: #fff !important; text-decoration: none; padding: 10px 18px; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; font-weight: 700; border: 1px solid #444; transition: all .2s; }
+.rel-card-cta-ghost:hover { border-color: #fff; }
+/* FOOTER */
+.rainbow-bar { display: flex; height: 2px; width: 100%; }
+.rainbow-bar div { flex: 1; }
+.footer-p { background: #000; padding: 2rem 2.5rem; }
+.footer-p-inner { max-width: 1120px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+.footer-p-copy { font-size: 11px; color: #2a2a2a; letter-spacing: 1px; font-family: 'Roboto', sans-serif; }
+@media (max-width: 1024px) {
+  .rel-intro-grid { grid-template-columns: 1fr; }
+  .rel-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 768px) {
+  .rel-hero { padding: 4rem 1.5rem 2.5rem; }
+  .rel-intro, .rel-section, .rel-form-wrap { padding: 0 1.5rem 3rem; }
+  .rel-title { font-size: 48px; }
+  .znav-links { display: none; }
+  .znav-hamburger { display: flex; }
+  .rel-form-box { padding: 1.75rem 1.25rem; }
+  .rel-form-iframe-wrap iframe { height: 1400px; }
+  .rel-card { grid-template-columns: 100px 1fr; padding: 1.5rem; gap: 1rem; }
+  .rel-card-title { font-size: 18px; }
+}
+</style>
+<div class="rel-page">
+  <nav class="znav">
+    <a href="https://zonaigualdad.com.ar" style="text-decoration:none">
+      <img src="https://zonaigualdad.com.ar/wp-content/uploads/2026/03/Logo-Zona-blanco-sin-fondo-1.png" alt="Zona Igualdad" style="height:40px;display:block">
+    </a>
+    <ul class="znav-links">
+      <li><a href="https://zonaigualdad.com.ar/#quienes">Quiénes somos</a></li>
+      <li><a href="https://zonaigualdad.com.ar/#ejes">Trabajo</a></li>
+      <li><a href="https://action.allout.org/es/m/3362ba67/" target="_blank">Nombralo</a></li>
+      <li><a href="https://zonaigualdad.com.ar/#actividades">Actividades</a></li>
+      <li><a href="https://zonaigualdad.com.ar/biblioteca">Biblioteca</a></li>
+      <li><a href="https://zonaigualdad.com.ar/#contacto">Contacto</a></li>
+    </ul>
+    <div class="znav-btns">
+      <a class="znav-sumate" href="https://zonaigualdad.com.ar/sumate">Sumate</a>
+      <a class="znav-dona" href="https://zonaigualdad.com.ar/amigues">&#9825; Dona</a>
+      <button class="znav-hamburger" onclick="document.querySelector('.znav-mobile').classList.toggle('open')">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+  <div class="znav-mobile">
+    <a href="https://zonaigualdad.com.ar/#quienes">Quiénes somos</a>
+    <a href="https://zonaigualdad.com.ar/#ejes">Trabajo</a>
+    <a href="https://action.allout.org/es/m/3362ba67/" target="_blank">Nombralo</a>
+    <a href="https://zonaigualdad.com.ar/#actividades">Actividades</a>
+    <a href="https://zonaigualdad.com.ar/biblioteca">Biblioteca</a>
+    <a href="https://zonaigualdad.com.ar/#contacto">Contacto</a>
+    <div class="znav-mobile-btns">
+      <a class="znav-sumate" href="https://zonaigualdad.com.ar/sumate" style="text-align:center">Sumate</a>
+      <a class="znav-dona" href="https://zonaigualdad.com.ar/amigues" style="text-align:center">&#9825; Dona</a>
+    </div>
+  </div>
+  <!-- HERO -->
+  <div class="rel-hero">
+    <div class="rel-tag">Monitoreo continuo</div>
+    <h1 class="rel-title">RELEVAMIENTOS <span class="acc">LGBTIQ+</span></h1>
+    <p class="rel-lead">Desde Zona Igualdad construimos un monitoreo continuo sobre la situación de las personas LGBTIQ+ en Argentina. Cada año relevamos datos propios para entender cómo viven, qué necesitan y cómo se organizan las juventudes de la diversidad sexual y de género frente a un contexto político adverso.</p>
+  </div>
+  <!-- INTRO / OBJETIVOS -->
+  <div class="rel-intro">
+    <div class="rel-intro-grid">
+      <div class="rel-intro-card">
+        <div class="rel-intro-num">01</div>
+        <div class="rel-intro-h">Qué es</div>
+        <p class="rel-intro-p">Un sistema de monitoreo anual con participación voluntaria y anónima, diseñado por Zona Igualdad para producir información actualizada sobre la población LGBTIQ+ joven en Argentina.</p>
+      </div>
+      <div class="rel-intro-card">
+        <div class="rel-intro-num">02</div>
+        <div class="rel-intro-h">Para qué</div>
+        <p class="rel-intro-p">Generar datos propios que permitan visibilizar realidades, incidir en políticas públicas y disputar narrativas en un escenario de retroceso de derechos.</p>
+      </div>
+      <div class="rel-intro-card">
+        <div class="rel-intro-num">03</div>
+        <div class="rel-intro-h">Quiénes participan</div>
+        <p class="rel-intro-p">Juventudes LGBTIQ+ de todo el país. Tu testimonio suma: cada respuesta es un dato más que fortalece la herramienta de incidencia colectiva.</p>
+      </div>
+    </div>
+  </div>
+  <!-- FORMULARIO DEL 3ER RELEVAMIENTO -->
+  <div class="rel-form-wrap">
+    <div class="rel-form-box">
+      <span class="rel-form-badge">Encuesta abierta</span>
+      <h2 class="rel-form-h">3er RELEVAMIENTO <span class="acc">2026</span></h2>
+      <p class="rel-form-p">Estamos lanzando el tercer relevamiento sobre la situación actual de las juventudes LGBTIQ+ en Argentina. Si tenés entre 16 y 35 años y formás parte de la comunidad, completá la encuesta. Es anónima y lleva pocos minutos. Tu participación nos ayuda a seguir construyendo datos propios para la incidencia.</p>
+      <div class="rel-form-iframe-wrap">
+        <iframe src="https://forms.gle/cWXRmxdQZ6eqBvvt7" loading="lazy" title="3er Relevamiento Juventudes LGBTIQ+ Argentina">Cargando…</iframe>
+      </div>
+      <p class="rel-form-fallback">¿No se ve el formulario? <a href="https://forms.gle/cWXRmxdQZ6eqBvvt7" target="_blank">Abrir la encuesta en una nueva pestaña →</a></p>
+    </div>
+  </div>
+  <!-- INFORMES PREVIOS -->
+  <div class="rel-section">
+    <div class="rel-section-header">
+      <div class="rel-section-bar" style="background:#E11481"></div>
+      <div class="rel-section-title">Informes anteriores</div>
+      <div class="rel-section-desc">Resultados de los relevamientos previos</div>
+    </div>
+    <div class="rel-grid">
+      <article class="rel-card">
+        <a href="https://drive.google.com/file/d/1KaEuWdcaJlG2kPJjE0r9gDE3LavwS1mx/view?usp=sharing" target="_blank" class="rel-card-cover">
+          <span class="rel-card-cover-stripe"></span>
+          <img src="https://zonaigualdad.com.ar/wp-content/uploads/2026/06/INFORME-2026-Relevamiento-2025-sobre-la-situacion-de-las-personas-lgbt-en-Argentina.png" alt="2do Relevamiento — Informe 2026">
+        </a>
+        <div class="rel-card-body">
+          <div class="rel-card-num">2do Relevamiento · 2026</div>
+          <h3 class="rel-card-title">Situación de las juventudes LGBTIQ+ en Argentina</h3>
+          <p class="rel-card-desc">Segunda edición del monitoreo. Actualización de datos clave para entender cómo viven las juventudes LGBTIQ+ en el actual escenario político.</p>
+          <div class="rel-card-ctas">
+            <a href="https://drive.google.com/file/d/1KaEuWdcaJlG2kPJjE0r9gDE3LavwS1mx/view?usp=sharing" target="_blank" class="rel-card-cta">Leer informe →</a>
+            <a href="https://drive.google.com/uc?export=download&id=1KaEuWdcaJlG2kPJjE0r9gDE3LavwS1mx" target="_blank" class="rel-card-cta-ghost">Descargar PDF</a>
+          </div>
+        </div>
+      </article>
+      <article class="rel-card">
+        <a href="https://drive.google.com/file/d/1-9BR48lDwdZjN3ffh23z_EKOPJdno8p6/view?usp=drive_link" target="_blank" class="rel-card-cover">
+          <span class="rel-card-cover-stripe"></span>
+          <img src="https://drive.google.com/thumbnail?id=1-9BR48lDwdZjN3ffh23z_EKOPJdno8p6&sz=w400" alt="1er Relevamiento">
+        </a>
+        <div class="rel-card-body">
+          <div class="rel-card-num">1er Relevamiento</div>
+          <h3 class="rel-card-title">Situación de las juventudes LGBTIQ+ en Argentina</h3>
+          <p class="rel-card-desc">Primera edición del monitoreo. Línea de base sobre las condiciones de vida, acceso a derechos y participación comunitaria de las juventudes LGBTIQ+.</p>
+          <div class="rel-card-ctas">
+            <a href="https://drive.google.com/file/d/1-9BR48lDwdZjN3ffh23z_EKOPJdno8p6/view?usp=drive_link" target="_blank" class="rel-card-cta">Leer informe →</a>
+            <a href="https://drive.google.com/uc?export=download&id=1-9BR48lDwdZjN3ffh23z_EKOPJdno8p6" target="_blank" class="rel-card-cta-ghost">Descargar PDF</a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+  <div class="rainbow-bar">
+    <div style="background:#E11481"></div><div style="background:#DF062C"></div><div style="background:#EC8D0B"></div><div style="background:#FCCC1C"></div><div style="background:#27A237"></div><div style="background:#2497D1"></div><div style="background:#0B6DA8"></div><div style="background:#7F217B"></div>
+  </div>
+  <footer class="footer-p">
+    <div class="footer-p-inner">
+      <img src="https://zonaigualdad.com.ar/wp-content/uploads/2026/03/Logo-Zona-blanco-sin-fondo-1.png" alt="Zona Igualdad" style="height:36px;opacity:.5">
+      <div class="footer-p-copy">© 2026 Zona Igualdad · Organización civil sin fines de lucro · CABA, Argentina</div>
+      <div class="footer-p-copy">Sitio web creado por <a href="https://www.instagram.com/arche.latam/" target="_blank" style="color:#E11481;text-decoration:none;font-weight:700">Ar.ché</a> · <a href="https://www.linkedin.com/company/ar-ch%C3%A9-latam" target="_blank" style="color:#E11481;text-decoration:none;font-weight:700">LinkedIn</a></div>
+    </div>
+  </footer>
+</div>
