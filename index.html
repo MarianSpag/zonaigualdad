@@ -1,0 +1,924 @@
+<!-- ============================================================
+     ZONA IGUALDAD — HOMEPAGE (SEO-OPTIMIZED)
+     Versión: 2.1 — Sección Relevamientos + item en nav
+     ============================================================ -->
+
+
+<!-- ===================== SCHEMA JSON-LD ===================== -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "NGO",
+      "@id": "https://zonaigualdad.com.ar/#organization",
+      "name": "Zona Igualdad",
+      "alternateName": "Asociación Civil Zona de Derechos, Igualdad y Diversidad",
+      "url": "https://zonaigualdad.com.ar",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://zonaigualdad.com.ar/wp-content/uploads/2026/03/Logo-Zona-blanco-sin-fondo-1.png"
+      },
+      "description": "Organización de juventudes LGBTIQ+ con base territorial en el AMBA y proyección nacional. Trabajamos en investigación, incidencia política, cultura y fortalecimiento comunitario.",
+      "foundingDate": "2022",
+      "email": "hola@zonaigualdad.com.ar",
+      "areaServed": {
+        "@type": "Country",
+        "name": "Argentina"
+      },
+      "knowsAbout": ["Derechos LGBTIQ+", "Juventudes", "Derechos humanos", "Activismo", "Diversidad sexual"],
+      "sameAs": [
+        "https://www.instagram.com/zonaigualdad/",
+        "https://twitter.com/zonaigualdad",
+        "https://www.facebook.com/zonaigualdad",
+        "https://www.tiktok.com/@zonaigualdad",
+        "https://www.youtube.com/channel/UCflPZ6f9JNiaNFkFJVQjNFw",
+        "https://open.spotify.com/show/2jk0CJnDHw9boSmBFB1rNZ"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://zonaigualdad.com.ar/#website",
+      "name": "Zona Igualdad",
+      "url": "https://zonaigualdad.com.ar",
+      "publisher": { "@id": "https://zonaigualdad.com.ar/#organization" },
+      "inLanguage": "es-AR"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Inicio",
+          "item": "https://zonaigualdad.com.ar"
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+
+<!-- ===================== NAV ===================== -->
+
+<style>
+.znav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(3,4,5,0.96);backdrop-filter:blur(12px);border-bottom:1px solid #1a1a1a;display:flex;align-items:center;justify-content:space-between;padding:0 2.5rem;height:66px}
+.znav-logo img{height:40px;display:block}
+.znav-links{display:flex;gap:1.5rem;list-style:none;margin:0;padding:0}
+.znav-links a{color:#777;text-decoration:none;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;transition:color .2s;font-family:'Roboto',sans-serif}
+.znav-links a:hover{color:#ccc}
+.znav-btns{display:flex;gap:10px}
+.znav-sumate{background:transparent;color:#fff;border:1px solid #444;padding:10px 20px;font-size:11px;letter-spacing:2px;text-transform:uppercase;font-family:'Roboto',sans-serif;cursor:pointer;text-decoration:none;display:inline-block;transition:all .2s}
+.znav-dona{background:#E11481;color:#fff;border:1px solid #E11481;padding:10px 20px;font-size:11px;letter-spacing:2px;text-transform:uppercase;font-family:'Roboto',sans-serif;font-weight:700;cursor:pointer;text-decoration:none;display:inline-block;transition:all .2s}
+.znav-sumate:hover{background:#7f217b!important;border-color:#7f217b!important;color:#fff!important}
+.znav-dona:hover{background:transparent!important;border-color:#7f217b!important;color:#fff!important}
+.znav-hamburger{display:none;background:transparent;border:none;cursor:pointer;flex-direction:column;gap:5px;padding:5px}
+.znav-hamburger span{display:block;width:24px;height:2px;background:#fff}
+.znav-mobile{display:none;position:fixed;inset:0;top:66px;background:#030405;z-index:199;flex-direction:column;padding:2rem 2.5rem;gap:1.5rem;overflow-y:auto}
+.znav-mobile.open{display:flex}
+.znav-mobile a{color:#777;text-decoration:none;font-size:16px;letter-spacing:2px;text-transform:uppercase;font-family:'Roboto',sans-serif;border-bottom:1px solid #111;padding-bottom:1.5rem}
+.znav-mobile-btns{display:flex;flex-direction:column;gap:10px;margin-top:1rem}
+.zi-hero{position:relative;min-height:100vh;overflow:hidden;background:#030405}
+.zi-hero-bg{position:absolute;top:0;left:0;width:100%;height:100%;z-index:0}
+.zi-slides{position:absolute;top:0;left:0;height:100%;display:flex;transition:transform 0.8s ease}
+.zi-slide{min-width:100vw;height:100vh;object-fit:cover}
+.zi-overlay{position:absolute;inset:0;background:linear-gradient(to right,rgba(3,4,5,0.93) 45%,rgba(3,4,5,0.4) 100%)}
+.zi-strip{position:absolute;left:0;top:0;bottom:0;width:6px;display:flex;flex-direction:column;z-index:3}
+.zi-strip div{flex:1}
+.zi-content{position:relative;z-index:2;display:block;padding:8rem 2.5rem 5rem;max-width:620px}
+.zi-eyebrow{display:block;font-size:11px;letter-spacing:4px;text-transform:uppercase;color:#E11481;font-weight:700;margin-bottom:1.5rem;font-family:'Roboto',sans-serif}
+.zi-logo{height:160px;display:block;margin-bottom:1.5rem}
+.zi-desc{display:block;font-size:16px;line-height:1.75;color:rgba(255,255,255,0.75);margin-bottom:2rem;font-weight:300;font-family:'Roboto',sans-serif}
+.zi-btns{display:block}
+.zi-btn-p{background:#E11481;color:#fff!important;border:1px solid #E11481;padding:14px 32px;font-size:12px;letter-spacing:2px;text-transform:uppercase;font-family:'Roboto',sans-serif;font-weight:700;cursor:pointer;text-decoration:none;margin-right:1rem;display:inline-block;transition:all .2s}
+.zi-btn-p:hover{background:transparent!important;border-color:#7f217b!important}
+.zi-btn-o{background:transparent;color:#fff!important;border:1px solid rgba(255,255,255,0.35);padding:14px 32px;font-size:12px;letter-spacing:2px;text-transform:uppercase;font-family:'Roboto',sans-serif;cursor:pointer;text-decoration:none;display:inline-block;transition:all .2s}
+.zi-btn-o:hover{background:#7f217b!important;border-color:#7f217b!important}
+.zi-dots{position:absolute;bottom:2rem;right:2.5rem;display:flex;gap:8px;z-index:3}
+.zi-dot{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,0.25);cursor:pointer;border:none;padding:0;transition:background .2s}
+.zi-dot.active{background:#fff}
+@media(max-width:1024px){
+  .znav-links{gap:1.1rem}
+  .znav-links a{font-size:10px;letter-spacing:1px}
+}
+@media(max-width:768px){
+  .znav-links{display:none}
+  .znav-hamburger{display:flex}
+  .zi-content{padding:6rem 1.5rem 4rem}
+  .zi-logo{height:120px}
+}
+</style>
+
+<!-- SEO: aria-label en nav para accesibilidad -->
+<nav class="znav" aria-label="Navegación principal">
+  <a href="https://zonaigualdad.com.ar" style="text-decoration:none">
+    <img src="https://zonaigualdad.com.ar/wp-content/uploads/2026/03/Logo-Zona-blanco-sin-fondo-1.png" style="height:40px;display:block" alt="Zona Igualdad — Organización LGBTIQ+ de juventudes en Argentina">
+  </a>
+  <ul class="znav-links">
+    <li><a href="#quienes">Quiénes somos</a></li>
+    <li><a href="#ejes">Trabajo</a></li>
+    <li><a href="https://action.allout.org/es/m/3362ba67/" target="_blank" rel="noopener noreferrer">Nombralo. Es odio.</a></li>
+    <li><a href="#actividades">Actividades</a></li>
+    <li><a href="https://zonaigualdad.com.ar/relevamientos">Relevamientos</a></li>
+    <li><a href="https://zonaigualdad.com.ar/biblioteca">Biblioteca</a></li>
+    <li><a href="#contacto">Contacto</a></li>
+  </ul>
+  <div class="znav-btns">
+    <a class="znav-sumate" href="https://zonaigualdad.com.ar/sumate">Sumate</a>
+    <a class="znav-dona" href="https://zonaigualdad.com.ar/amigues">&#9825; Dona</a>
+    <button class="znav-hamburger" aria-label="Abrir menú de navegación" onclick="document.querySelector('.znav-mobile').classList.toggle('open')">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<nav class="znav-mobile" aria-label="Navegación móvil">
+  <a href="#quienes">Quiénes somos</a>
+  <a href="#ejes">Trabajo</a>
+  <a href="https://action.allout.org/es/m/3362ba67/" target="_blank" rel="noopener noreferrer">Nombralo. Es odio</a>
+  <a href="#actividades">Actividades</a>
+  <a href="https://zonaigualdad.com.ar/relevamientos">Relevamientos</a>
+  <a href="https://zonaigualdad.com.ar/biblioteca">Biblioteca</a>
+  <a href="#contacto">Contacto</a>
+  <div class="znav-mobile-btns">
+    <a class="znav-sumate" href="https://zonaigualdad.com.ar/sumate" style="text-align:center">Sumate</a>
+    <a class="znav-dona" href="https://zonaigualdad.com.ar/amigues" style="text-align:center">&#9825; Dona</a>
+  </div>
+</nav>
+
+
+<!-- ===================== HEADER / HERO ===================== -->
+<main>
+
+<section class="zi-hero" id="top" aria-label="Presentación de Zona Igualdad">
+  <div class="zi-hero-bg">
+    <div class="zi-slides" id="ziSlides"></div>
+    <div class="zi-overlay"></div>
+  </div>
+  <div class="zi-strip" aria-hidden="true">
+    <div style="background:#E11481"></div>
+    <div style="background:#DF062C"></div>
+    <div style="background:#EC8D0B"></div>
+    <div style="background:#FCCC1C"></div>
+    <div style="background:#27A237"></div>
+    <div style="background:#2497D1"></div>
+    <div style="background:#0B6DA8"></div>
+    <div style="background:#7F217B"></div>
+  </div>
+  <div class="zi-content">
+    <span class="zi-eyebrow">— Organización LGBTIQ+ · Buenos Aires · Desde 2023</span>
+    <img class="zi-logo" src="https://zonaigualdad.com.ar/wp-content/uploads/2026/03/Logo-Zona-blanco-sin-fondo-1.png" alt="Isologo de Zona Igualdad con chevrones del orgullo LGBTIQ+">
+    <h1 style="font-size:0;margin:0;padding:0;position:absolute;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0">Zona Igualdad — Organización LGBTIQ+ de juventudes en Buenos Aires, Argentina</h1>
+    <p class="zi-desc">Somos la organización argentina que activa por y para las juventudes LGBT+. Construimos voces que hoy no están en escena pero son necesarias.</p>
+    <div class="zi-btns">
+      <a class="zi-btn-p" href="https://zonaigualdad.com.ar/sumate">Sumate</a>
+      <a class="zi-btn-o" href="https://zonaigualdad.com.ar/amigues">&#9825; Dona</a>
+    </div>
+  </div>
+  <div class="zi-dots" id="ziDots" aria-hidden="true"></div>
+</section>
+
+<script>
+var images=[
+  'https://zonaigualdad.com.ar/wp-content/uploads/2026/03/slide-portada-5-scaled.png',
+  'https://zonaigualdad.com.ar/wp-content/uploads/2026/03/slide-portada-2-scaled.png',
+  'https://zonaigualdad.com.ar/wp-content/uploads/2026/03/slide-portada-1-scaled.png',
+  'https://zonaigualdad.com.ar/wp-content/uploads/2026/03/slide-portada-39.png',
+  'https://zonaigualdad.com.ar/wp-content/uploads/2026/03/slide-portada-38.png',
+  'https://zonaigualdad.com.ar/wp-content/uploads/2026/03/slide-portada-37.png',
+  'https://zonaigualdad.com.ar/wp-content/uploads/2026/03/slide-portada-34.png',
+  'https://zonaigualdad.com.ar/wp-content/uploads/2026/03/slide-portada-36.png',
+  'https://zonaigualdad.com.ar/wp-content/uploads/2026/03/slide-portada-33.png',
+  'https://zonaigualdad.com.ar/wp-content/uploads/2026/03/slide-portada-32-scaled.png',
+  'https://zonaigualdad.com.ar/wp-content/uploads/2026/03/slide-portada-21-scaled.png',
+  'https://zonaigualdad.com.ar/wp-content/uploads/2026/03/slide-portada-31-scaled.png',
+  'https://zonaigualdad.com.ar/wp-content/uploads/2026/03/slide-portada-23-scaled.png',
+  'https://zonaigualdad.com.ar/wp-content/uploads/2026/03/slide-portada-18-scaled.png',
+  'https://zonaigualdad.com.ar/wp-content/uploads/2026/03/slide-portada-16-scaled.png',
+  'https://zonaigualdad.com.ar/wp-content/uploads/2026/03/slide-portada-15-scaled.png',
+  'https://zonaigualdad.com.ar/wp-content/uploads/2026/03/slide-portada-12-scaled.png',
+  'https://zonaigualdad.com.ar/wp-content/uploads/2026/03/slide-portada-9-scaled.png',
+  'https://zonaigualdad.com.ar/wp-content/uploads/2026/03/slide-portada-6-scaled.png'
+];
+
+for(var i=images.length-1;i>0;i--){
+  var j=Math.floor(Math.random()*(i+1));
+  var tmp=images[i];images[i]=images[j];images[j]=tmp;
+}
+
+var sl=document.getElementById('ziSlides');
+var dc=document.getElementById('ziDots');
+var tot=images.length,cur=0;
+
+images.forEach(function(src){
+  var img=document.createElement('img');
+  img.className='zi-slide';
+  img.src=src;
+  img.alt='Activistas de Zona Igualdad en actividades LGBTIQ+ en Buenos Aires';
+  img.loading='lazy';
+  sl.appendChild(img);
+});
+
+for(var i=0;i<tot;i++){
+  var d=document.createElement('button');
+  d.className='zi-dot'+(i===0?' active':'');
+  d.setAttribute('data-i',i);
+  d.setAttribute('aria-label','Ir a imagen '+(i+1));
+  d.onclick=function(){goTo(parseInt(this.getAttribute('data-i')))};
+  dc.appendChild(d);
+}
+
+function goTo(n){
+  cur=(n+tot)%tot;
+  sl.style.transform='translateX(-'+(cur*100)+'vw)';
+  document.querySelectorAll('.zi-dot').forEach(function(d,i){d.classList.toggle('active',i===cur)});
+}
+
+setInterval(function(){goTo(cur+1)},4000);
+
+document.querySelectorAll('a[href^="#"]').forEach(function(a){
+  a.addEventListener('click',function(e){
+    var h=a.getAttribute('href');
+    if(h==='#')return;
+    e.preventDefault();
+    var t=document.querySelector(h);
+    if(t)t.scrollIntoView({behavior:'smooth'});
+  });
+});
+</script>
+
+
+<!-- ===================== MISIÓN & VISIÓN ===================== -->
+
+<style>
+.mv { background: #080808; padding: 6rem 2.5rem; }
+.mv-inner { max-width: 1120px; margin: 0 auto; }
+.mv-label { font-size: 10px; letter-spacing: 4px; text-transform: uppercase; color: #444; margin-bottom: 1rem; font-family: 'Roboto', sans-serif; }
+.mv-title { font-family: 'Bebas Neue', sans-serif; font-size: 80px; letter-spacing: 2px; color: #fff; line-height: .95; margin-bottom: 3.5rem; }
+.mv-title .acc { color: #E11481; }
+.mv-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; background: #1a1a1a; }
+.mv-block { background: #080808; padding: 3rem; }
+.mv-tag { font-size: 40px; letter-spacing: 4px; text-transform: uppercase; margin-bottom: 1.25rem; font-weight: 700; font-family: 'Roboto', sans-serif; }
+.mv-text { font-size: 15px; line-height: 1.9; color: #aaa; font-weight: 300; font-family: 'Roboto', sans-serif; }
+.mv-text strong { color: #fff; font-weight: 700; }
+@media (max-width: 768px) {
+  .mv { padding: 4rem 1.5rem; }
+  .mv-title { font-size: 52px; margin-bottom: 2rem; }
+  .mv-grid { grid-template-columns: 1fr; }
+  .mv-block { padding: 2rem; }
+  .mv-block:last-child { border-top: 1px solid #1a1a1a; }
+}
+</style>
+
+<section class="mv" id="quienes" aria-label="Misión y visión de Zona Igualdad">
+  <div class="mv-inner">
+    <div class="mv-label">Quiénes somos</div>
+    <h2 class="mv-title">MISIÓN &amp;<br><span class="acc">VISIÓN</span></h2>
+    <div class="mv-grid">
+      <div class="mv-block">
+        <h3 class="mv-tag" style="color:#E11481">Misión</h3>
+        <p class="mv-text">Zona Igualdad es una <strong>organización de juventudes LGBTIQ+ con base territorial en el AMBA y proyección nacional</strong>. Trabajamos para fortalecer la organización comunitaria y transformar las condiciones de vida de las juventudes LGBTIQ+ mediante la formación política, la incidencia en la agenda pública y la investigación y el monitoreo de derechos humanos. Generamos espacios de encuentro, producimos evidencia y desarrollamos <strong>liderazgos jóvenes con capacidad de participación en ámbitos de decisión</strong>, para contribuir a la defensa y ampliación de derechos.</p>
+      </div>
+      <div class="mv-block" style="border-left:1px solid #111">
+        <h3 class="mv-tag" style="color:#2497D1">Visión</h3>
+        <p class="mv-text">Zona Igualdad nació para <strong>cambiar las condiciones de vida de las juventudes LGBTIQ+ en Argentina</strong>. Tenemos raíces en el AMBA, pero miramos al país entero. Somos una organización que apuesta por construir comunidad, formarse políticamente y ocupar los espacios donde se toman las decisiones que nos afectan.<br><br>Queremos algo concreto y sostenido en el tiempo: que <strong>las juventudes LGBTIQ+ tengamos redes y herramientas reales para defender y ampliar nuestros derechos</strong>.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ===================== ZONA EN NÚMEROS ===================== -->
+
+<style>
+.nums{background:#030405;border-top:1px solid #111;padding:6rem 2.5rem}
+.nums-inner{max-width:1120px;margin:0 auto}
+.nums-label{font-size:10px;letter-spacing:4px;text-transform:uppercase;color:#666;margin-bottom:1rem;font-family:'Roboto',sans-serif;display:block}
+.nums-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(52px,6vw,80px);letter-spacing:2px;color:#fff;line-height:.95;margin-bottom:1rem}
+.nums-acc{color:#E11481}
+.nums-sub{font-size:13px;color:#666;margin-bottom:.5rem;font-style:italic;font-weight:300;font-family:'Roboto',sans-serif;display:block}
+.nums-sub2{font-size:12px;color:#555;margin-bottom:3rem;font-weight:300;font-family:'Roboto',sans-serif;display:block;letter-spacing:.5px}
+.nums-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:#1a1a1a}
+.num-block{background:#030405;padding:2.5rem 1.75rem;border-top:3px solid;display:block}
+.num-big{font-family:'Bebas Neue',sans-serif;font-size:72px;line-height:1;margin-bottom:.5rem;display:block}
+.num-lbl{font-size:12px;letter-spacing:1px;text-transform:uppercase;color:#888;font-weight:300;line-height:1.5;font-family:'Roboto',sans-serif;display:block}
+@media(max-width:768px){
+  .nums{padding:4rem 1.5rem}
+  .nums-grid{grid-template-columns:repeat(2,1fr)}
+  .num-big{font-size:56px}
+}
+</style>
+
+<section class="nums" aria-label="Zona Igualdad en números: impacto 2022-2025">
+  <div class="nums-inner">
+    <span class="nums-label">Lo que hicimos</span>
+    <h2 class="nums-title">ZONA EN<br><span class="nums-acc">NÚMEROS</span></h2>
+    <span class="nums-sub">2022 — 2025</span>
+    <span class="nums-sub2">Basado en informes trimestrales de actividades</span>
+    <div class="nums-grid">
+      <div class="num-block" style="border-color:#E11481">
+        <span class="num-big" style="color:#E11481">+60</span>
+        <span class="num-lbl">Actividades territoriales, culturales y políticas</span>
+      </div>
+      <div class="num-block" style="border-color:#DF062C">
+        <span class="num-big" style="color:#DF062C">+20</span>
+        <span class="num-lbl">Capacitaciones y talleres</span>
+      </div>
+      <div class="num-block" style="border-color:#EC8D0B">
+        <span class="num-big" style="color:#EC8D0B">+30</span>
+        <span class="num-lbl">Materiales de creación propia</span>
+      </div>
+      <div class="num-block" style="border-color:#FCCC1C">
+        <span class="num-big" style="color:#FCCC1C">+1000</span>
+        <span class="num-lbl">Personas alcanzadas en eventos culturales y políticos</span>
+      </div>
+      <div class="num-block" style="border-color:#27A237">
+        <span class="num-big" style="color:#27A237">+30</span>
+        <span class="num-lbl">Organizaciones aliadas</span>
+      </div>
+      <div class="num-block" style="border-color:#2497D1">
+        <span class="num-big" style="color:#2497D1">4</span>
+        <span class="num-lbl">Años de trayectoria documentada</span>
+      </div>
+      <div class="num-block" style="border-color:#0B6DA8">
+        <span class="num-big" style="color:#0B6DA8">+140</span>
+        <span class="num-lbl">Reuniones de trabajo semanales</span>
+      </div>
+      <div class="num-block" style="border-color:#7F217B">
+        <span class="num-big" style="color:#7F217B">1</span>
+        <span class="num-lbl">Campaña nacional lanzada</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ===================== CINCO EJES ===================== -->
+
+<style>
+.ejes { background: #0a0a0a; padding: 6rem 2.5rem; }
+.ejes-inner { max-width: 1120px; margin: 0 auto; }
+.ejes-label { font-size: 10px; letter-spacing: 4px; text-transform: uppercase; color: #444; margin-bottom: 1rem; font-family: 'Roboto', sans-serif; }
+.ejes-title { font-family: 'Bebas Neue', sans-serif; font-size: 80px; letter-spacing: 2px; color: #fff; line-height: .95; margin-bottom: 3.5rem; }
+.ejes-title .acc { color: #E11481; }
+.ejes-grid { display: grid; grid-template-columns: repeat(5,1fr); gap: 1px; background: #1a1a1a; }
+.eje { background: #0a0a0a; padding: 2.5rem 1.75rem; position: relative; }
+.eje::before { content:''; position:absolute; top:0; left:0; right:0; height:3px; }
+.eje-num { font-family: 'Bebas Neue', sans-serif; font-size: 52px; color: #111; line-height: 1; margin-bottom: .5rem; }
+.eje-title { font-size: 20px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 1rem; font-family: 'Roboto', sans-serif; }
+.eje-desc { font-size: 13px; line-height: 1.65; color: #777; font-weight: 300; font-family: 'Roboto', sans-serif; }
+@media (max-width: 1024px) {
+  .ejes-grid { grid-template-columns: repeat(3,1fr); }
+}
+@media (max-width: 768px) {
+  .ejes { padding: 4rem 1.5rem; }
+  .ejes-title { font-size: 52px; margin-bottom: 2rem; }
+  .ejes-grid { grid-template-columns: 1fr 1fr; }
+  .eje { padding: 1.75rem 1.25rem; }
+  .eje-num { font-size: 40px; }
+}
+@media (max-width: 480px) {
+  .ejes-grid { grid-template-columns: 1fr; }
+}
+</style>
+
+<section class="ejes" id="ejes" aria-label="Líneas de trabajo de Zona Igualdad">
+  <div class="ejes-inner">
+    <div class="ejes-label">Líneas de trabajo</div>
+    <h2 class="ejes-title">CINCO EJES<br><span class="acc">PRINCIPALES</span></h2>
+    <div class="ejes-grid">
+      <article class="eje" style="position:relative">
+        <div style="position:absolute;top:0;left:0;right:0;height:3px;background:#E11481"></div>
+        <div class="eje-num" aria-hidden="true">01</div>
+        <h3 class="eje-title" style="color:#E11481">Investigación y DDHH</h3>
+        <p class="eje-desc">Relevamientos y datos sobre educación, empleo, vivienda y salud mental de juventudes LGBTIQ+.</p>
+      </article>
+      <article class="eje" style="position:relative">
+        <div style="position:absolute;top:0;left:0;right:0;height:3px;background:#DF062C"></div>
+        <div class="eje-num" aria-hidden="true">02</div>
+        <h3 class="eje-title" style="color:#DF062C">Incidencia política</h3>
+        <p class="eje-desc">Ley Integral Trans, Ley Antidiscriminatoria, ESI inclusiva. Evidencia para la agenda pública.</p>
+      </article>
+      <article class="eje" style="position:relative">
+        <div style="position:absolute;top:0;left:0;right:0;height:3px;background:#FCCC1C"></div>
+        <div class="eje-num" aria-hidden="true">03</div>
+        <h3 class="eje-title" style="color:#FCCC1C">Visibilidad y movilización</h3>
+        <p class="eje-desc">Intervenciones públicas, campañas y estrategias creativas para disputar sentidos.</p>
+      </article>
+      <article class="eje" style="position:relative">
+        <div style="position:absolute;top:0;left:0;right:0;height:3px;background:#27A237"></div>
+        <div class="eje-num" aria-hidden="true">04</div>
+        <h3 class="eje-title" style="color:#27A237">Comunicación y narrativas</h3>
+        <p class="eje-desc">Contenidos accesibles contra la desinformación y los discursos de odio.</p>
+      </article>
+      <article class="eje" style="position:relative">
+        <div style="position:absolute;top:0;left:0;right:0;height:3px;background:#2497D1"></div>
+        <div class="eje-num" aria-hidden="true">05</div>
+        <h3 class="eje-title" style="color:#2497D1">Fortalecimiento comunitario</h3>
+        <p class="eje-desc">Formación de activistas, liderazgo joven y autonomía organizacional.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+
+<!-- ===================== RELEVAMIENTOS · 3ER RELEVAMIENTO ABIERTO ===================== -->
+
+<style>
+.relev { background: #030405; border-top: 1px solid #111; padding: 6rem 2.5rem; position: relative; overflow: hidden; }
+.relev::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, #E11481 0%, #DF062C 14%, #EC8D0B 28%, #FCCC1C 42%, #27A237 56%, #2497D1 70%, #0B6DA8 84%, #7F217B 100%); }
+.relev-inner { max-width: 1120px; margin: 0 auto; display: grid; grid-template-columns: 1.1fr 1fr; gap: 4rem; align-items: center; }
+.relev-left { display: flex; flex-direction: column; }
+.relev-label { font-size: 10px; letter-spacing: 4px; text-transform: uppercase; color: #444; margin-bottom: 1rem; font-family: 'Roboto', sans-serif; }
+.relev-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(52px, 6vw, 76px); letter-spacing: 2px; color: #fff; line-height: .95; margin-bottom: 1.5rem; }
+.relev-title .acc { color: #E11481; }
+.relev-desc { font-size: 15px; color: #aaa; font-weight: 300; line-height: 1.75; margin-bottom: 2rem; font-family: 'Roboto', sans-serif; }
+.relev-desc strong { color: #fff; font-weight: 700; }
+.relev-ctas { display: flex; gap: 12px; flex-wrap: wrap; }
+.relev-cta { background: #E11481; color: #fff !important; text-decoration: none; padding: 14px 28px; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; font-weight: 700; font-family: 'Roboto', sans-serif; transition: background .2s; display: inline-flex; align-items: center; gap: 10px; }
+.relev-cta:hover { background: #fff; color: #E11481 !important; }
+.relev-cta-ghost { background: transparent; color: #fff !important; text-decoration: none; padding: 14px 28px; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; font-weight: 700; font-family: 'Roboto', sans-serif; border: 1px solid #444; transition: all .2s; }
+.relev-cta-ghost:hover { border-color: #fff; }
+.relev-right { display: flex; flex-direction: column; align-items: flex-start; }
+.relev-badge { display: inline-flex; align-items: center; gap: 8px; background: #E11481; color: #fff; padding: 8px 14px; font-size: 11px; letter-spacing: 3px; text-transform: uppercase; font-weight: 700; font-family: 'Roboto', sans-serif; margin-bottom: 1.5rem; }
+.relev-badge::before { content: ''; width: 8px; height: 8px; border-radius: 50%; background: #fff; animation: relev-pulse 1.8s ease-in-out infinite; }
+@keyframes relev-pulse { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: .5; transform: scale(.7); } }
+.relev-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: #1a1a1a; border: 1px solid #1a1a1a; width: 100%; }
+.relev-stat { background: #030405; padding: 1.75rem 1.5rem; border-top: 3px solid; }
+.relev-stat-num { font-family: 'Bebas Neue', sans-serif; font-size: 52px; line-height: 1; margin-bottom: .35rem; display: block; }
+.relev-stat-lbl { font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: #888; font-weight: 300; line-height: 1.45; font-family: 'Roboto', sans-serif; display: block; }
+@media (max-width: 1024px) {
+  .relev-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+}
+@media (max-width: 768px) {
+  .relev { padding: 4rem 1.5rem; }
+  .relev-ctas { flex-direction: column; }
+  .relev-cta, .relev-cta-ghost { justify-content: center; text-align: center; }
+  .relev-stat-num { font-size: 40px; }
+}
+</style>
+
+<section class="relev" id="relevamientos" aria-label="Tercer Relevamiento de juventudes LGBTIQ+ en Argentina">
+  <div class="relev-inner">
+    <div class="relev-left">
+      <div class="relev-label">Monitoreo continuo</div>
+      <h2 class="relev-title">RELEVAMIENTO<br><span class="acc">2026</span></h2>
+      <p class="relev-desc">Lanzamos el <strong>3er relevamiento sobre la situación actual de las juventudes LGBTIQ+ en Argentina</strong>. Es un monitoreo anual con el que producimos datos propios para visibilizar realidades, incidir en políticas públicas y disputar narrativas. Tu participación es anónima y lleva pocos minutos.</p>
+      <div class="relev-ctas">
+        <a href="https://forms.gle/cWXRmxdQZ6eqBvvt7" target="_blank" rel="noopener noreferrer" class="relev-cta">Participar de la encuesta →</a>
+        <a href="https://zonaigualdad.com.ar/relevamientos" class="relev-cta-ghost">Ver informes anteriores</a>
+      </div>
+    </div>
+    <div class="relev-right">
+      <span class="relev-badge">Encuesta abierta</span>
+      <div class="relev-stats">
+        <div class="relev-stat" style="border-color:#E11481">
+          <span class="relev-stat-num" style="color:#E11481">3°</span>
+          <span class="relev-stat-lbl">Relevamiento nacional</span>
+        </div>
+        <div class="relev-stat" style="border-color:#FCCC1C">
+          <span class="relev-stat-num" style="color:#FCCC1C">2</span>
+          <span class="relev-stat-lbl">Informes publicados</span>
+        </div>
+        <div class="relev-stat" style="border-color:#27A237">
+          <span class="relev-stat-num" style="color:#27A237">AR</span>
+          <span class="relev-stat-lbl">Alcance nacional</span>
+        </div>
+        <div class="relev-stat" style="border-color:#2497D1">
+          <span class="relev-stat-num" style="color:#2497D1">+</span>
+          <span class="relev-stat-lbl">Datos para incidencia</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ===================== AMIGUES CTA ===================== -->
+
+<style>
+.amigues-cta { background: #080808; border-top: 1px solid #111; padding: 5rem 2.5rem; }
+.amigues-cta-inner { max-width: 1120px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 3rem; flex-wrap: wrap; }
+.amigues-cta-left { display: flex; align-items: center; gap: 1.75rem; }
+.amigues-cta-text h3 { font-family: 'Bebas Neue', sans-serif; font-size: 44px; letter-spacing: 2px; line-height: 1; color: #fff; margin-bottom: .5rem; }
+.amigues-cta-text p { font-size: 14px; color: #666; font-weight: 300; max-width: 420px; line-height: 1.7; font-family: 'Roboto', sans-serif; }
+.btn-amigues { background: #E11481; color: #fff !important; border: none; padding: 16px 10px; font-size: 13px; letter-spacing: 2px; text-transform: uppercase; font-family: 'Roboto', sans-serif; font-weight: 700; cursor: pointer; white-space: nowrap; text-decoration: none; display: inline-block; }
+.btn-amigues:hover { background: #c5116f; }
+@media (max-width: 768px) {
+  .amigues-cta { padding: 3rem 1.5rem; }
+  .amigues-cta-inner { flex-direction: column; align-items: flex-start; }
+  .amigues-cta-left { flex-direction: column; align-items: flex-start; gap: 1rem; }
+  .amigues-cta-text h3 { font-size: 32px; }
+  .btn-amigues { width: 100%; text-align: center; }
+}
+</style>
+
+<section class="amigues-cta" aria-label="Amigues por la Igualdad — financiamiento colectivo">
+  <div class="amigues-cta-inner">
+    <div class="amigues-cta-left">
+      <img src="https://zonaigualdad.com.ar/wp-content/uploads/2026/03/Amigues-por-la-igualdad.-posteo-en-redes.png" alt="Campaña Amigues por la Igualdad — financiamiento colectivo para Zona Igualdad" style="height:200px;display:block" loading="lazy">
+      <div class="amigues-cta-text">
+        <h3>AMIGUES POR LA IGUALDAD</h3>
+        <p>Sumate a nuestra comunidad de financiamiento colectivo y hacé posible el trabajo de Zona Igualdad.</p>
+      </div>
+    </div>
+    <a class="btn-amigues" href="/amigues">Quiero ser amigue →</a>
+  </div>
+</section>
+
+
+<!-- ===================== ZONA EN ACCIÓN ===================== -->
+
+<style>
+.act { background: #030405; border-top: 1px solid #111; padding: 6rem 2.5rem; }
+.act-inner { max-width: 1120px; margin: 0 auto; }
+.act-label { font-size: 10px; letter-spacing: 4px; text-transform: uppercase; color: #444; margin-bottom: 1rem; font-family: 'Roboto', sans-serif; }
+.act-title { font-family: 'Bebas Neue', sans-serif; font-size: 80px; letter-spacing: 2px; color: #fff; line-height: .95; margin-bottom: 3.5rem; }
+.act-title .acc { color: #E11481; }
+.act-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 2px; background: #1a1a1a; }
+.act-card { background: #030405; display: flex; flex-direction: column; }
+.act-slider { position: relative; overflow: hidden; aspect-ratio: 16/9; }
+.act-slides { display: flex; transition: transform 0.4s ease; height: 100%; }
+.act-slide { min-width: 100%; height: 100%; object-fit: cover; }
+.act-prev, .act-next { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(0,0,0,0.6); border: none; color: #fff; width: 32px; height: 32px; cursor: pointer; font-size: 14px; display: flex; align-items: center; justify-content: center; z-index: 2; transition: background .2s; }
+.act-prev { left: 8px; }
+.act-next { right: 8px; }
+.act-prev:hover, .act-next:hover { background: #E11481; }
+.act-dots { position: absolute; bottom: 8px; left: 50%; transform: translateX(-50%); display: flex; gap: 5px; }
+.act-dot { width: 6px; height: 6px; border-radius: 50%; background: rgba(255,255,255,0.3); cursor: pointer; transition: background .2s; }
+.act-dot.active { background: #fff; }
+.act-info { padding: 1.75rem; display: flex; flex-direction: column; flex: 1; }
+.act-badge { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; font-weight: 700; padding: 4px 10px; display: inline-block; margin-bottom: .75rem; font-family: 'Roboto', sans-serif; }
+.act-name { font-family: 'Bebas Neue', sans-serif; font-size: 28px; letter-spacing: 1px; color: #fff; margin-bottom: .5rem; line-height: 1; }
+.act-desc { font-size: 13px; color: #666; line-height: 1.6; font-weight: 300; font-family: 'Roboto', sans-serif; }
+@media (max-width: 1024px) {
+  .act-grid { grid-template-columns: repeat(2,1fr); }
+}
+@media (max-width: 768px) {
+  .act { padding: 4rem 1.5rem; }
+  .act-title { font-size: 52px; margin-bottom: 2rem; }
+  .act-grid { grid-template-columns: 1fr; }
+}
+</style>
+
+<section class="act" id="actividades" aria-label="Eventos y actividades LGBTIQ+ de Zona Igualdad">
+  <div class="act-inner">
+    <div class="act-label">Eventos y actividades</div>
+    <h2 class="act-title">ZONA<br><span class="acc">EN ACCIón</span></h2>
+    <div class="act-grid">
+
+      <article class="act-card">
+        <div class="act-slider" data-slider>
+          <div class="act-slides">
+            <img class="act-slide" src="https://zonaigualdad.com.ar/wp-content/uploads/2026/03/FestiZona-1.png" alt="FestiZona: festival de cultura y música LGBTIQ+ organizado por Zona Igualdad" loading="lazy">
+            <img class="act-slide" src="https://zonaigualdad.com.ar/wp-content/uploads/2026/03/FestiZona-2.png" alt="Público y artistas en FestiZona, evento cultural LGBTIQ+ en Buenos Aires" loading="lazy">
+            <img class="act-slide" src="https://zonaigualdad.com.ar/wp-content/uploads/2026/03/FestiZona-3.png" alt="Escenario de FestiZona con artistas LGBTIQ+ en vivo" loading="lazy">
+          </div>
+          <button class="act-prev" aria-label="Imagen anterior">&#8249;</button>
+          <button class="act-next" aria-label="Imagen siguiente">&#8250;</button>
+          <div class="act-dots" aria-hidden="true"><div class="act-dot active"></div><div class="act-dot"></div><div class="act-dot"></div></div>
+        </div>
+        <div class="act-info">
+          <span class="act-badge" style="background:rgba(225,20,129,0.12);color:#E11481">Arte</span>
+          <h3 class="act-name">FESTIZONA</h3>
+          <p class="act-desc">Festival de cultura, música y comunidad. Artistas LGBTIQ+ en el escenario. El evento más esperado del año.</p>
+        </div>
+      </article>
+
+      <article class="act-card">
+        <div class="act-slider" data-slider>
+          <div class="act-slides">
+            <img class="act-slide" src="https://zonaigualdad.com.ar/wp-content/uploads/2026/03/Rancheo-1.png" alt="Rancheo Orgulloso: encuentro de juventudes LGBTIQ+ al aire libre en Buenos Aires" loading="lazy">
+            <img class="act-slide" src="https://zonaigualdad.com.ar/wp-content/uploads/2026/03/Rancheo-2.png" alt="Jóvenes LGBTIQ+ compartiendo en el Rancheo Orgulloso de Zona Igualdad" loading="lazy">
+            <img class="act-slide" src="https://zonaigualdad.com.ar/wp-content/uploads/2026/03/Rancheo-3.png" alt="Actividad grupal en el Rancheo Orgulloso, espacio comunitario LGBTIQ+" loading="lazy">
+          </div>
+          <button class="act-prev" aria-label="Imagen anterior">&#8249;</button>
+          <button class="act-next" aria-label="Imagen siguiente">&#8250;</button>
+          <div class="act-dots" aria-hidden="true"><div class="act-dot active"></div><div class="act-dot"></div><div class="act-dot"></div></div>
+        </div>
+        <div class="act-info">
+          <span class="act-badge" style="background:rgba(252,204,28,0.1);color:#FCCC1C">Encuentro</span>
+          <h3 class="act-name">RANCHEO ORGULLOSO</h3>
+          <p class="act-desc">Espacio de encuentro y reflexión de juventudes LGBTIQ+. Dos sábados por mes.</p>
+        </div>
+      </article>
+
+      <article class="act-card">
+        <div class="act-slider" data-slider>
+          <div class="act-slides">
+            <img class="act-slide" src="https://zonaigualdad.com.ar/wp-content/uploads/2026/03/ClaudiaPalooza-1.png" alt="Claudiapalooza: evento en homenaje a Claudia Pía Baudracco, activista trans argentina" loading="lazy">
+            <img class="act-slide" src="https://zonaigualdad.com.ar/wp-content/uploads/2026/03/ClaudiaPalooza-2.png" alt="Debate y arte en Claudiapalooza, evento cultural y político LGBTIQ+" loading="lazy">
+            <img class="act-slide" src="https://zonaigualdad.com.ar/wp-content/uploads/2026/03/ClaudiaPalooza-3.png" alt="Participantes de Claudiapalooza de Zona Igualdad" loading="lazy">
+          </div>
+          <button class="act-prev" aria-label="Imagen anterior">&#8249;</button>
+          <button class="act-next" aria-label="Imagen siguiente">&#8250;</button>
+          <div class="act-dots" aria-hidden="true"><div class="act-dot active"></div><div class="act-dot"></div><div class="act-dot"></div></div>
+        </div>
+        <div class="act-info">
+          <span class="act-badge" style="background:rgba(223,6,44,0.1);color:#DF062C">Debate</span>
+          <h3 class="act-name">CLAUDIAPALOOZA</h3>
+          <p class="act-desc">Evento cultural y político en homenaje a Claudia Pía Baudracco. Arte, debate y lucha desde la memoria.</p>
+        </div>
+      </article>
+
+      <article class="act-card">
+        <div class="act-slider" data-slider>
+          <div class="act-slides">
+            <img class="act-slide" src="https://zonaigualdad.com.ar/wp-content/uploads/2026/03/Marcha-del-Orgullo-1.png" alt="Zona Igualdad en la Marcha del Orgullo LGBTIQ+ de Buenos Aires" loading="lazy">
+            <img class="act-slide" src="https://zonaigualdad.com.ar/wp-content/uploads/2026/03/Marcha-del-Orgullo-2.png" alt="Activistas de Zona Igualdad marchando con banderas del orgullo en CABA" loading="lazy">
+            <img class="act-slide" src="https://zonaigualdad.com.ar/wp-content/uploads/2026/03/Marcha-del-Orgullo-3.png" alt="Kermés y materiales de Zona Igualdad en la Marcha del Orgullo" loading="lazy">
+          </div>
+          <button class="act-prev" aria-label="Imagen anterior">&#8249;</button>
+          <button class="act-next" aria-label="Imagen siguiente">&#8250;</button>
+          <div class="act-dots" aria-hidden="true"><div class="act-dot active"></div><div class="act-dot"></div><div class="act-dot"></div></div>
+        </div>
+        <div class="act-info">
+          <span class="act-badge" style="background:rgba(39,162,55,0.1);color:#27A237">Visibilidad</span>
+          <h3 class="act-name">MARCHA DEL ORGULLO</h3>
+          <p class="act-desc">Participamos con kermés, materiales y presencia activa en las calles de Buenos Aires.</p>
+        </div>
+      </article>
+
+      <article class="act-card">
+        <div class="act-slider" data-slider>
+          <div class="act-slides">
+            <img class="act-slide" src="https://zonaigualdad.com.ar/wp-content/uploads/2026/03/Zona-Orgullosa-1.png" alt="Zona Orgullosa: celebración del Día del Orgullo LGBTIQ+ por Zona Igualdad" loading="lazy">
+            <img class="act-slide" src="https://zonaigualdad.com.ar/wp-content/uploads/2026/03/Zona-Orgullosa-2.png" alt="Expresiones culturales en Zona Orgullosa, evento por el 28 de junio" loading="lazy">
+            <img class="act-slide" src="https://zonaigualdad.com.ar/wp-content/uploads/2026/03/Zona-Orgullosa-3.png" alt="Arte y diversidad en la celebración Zona Orgullosa" loading="lazy">
+          </div>
+          <button class="act-prev" aria-label="Imagen anterior">&#8249;</button>
+          <button class="act-next" aria-label="Imagen siguiente">&#8250;</button>
+          <div class="act-dots" aria-hidden="true"><div class="act-dot active"></div><div class="act-dot"></div><div class="act-dot"></div></div>
+        </div>
+        <div class="act-info">
+          <span class="act-badge" style="background:rgba(127,33,123,0.1);color:#7F217B">Cultural</span>
+          <h3 class="act-name">ZONA ORGULLOSA</h3>
+          <p class="act-desc">Celebramos el 28 de Junio con expresiones culturales de nuestra comunidad. Arte, diversidad e identidad.</p>
+        </div>
+      </article>
+
+      <article class="act-card">
+        <div class="act-slider" data-slider>
+          <div class="act-slides">
+            <img class="act-slide" src="https://zonaigualdad.com.ar/wp-content/uploads/2026/03/Jueves-1.png" alt="Reuniones semanales de organización y planificación de Zona Igualdad" loading="lazy">
+            <img class="act-slide" src="https://zonaigualdad.com.ar/wp-content/uploads/2026/03/Jueves-2.png" alt="Activistas de Zona Igualdad en reunión de trabajo semanal" loading="lazy">
+            <img class="act-slide" src="https://zonaigualdad.com.ar/wp-content/uploads/2026/03/Jueves-3.png" alt="Trabajo colectivo en las reuniones semanales de Zona Igualdad" loading="lazy">
+          </div>
+          <button class="act-prev" aria-label="Imagen anterior">&#8249;</button>
+          <button class="act-next" aria-label="Imagen siguiente">&#8250;</button>
+          <div class="act-dots" aria-hidden="true"><div class="act-dot active"></div><div class="act-dot"></div><div class="act-dot"></div></div>
+        </div>
+        <div class="act-info">
+          <span class="act-badge" style="background:rgba(36,151,209,0.1);color:#2497D1">Activismo</span>
+          <h3 class="act-name">REUNIONES SEMANALES</h3>
+          <p class="act-desc">Pensamos, planificamos y accionamos juntes cada semana. El motor que mueve todo lo demás.</p>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<script>
+document.querySelectorAll('[data-slider]').forEach(slider => {
+  const slides = slider.querySelector('.act-slides');
+  const dots = slider.querySelectorAll('.act-dot');
+  const prev = slider.querySelector('.act-prev');
+  const next = slider.querySelector('.act-next');
+  let current = 0;
+  const total = dots.length;
+
+  function goTo(n) {
+    current = (n + total) % total;
+    slides.style.transform = `translateX(-${current * 100}%)`;
+    dots.forEach((d, i) => d.classList.toggle('active', i === current));
+  }
+
+  prev.addEventListener('click', () => goTo(current - 1));
+  next.addEventListener('click', () => goTo(current + 1));
+  dots.forEach((d, i) => d.addEventListener('click', () => goTo(i)));
+
+  const delay = 3000 + Math.random() * 3000;
+  setInterval(() => goTo(current + 1), delay);
+});
+</script>
+
+
+<!-- ===================== QUÉ ESTAMOS HACIENDO (Instagram) ===================== -->
+
+<style>
+.acciones { background: #080808; border-top: 1px solid #111; padding: 6rem 2.5rem; }
+.acciones-inner { max-width: 1120px; margin: 0 auto; }
+.acciones-label { font-size: 10px; letter-spacing: 4px; text-transform: uppercase; color: #444; margin-bottom: 1rem; font-family: 'Roboto', sans-serif; }
+.acciones-title { font-family: 'Bebas Neue', sans-serif; font-size: 80px; letter-spacing: 2px; color: #fff; line-height: .95; margin-bottom: 3.5rem; }
+.acciones-title .acc { color: #E11481; }
+.ig-foot { margin-top: 2rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
+.ig-foot-t { font-size: 13px; color: #444; font-family: 'Roboto', sans-serif; }
+.ig-foot a { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: #E11481; text-decoration: none; font-weight: 700; font-family: 'Roboto', sans-serif; }
+@media (max-width: 768px) {
+  .acciones { padding: 4rem 1.5rem; }
+  .acciones-title { font-size: 52px; margin-bottom: 2rem; }
+}
+</style>
+
+<section class="acciones" aria-label="Últimas publicaciones de Zona Igualdad en Instagram">
+  <div class="acciones-inner">
+    <div class="acciones-label">Últimas acciones</div>
+    <h2 class="acciones-title">LO QUE ESTAMOS<br><span class="acc">HACIENDO</span></h2>
+    [instagram-feed feed=1]
+  </div>
+</section>
+
+
+<!-- ===================== BIBLIOTECA ===================== -->
+
+<style>
+.bib { background: #030405; border-top: 1px solid #111; padding: 6rem 2.5rem; }
+.bib-inner { max-width: 1120px; margin: 0 auto; }
+.bib-label { font-size: 10px; letter-spacing: 4px; text-transform: uppercase; color: #444; margin-bottom: 1rem; font-family: 'Roboto', sans-serif; }
+.bib-title { font-family: 'Bebas Neue', sans-serif; font-size: 80px; letter-spacing: 2px; color: #fff; line-height: .95; margin-bottom: 3.5rem; }
+.bib-title .acc { color: #E11481; }
+.bib-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: #1a1a1a; }
+.bib-item { background: #030405; padding: 2.5rem; display: flex; gap: 2rem; }
+.bib-cover { width: 150px; flex-shrink: 0; aspect-ratio: 3/4; background: #111; border: 1px solid #1e1e1e; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; }
+.bib-c { flex: 1; }
+.bib-type { font-size: 9px; letter-spacing: 3px; text-transform: uppercase; color: #444; margin-bottom: .75rem; font-family: 'Roboto', sans-serif; }
+.bib-name { font-size: 16px; color: #ddd; line-height: 1.4; margin-bottom: .75rem; font-family: 'Roboto', sans-serif; }
+.bib-desc { font-size: 13px; color: #666; line-height: 1.6; font-weight: 300; font-family: 'Roboto', sans-serif; }
+.bib-link { font-size: 11px; letter-spacing: 1px; text-transform: uppercase; color: #E11481; text-decoration: none; margin-top: 1rem; display: inline-block; font-weight: 700; font-family: 'Roboto', sans-serif; }
+.bib-more { margin-top: 2.5rem; }
+.bib-more a { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: #E11481; text-decoration: none; font-weight: 700; border-bottom: 1px solid #E11481; padding-bottom: 2px; font-family: 'Roboto', sans-serif; }
+@media (max-width: 768px) {
+  .bib { padding: 4rem 1.5rem; }
+  .bib-title { font-size: 52px; margin-bottom: 2rem; }
+  .bib-grid { grid-template-columns: 1fr; }
+  .bib-item { padding: 1.75rem; gap: 1.25rem; }
+  .bib-cover { width: 60px; }
+}
+</style>
+
+<section class="bib" aria-label="Biblioteca virtual con recursos LGBTIQ+ de Zona Igualdad">
+  <div class="bib-inner">
+    <div class="bib-label">Biblioteca virtual</div>
+    <h2 class="bib-title">Nuestros<br><span class="acc">RECURSOS</span></h2>
+    <div class="bib-grid">
+      <article class="bib-item">
+        <div class="bib-cover">
+          <img src="https://drive.google.com/thumbnail?id=1jb4I6-_g_0pUdrp7fCRF7qVqlbKnaeCy&sz=w400" style="width:100%;height:100%;object-fit:cover" alt="Portada del relevamiento nacional sobre situación de juventudes LGBTIQ+ en Argentina por Zona Igualdad" loading="lazy">
+        </div>
+        <div class="bib-c">
+          <div class="bib-type">Relevamiento nacional</div>
+          <h3 class="bib-name">Situación de las juventudes LGBTIQ+ en Argentina</h3>
+          <p class="bib-desc">Primer relevamiento con alcance nacional sobre condiciones de vida y acceso a derechos.</p>
+          <a class="bib-link" href="https://drive.google.com/file/d/1jb4I6-_g_0pUdrp7fCRF7qVqlbKnaeCy/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Descargar →</a>
+        </div>
+      </article>
+      <article class="bib-item">
+        <div class="bib-cover">
+          <img src="https://drive.google.com/thumbnail?id=1U1NaxDcpTsHfrtSLjunWPVDLrcejgqLx&sz=w400" style="width:100%;height:100%;object-fit:cover" alt="Portada de la guía práctica de Derechos Trans en Argentina por Zona Igualdad" loading="lazy">
+        </div>
+        <div class="bib-c">
+          <div class="bib-type">Guía de derechos</div>
+          <h3 class="bib-name">Derechos Trans en Argentina: guía práctica</h3>
+          <p class="bib-desc">Ley de Identidad de Género, cupo laboral trans y derechos vigentes en Argentina.</p>
+          <a class="bib-link" href="https://drive.google.com/file/d/1U1NaxDcpTsHfrtSLjunWPVDLrcejgqLx/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Leer →</a>
+        </div>
+      </article>
+    </div>
+    <div class="bib-more">
+      <a href="/biblioteca">Ver toda la biblioteca →</a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ===================== CONTACTO ===================== -->
+
+<style>
+.contacto { background: #080808; border-top: 1px solid #111; padding: 6rem 2.5rem; }
+.contacto-inner { max-width: 1120px; margin: 0 auto; }
+.contacto-label { font-size: 10px; letter-spacing: 4px; text-transform: uppercase; color: #444; margin-bottom: 1rem; font-family: 'Roboto', sans-serif; }
+.contacto-title { font-family: 'Bebas Neue', sans-serif; font-size: 80px; letter-spacing: 2px; color: #fff; line-height: .95; margin-bottom: 3.5rem; }
+.contacto-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 5rem; }
+.c-form { display: flex; flex-direction: column; gap: 1.25rem; }
+.c-lbl { display: block; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: #555; margin-bottom: 8px; font-family: 'Roboto', sans-serif; }
+.c-input { width: 100%; background: #030405; border: 1px solid #1e1e1e; color: #fff; padding: 14px 16px; font-family: 'Roboto', sans-serif; font-size: 14px; outline: none; transition: border-color .2s; }
+.c-input:focus { border-color: #E11481; }
+textarea.c-input { height: 120px; resize: vertical; }
+.c-btn { background: #E11481; color: #fff !important; border: none; padding: 15px 34px; font-size: 12px; letter-spacing: 2px; text-transform: uppercase; font-family: 'Roboto', sans-serif; font-weight: 700; cursor: pointer; width: 100%; }
+.c-btn:hover { background: #c5116f; }
+.c-socials { display: flex; flex-direction: column; gap: 1.5rem; }
+.c-soc { display: flex; align-items: center; gap: 1.25rem; text-decoration: none; transition: opacity .2s; }
+.c-soc:hover { opacity: .7; }
+.c-soc-icon { width: 52px; height: 52px; border: 1px solid; display: flex; align-items: center; justify-content: center; font-family: 'Bebas Neue', sans-serif; font-size: 16px; letter-spacing: 1px; flex-shrink: 0; }
+.c-soc-info h4 { font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: #444; margin-bottom: 3px; font-family: 'Roboto', sans-serif; }
+.c-soc-info p { font-size: 14px; color: #ccc; font-family: 'Roboto', sans-serif; }
+@media (max-width: 768px) {
+  .contacto { padding: 4rem 1.5rem; }
+  .contacto-title { font-size: 52px; margin-bottom: 2rem; }
+  .contacto-grid { grid-template-columns: 1fr; gap: 3rem; }
+}
+</style>
+
+<section class="contacto" id="contacto" aria-label="Contacto con Zona Igualdad">
+  <div class="contacto-inner">
+    <div class="contacto-label">Contacto</div>
+    <h2 class="contacto-title">ESCRIBINOS</h2>
+    <div class="contacto-grid">
+      <div>
+        <form class="c-form" aria-label="Formulario de contacto de Zona Igualdad" method="post" action="#">
+          <div>
+            <label class="c-lbl" for="contacto-nombre">Nombre</label>
+            <input class="c-input" type="text" id="contacto-nombre" name="nombre" placeholder="Tu nombre" required>
+          </div>
+          <div>
+            <label class="c-lbl" for="contacto-email">Email</label>
+            <input class="c-input" type="email" id="contacto-email" name="email" placeholder="tu@email.com" required>
+          </div>
+          <div>
+            <label class="c-lbl" for="contacto-mensaje">Mensaje</label>
+            <textarea class="c-input" id="contacto-mensaje" name="mensaje" placeholder="¿En qué te podemos ayudar?" required></textarea>
+          </div>
+          <button class="c-btn" type="submit">Enviar mensaje</button>
+        </form>
+      </div>
+      <div class="c-socials">
+        <a class="c-soc" href="https://www.instagram.com/zonaigualdad/" target="_blank" rel="noopener noreferrer">
+          <div class="c-soc-icon" style="color:#E11481;border-color:#E11481">IG</div>
+          <div class="c-soc-info"><h4>Instagram</h4><p>@zonaigualdad</p></div>
+        </a>
+        <a class="c-soc" href="https://twitter.com/zonaigualdad" target="_blank" rel="noopener noreferrer">
+          <div class="c-soc-icon" style="color:#2497D1;border-color:#2497D1">TW</div>
+          <div class="c-soc-info"><h4>Twitter / X</h4><p>@zonaigualdad</p></div>
+        </a>
+        <a class="c-soc" href="https://www.facebook.com/zonaigualdad" target="_blank" rel="noopener noreferrer">
+          <div class="c-soc-icon" style="color:#EC8D0B;border-color:#EC8D0B">FB</div>
+          <div class="c-soc-info"><h4>Facebook</h4><p>zonaigualdad</p></div>
+        </a>
+        <a class="c-soc" href="https://www.tiktok.com/@zonaigualdad" target="_blank" rel="noopener noreferrer">
+          <div class="c-soc-icon" style="color:#DF062C;border-color:#DF062C">TK</div>
+          <div class="c-soc-info"><h4>TikTok</h4><p>@zonaigualdad</p></div>
+        </a>
+        <a class="c-soc" href="https://www.youtube.com/channel/UCflPZ6f9JNiaNFkFJVQjNFw" target="_blank" rel="noopener noreferrer">
+          <div class="c-soc-icon" style="color:#27A237;border-color:#27A237">YT</div>
+          <div class="c-soc-info"><h4>YouTube</h4><p>Zona Igualdad</p></div>
+        </a>
+        <a class="c-soc" href="https://open.spotify.com/show/2jk0CJnDHw9boSmBFB1rNZ" target="_blank" rel="noopener noreferrer">
+          <div class="c-soc-icon" style="color:#FCCC1C;border-color:#FCCC1C">SP</div>
+          <div class="c-soc-info"><h4>Spotify</h4><p>Zona Igualdad</p></div>
+        </a>
+        <a class="c-soc" href="mailto:hola@zonaigualdad.com.ar">
+          <div class="c-soc-icon" style="color:#7F217B;border-color:#7F217B">@</div>
+          <div class="c-soc-info"><h4>Email</h4><p>hola@zonaigualdad.com.ar</p></div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main><!-- cierre de <main> -->
+
+
+<!-- ===================== FOOTER ===================== -->
+
+<style>
+.footer { background: #000; border-top: 1px solid #0d0d0d; padding: 3rem 2.5rem; }
+.footer-rainbow { display: flex; height: 2px; width: 100%; margin-bottom: 2rem; }
+.footer-rainbow div { flex: 1; }
+.footer-inner { max-width: 1120px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1.5rem; }
+.footer-logo img { height: 36px; opacity: .5; }
+.footer-copy { font-size: 12px; color: #666; letter-spacing: 1px; font-family: 'Roboto', sans-serif; }
+.footer-btn { background: #E11481; color: #fff !important; border: none; padding: 10px 20px; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; font-family: 'Roboto', sans-serif; font-weight: 700; cursor: pointer; text-decoration: none; display: inline-block; }
+@media (max-width: 768px) {
+  .footer { padding: 2rem 1.5rem; }
+  .footer-inner { flex-direction: column; align-items: flex-start; gap: 1rem; }
+  .footer-copy { font-size: 10px; }
+}
+</style>
+
+<footer class="footer">
+  <div class="footer-rainbow" aria-hidden="true">
+    <div style="background:#E11481"></div>
+    <div style="background:#DF062C"></div>
+    <div style="background:#EC8D0B"></div>
+    <div style="background:#FCCC1C"></div>
+    <div style="background:#27A237"></div>
+    <div style="background:#2497D1"></div>
+    <div style="background:#0B6DA8"></div>
+    <div style="background:#7F217B"></div>
+  </div>
+  <div class="footer-inner">
+    <div class="footer-logo">
+      <img src="https://zonaigualdad.com.ar/wp-content/uploads/2026/03/Logo-Zona-blanco-sin-fondo-1.png" alt="Zona Igualdad" loading="lazy">
+    </div>
+    <div class="footer-copy">© 2026 Zona Igualdad · Organización civil sin fines de lucro · CABA, Argentina</div>
+    <div class="footer-copy" style="text-align:center">
+      Sitio web creado por
+      <a href="https://www.instagram.com/arche.latam" target="_blank" rel="noopener noreferrer" style="color:#E11481;text-decoration:none;font-weight:700">Ar.ché</a>
+      &nbsp;·&nbsp;
+      <a href="https://www.linkedin.com/company/ar-ch%C3%A9-latam" target="_blank" rel="noopener noreferrer" style="color:#E11481;text-decoration:none;font-weight:700">LinkedIn</a>
+    </div>
+    <a class="footer-btn" href="/amigues">&#9825; Ser amigue</a>
+  </div>
+</footer>
