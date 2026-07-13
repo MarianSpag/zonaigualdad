@@ -801,13 +801,32 @@ document.querySelectorAll('[data-slider]').forEach(slider => {
 .contacto-label { font-size: 10px; letter-spacing: 4px; text-transform: uppercase; color: #444; margin-bottom: 1rem; font-family: 'Roboto', sans-serif; }
 .contacto-title { font-family: 'Bebas Neue', sans-serif; font-size: 80px; letter-spacing: 2px; color: #fff; line-height: .95; margin-bottom: 3.5rem; }
 .contacto-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 5rem; }
-.c-form { display: flex; flex-direction: column; gap: 1.25rem; }
-.c-lbl { display: block; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: #555; margin-bottom: 8px; font-family: 'Roboto', sans-serif; }
-.c-input { width: 100%; background: #030405; border: 1px solid #1e1e1e; color: #fff; padding: 14px 16px; font-family: 'Roboto', sans-serif; font-size: 14px; outline: none; transition: border-color .2s; }
-.c-input:focus { border-color: #E11481; }
-textarea.c-input { height: 120px; resize: vertical; }
-.c-btn { background: #E11481; color: #fff !important; border: none; padding: 15px 34px; font-size: 12px; letter-spacing: 2px; text-transform: uppercase; font-family: 'Roboto', sans-serif; font-weight: 700; cursor: pointer; width: 100%; }
-.c-btn:hover { background: #c5116f; }
+/* ---------- Skin de Fluent Forms para diseño oscuro Zona Igualdad ---------- */
+.zi-ff .fluentform .ff-el-input--label label,
+.zi-ff .fluentform label.ff-el-input--label { font-size: 10px !important; letter-spacing: 2px !important; text-transform: uppercase !important; color: #555 !important; font-family: 'Roboto', sans-serif !important; font-weight: 400 !important; margin-bottom: 8px !important; }
+.zi-ff .fluentform .ff-el-form-control,
+.zi-ff .fluentform input[type="text"],
+.zi-ff .fluentform input[type="email"],
+.zi-ff .fluentform textarea,
+.zi-ff .fluentform select { width: 100% !important; background: #030405 !important; border: 1px solid #1e1e1e !important; color: #fff !important; padding: 14px 16px !important; font-family: 'Roboto', sans-serif !important; font-size: 14px !important; border-radius: 0 !important; outline: none !important; box-shadow: none !important; transition: border-color .2s !important; }
+.zi-ff .fluentform .ff-el-form-control:focus,
+.zi-ff .fluentform input:focus,
+.zi-ff .fluentform textarea:focus,
+.zi-ff .fluentform select:focus { border-color: #E11481 !important; box-shadow: none !important; }
+.zi-ff .fluentform textarea { height: 120px !important; resize: vertical !important; }
+.zi-ff .fluentform .ff-el-group { margin-bottom: 1.25rem !important; }
+.zi-ff .fluentform .ff-btn.ff-btn-submit,
+.zi-ff .fluentform button[type="submit"] { background: #E11481 !important; color: #fff !important; border: none !important; padding: 15px 34px !important; font-size: 12px !important; letter-spacing: 2px !important; text-transform: uppercase !important; font-family: 'Roboto', sans-serif !important; font-weight: 700 !important; cursor: pointer !important; width: 100% !important; border-radius: 0 !important; }
+.zi-ff .fluentform .ff-btn.ff-btn-submit:hover,
+.zi-ff .fluentform button[type="submit"]:hover { background: #c5116f !important; }
+.zi-ff .fluentform .ff-el-input--content::placeholder,
+.zi-ff .fluentform input::placeholder,
+.zi-ff .fluentform textarea::placeholder { color: #555 !important; }
+.zi-ff .fluentform .ff-message-success { background: rgba(39,162,55,0.08) !important; border: 1px solid #27A237 !important; color: #fff !important; padding: 1rem 1.25rem !important; border-radius: 0 !important; }
+.zi-ff .fluentform .error,
+.zi-ff .fluentform .ff-el-is-error input,
+.zi-ff .fluentform .ff-el-is-error textarea,
+.zi-ff .fluentform .ff-el-is-error select { border-color: #DF062C !important; }
 .c-socials { display: flex; flex-direction: column; gap: 1.5rem; }
 .c-soc { display: flex; align-items: center; gap: 1.25rem; text-decoration: none; transition: opacity .2s; }
 .c-soc:hover { opacity: .7; }
@@ -826,22 +845,9 @@ textarea.c-input { height: 120px; resize: vertical; }
     <div class="contacto-label">Contacto</div>
     <h2 class="contacto-title">ESCRIBINOS</h2>
     <div class="contacto-grid">
-      <div>
-        <form class="c-form" aria-label="Formulario de contacto de Zona Igualdad" method="post" action="#">
-          <div>
-            <label class="c-lbl" for="contacto-nombre">Nombre</label>
-            <input class="c-input" type="text" id="contacto-nombre" name="nombre" placeholder="Tu nombre" required>
-          </div>
-          <div>
-            <label class="c-lbl" for="contacto-email">Email</label>
-            <input class="c-input" type="email" id="contacto-email" name="email" placeholder="tu@email.com" required>
-          </div>
-          <div>
-            <label class="c-lbl" for="contacto-mensaje">Mensaje</label>
-            <textarea class="c-input" id="contacto-mensaje" name="mensaje" placeholder="¿En qué te podemos ayudar?" required></textarea>
-          </div>
-          <button class="c-btn" type="submit">Enviar mensaje</button>
-        </form>
+      <div class="zi-ff">
+        <!-- Reemplazar id="XX" por el ID real del form "Contacto Home" de Fluent Forms -->
+        [fluentform id="XX"]
       </div>
       <div class="c-socials">
         <a class="c-soc" href="https://www.instagram.com/zonaigualdad/" target="_blank" rel="noopener noreferrer">

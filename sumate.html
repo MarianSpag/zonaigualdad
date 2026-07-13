@@ -1,0 +1,159 @@
+<style>
+.sumate-page { background: #030405; min-height: 100vh; font-family: 'Roboto', sans-serif; }
+
+.znav { position: sticky; top: 0; z-index: 200; background: rgba(3,4,5,0.96); backdrop-filter: blur(12px); border-bottom: 1px solid #1a1a1a; display: flex; align-items: center; justify-content: space-between; padding: 0 2.5rem; height: 66px; }
+.znav-logo img { height: 40px; display: block; }
+.znav-links { display: flex; gap: 1.5rem; list-style: none; margin: 0; padding: 0; }
+.znav-links a { color: #777; text-decoration: none; font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; transition: color .2s; font-family: 'Roboto', sans-serif; }
+.znav-links a:hover { color: #fff; }
+.znav-btns { display: flex; gap: 10px; }
+.znav-sumate { background: transparent; color: #fff !important; border: 1px solid #444; padding: 10px 20px; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; font-family: 'Roboto', sans-serif; cursor: pointer; text-decoration: none; display: inline-block; }
+.znav-dona { background: #E11481; color: #fff !important; border: none; padding: 10px 20px; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; font-family: 'Roboto', sans-serif; font-weight: 700; cursor: pointer; text-decoration: none; display: inline-block; }
+.znav-sumate:hover { background: #E11481; border-color: #E11481; color: #fff !important; }
+.znav-dona:hover { background: #fff !important; color: #E11481 !important; }
+.znav-hamburger { display: none; background: transparent; border: none; cursor: pointer; flex-direction: column; gap: 5px; padding: 5px; }
+.znav-hamburger span { display: block; width: 24px; height: 2px; background: #fff; }
+.znav-mobile { display: none; position: fixed; inset: 0; top: 66px; background: #030405; z-index: 199; flex-direction: column; padding: 2rem 2.5rem; gap: 1.5rem; }
+.znav-mobile.open { display: flex; }
+.znav-mobile a { color: #777; text-decoration: none; font-size: 16px; letter-spacing: 2px; text-transform: uppercase; font-family: 'Roboto', sans-serif; border-bottom: 1px solid #111; padding-bottom: 1.5rem; }
+.znav-mobile-btns { display: flex; flex-direction: column; gap: 10px; margin-top: 1rem; }
+
+.sumate-hero { padding: 6rem 2.5rem 4rem; max-width: 1120px; margin: 0 auto; }
+.sumate-tag { font-size: 10px; letter-spacing: 4px; text-transform: uppercase; color: #444; margin-bottom: 1rem; }
+.sumate-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(52px,7vw,88px); letter-spacing: 2px; line-height: .95; margin-bottom: 3rem; color: #fff; }
+.sumate-title .acc { color: #E11481; }
+.sumate-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }
+.sumate-desc { font-size: 16px; line-height: 1.85; color: #888; font-weight: 300; margin-bottom: 2rem; font-family: 'Roboto', sans-serif; }
+.sumate-desc strong { color: #fff; }
+.areas-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: #1a1a1a; }
+.area-card { background: #080808; padding: 1.75rem; border-top: 3px solid; }
+.area-title { font-size: 12px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; margin-bottom: .5rem; font-family: 'Roboto', sans-serif; }
+.area-desc { font-size: 13px; color: #666; font-weight: 300; line-height: 1.5; font-family: 'Roboto', sans-serif; }
+
+/* ---------- Skin de Fluent Forms para diseño oscuro Zona Igualdad ---------- */
+.zi-ff .fluentform .ff-el-input--label label,
+.zi-ff .fluentform label.ff-el-input--label { font-size: 10px !important; letter-spacing: 2px !important; text-transform: uppercase !important; color: #555 !important; font-family: 'Roboto', sans-serif !important; font-weight: 400 !important; margin-bottom: 8px !important; }
+.zi-ff .fluentform .ff-el-form-control,
+.zi-ff .fluentform input[type="text"],
+.zi-ff .fluentform input[type="email"],
+.zi-ff .fluentform textarea,
+.zi-ff .fluentform select { width: 100% !important; background: #080808 !important; border: 1px solid #1e1e1e !important; color: #fff !important; padding: 14px 16px !important; font-family: 'Roboto', sans-serif !important; font-size: 14px !important; border-radius: 0 !important; outline: none !important; box-shadow: none !important; transition: border-color .2s !important; }
+.zi-ff .fluentform .ff-el-form-control:focus,
+.zi-ff .fluentform input:focus,
+.zi-ff .fluentform textarea:focus,
+.zi-ff .fluentform select:focus { border-color: #E11481 !important; box-shadow: none !important; }
+.zi-ff .fluentform textarea { height: 100px !important; resize: vertical !important; }
+.zi-ff .fluentform .ff-el-group { margin-bottom: 1.25rem !important; }
+.zi-ff .fluentform .ff-btn.ff-btn-submit,
+.zi-ff .fluentform button[type="submit"] { background: #E11481 !important; color: #fff !important; border: none !important; padding: 15px !important; font-size: 12px !important; letter-spacing: 2px !important; text-transform: uppercase !important; font-family: 'Roboto', sans-serif !important; font-weight: 700 !important; cursor: pointer !important; width: 100% !important; border-radius: 0 !important; }
+.zi-ff .fluentform .ff-btn.ff-btn-submit:hover,
+.zi-ff .fluentform button[type="submit"]:hover { background: #c5116f !important; }
+.zi-ff .fluentform input::placeholder,
+.zi-ff .fluentform textarea::placeholder { color: #555 !important; }
+.zi-ff .fluentform .ff-message-success { background: rgba(39,162,55,0.08) !important; border: 1px solid #27A237 !important; color: #fff !important; padding: 1rem 1.25rem !important; border-radius: 0 !important; }
+.zi-ff .fluentform .error,
+.zi-ff .fluentform .ff-el-is-error input,
+.zi-ff .fluentform .ff-el-is-error textarea,
+.zi-ff .fluentform .ff-el-is-error select { border-color: #DF062C !important; }
+
+.rainbow-bar { display: flex; height: 2px; width: 100%; }
+.rainbow-bar div { flex: 1; }
+.footer-p { background: #000; padding: 2rem 2.5rem; }
+.footer-p-inner { max-width: 1120px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+.footer-p-copy { font-size: 11px; color: #2a2a2a; letter-spacing: 1px; font-family: 'Roboto', sans-serif; }
+
+@media (max-width: 1024px) {
+  .znav-links { gap: 1.1rem; }
+  .znav-links a { font-size: 10px; letter-spacing: 1px; }
+}
+@media (max-width: 768px) {
+  .sumate-hero { padding: 4rem 1.5rem; }
+  .sumate-grid { grid-template-columns: 1fr; gap: 3rem; }
+  .sumate-title { font-size: 52px; }
+  .znav-links { display: none; }
+  .znav-hamburger { display: flex; }
+}
+</style>
+
+<div class="sumate-page">
+
+  <nav class="znav" aria-label="Navegación principal">
+    <a href="https://zonaigualdad.com.ar" style="text-decoration:none">
+      <img src="https://zonaigualdad.com.ar/wp-content/uploads/2026/03/Logo-Zona-blanco-sin-fondo-1.png" alt="Zona Igualdad" style="height:40px;display:block">
+    </a>
+    <ul class="znav-links">
+      <li><a href="https://zonaigualdad.com.ar/#quienes">Quiénes somos</a></li>
+      <li><a href="https://zonaigualdad.com.ar/#ejes">Trabajo</a></li>
+      <li><a href="https://action.allout.org/es/m/3362ba67/" target="_blank" rel="noopener noreferrer">Nombralo</a></li>
+      <li><a href="https://zonaigualdad.com.ar/#actividades">Actividades</a></li>
+      <li><a href="https://zonaigualdad.com.ar/relevamiento-sobre-la-situacion-de-las-personas-lgbtiq-en-argentina/">Relevamiento Juventudes LGBTIQ+</a></li>
+      <li><a href="https://zonaigualdad.com.ar/biblioteca">Biblioteca</a></li>
+      <li><a href="https://zonaigualdad.com.ar/#contacto">Contacto</a></li>
+    </ul>
+    <div class="znav-btns">
+      <a class="znav-sumate" href="https://zonaigualdad.com.ar/sumate">Sumate</a>
+      <a class="znav-dona" href="https://zonaigualdad.com.ar/amigues">&#9825; Dona</a>
+      <button class="znav-hamburger" aria-label="Abrir menú de navegación" onclick="document.querySelector('.znav-mobile').classList.toggle('open')">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <nav class="znav-mobile" aria-label="Navegación móvil">
+    <a href="https://zonaigualdad.com.ar/#quienes">Quiénes somos</a>
+    <a href="https://zonaigualdad.com.ar/#ejes">Trabajo</a>
+    <a href="https://action.allout.org/es/m/3362ba67/" target="_blank" rel="noopener noreferrer">Nombralo</a>
+    <a href="https://zonaigualdad.com.ar/#actividades">Actividades</a>
+    <a href="https://zonaigualdad.com.ar/relevamiento-sobre-la-situacion-de-las-personas-lgbtiq-en-argentina/">Relevamiento Juventudes LGBTIQ+</a>
+    <a href="https://zonaigualdad.com.ar/biblioteca">Biblioteca</a>
+    <a href="https://zonaigualdad.com.ar/#contacto">Contacto</a>
+    <div class="znav-mobile-btns">
+      <a class="znav-sumate" href="https://zonaigualdad.com.ar/sumate" style="text-align:center">Sumate</a>
+      <a class="znav-dona" href="https://zonaigualdad.com.ar/amigues" style="text-align:center">&#9825; Dona</a>
+    </div>
+  </nav>
+
+  <div class="sumate-hero">
+    <div class="sumate-tag">Participá</div>
+    <h1 class="sumate-title">¡SUMALE TU COLOR<br><span class="acc">A LA DIVERSIDAD!</span></h1>
+    <div class="sumate-grid">
+      <div>
+        <p class="sumate-desc">Zona Igualdad es un espacio sostenido por <strong>trabajo voluntario y liderazgo joven</strong>. Si sos parte de la comunidad LGBTIQ+ o querés contribuir a la causa, hay un lugar para vos. No hace falta experiencia previa, sí hace falta ganas.</p>
+        <div class="areas-grid">
+          <div class="area-card" style="border-color:#E11481">
+            <div class="area-title" style="color:#E11481">Activismo</div>
+            <div class="area-desc">Organización, movilización y acción política.</div>
+          </div>
+          <div class="area-card" style="border-color:#FCCC1C">
+            <div class="area-title" style="color:#FCCC1C">Comunicación</div>
+            <div class="area-desc">Redes, contenido y estrategia comunicacional.</div>
+          </div>
+          <div class="area-card" style="border-color:#27A237">
+            <div class="area-title" style="color:#27A237">Investigación</div>
+            <div class="area-desc">Relevamientos, datos y producción de informes.</div>
+          </div>
+          <div class="area-card" style="border-color:#2497D1">
+            <div class="area-title" style="color:#2497D1">Arte y cultura</div>
+            <div class="area-desc">Producción cultural, eventos y expresión artística.</div>
+          </div>
+        </div>
+      </div>
+      <div class="zi-ff">
+        <!-- Reemplazar id="YY" por el ID real del form "Sumate" de Fluent Forms -->
+        [fluentform id="YY"]
+      </div>
+    </div>
+  </div>
+
+  <div class="rainbow-bar">
+    <div style="background:#E11481"></div><div style="background:#DF062C"></div><div style="background:#EC8D0B"></div><div style="background:#FCCC1C"></div><div style="background:#27A237"></div><div style="background:#2497D1"></div><div style="background:#0B6DA8"></div><div style="background:#7F217B"></div>
+  </div>
+  <footer class="footer-p">
+    <div class="footer-p-inner">
+      <img src="https://zonaigualdad.com.ar/wp-content/uploads/2026/03/Logo-Zona-blanco-sin-fondo-1.png" alt="Zona Igualdad" style="height:36px;opacity:.5">
+      <div class="footer-p-copy">© 2026 Zona Igualdad · Organización civil sin fines de lucro · CABA, Argentina</div>
+      <div class="footer-p-copy">Sitio web creado por <a href="https://www.instagram.com/arche.latam/" target="_blank" rel="noopener noreferrer" style="color:#E11481;text-decoration:none;font-weight:700">Ar.ché</a> · <a href="https://www.linkedin.com/company/ar-ch%C3%A9-latam" target="_blank" rel="noopener noreferrer" style="color:#E11481;text-decoration:none;font-weight:700">LinkedIn</a></div>
+    </div>
+  </footer>
+
+</div>
