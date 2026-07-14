@@ -22,6 +22,10 @@
 .cap-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(52px,7vw,84px); letter-spacing: 2px; line-height: .95; margin-bottom: 1.5rem; color: #fff; }
 .cap-title .acc { color: #E11481; }
 .cap-lead { font-size: 16px; line-height: 1.75; color: #aaa; font-weight: 300; max-width: 760px; font-family: 'Roboto', sans-serif; }
+.cap-toc { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin-top: 2.25rem; }
+.cap-toc-label { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: #555; font-family: 'Roboto', sans-serif; margin-right: 2px; }
+.cap-toc a { font-size: 11px; letter-spacing: 1px; text-transform: uppercase; color: #ccc; text-decoration: none; border: 1px solid #2a2a2a; padding: 8px 16px; font-family: 'Roboto', sans-serif; transition: all .2s; }
+.cap-toc a:hover { border-color: #E11481; color: #E11481; }
 /* MODALIDAD */
 .cap-mod { padding: 0 2.5rem 5rem; max-width: 1120px; margin: 0 auto; }
 .cap-section-header { display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem; padding-bottom: 1rem; border-bottom: 1px solid #1a1a1a; flex-wrap: wrap; }
@@ -36,18 +40,33 @@
 /* PROPUESTAS GRID */
 .cap-props { padding: 0 2.5rem 5rem; max-width: 1120px; margin: 0 auto; }
 .cap-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 1px; background: #1a1a1a; border: 1px solid #1a1a1a; }
-.cap-card { background: #0a0a0a; padding: 2.5rem; position: relative; display: flex; flex-direction: column; gap: .85rem; }
-.cap-card-bar { position: absolute; top: 0; left: 0; right: 0; height: 3px; }
+.cap-card { background: #0a0a0a; position: relative; overflow: hidden; }
+.cap-card-bar { position: absolute; top: 0; left: 0; right: 0; height: 3px; z-index: 1; }
+.cap-details { padding: 2.5rem; }
+.cap-summary { cursor: pointer; list-style: none; display: flex; flex-direction: column; gap: .6rem; }
+.cap-summary::-webkit-details-marker { display: none; }
+.cap-summary::marker { content: ""; }
 .cap-card-type { font-size: 10px; letter-spacing: 3px; text-transform: uppercase; font-weight: 700; font-family: 'Roboto', sans-serif; }
 .cap-card-title { font-family: 'Bebas Neue', sans-serif; font-size: 26px; letter-spacing: 1px; color: #fff; line-height: 1.05; }
-.cap-card-alt { font-size: 11.5px; color: #666; font-style: italic; font-weight: 300; font-family: 'Roboto', sans-serif; margin-top: -.4rem; }
-.cap-card-desc { font-size: 13.5px; line-height: 1.7; color: #999; font-weight: 300; font-family: 'Roboto', sans-serif; flex: 1; }
-.cap-card-cta { font-size: 11px; letter-spacing: 1px; text-transform: uppercase; text-decoration: none; font-weight: 700; margin-top: .25rem; display: inline-block; font-family: 'Roboto', sans-serif; transition: opacity .2s; }
+.cap-card-teaser { font-size: 13.5px; line-height: 1.6; color: #888; font-weight: 300; font-family: 'Roboto', sans-serif; }
+.cap-summary-toggle { font-size: 10.5px; letter-spacing: 1.5px; text-transform: uppercase; color: #666; font-weight: 700; font-family: 'Roboto', sans-serif; display: inline-flex; align-items: center; gap: 6px; margin-top: .3rem; }
+.cap-chevron { display: inline-block; transition: transform .2s; font-size: 14px; line-height: 1; }
+.cap-details[open] .cap-chevron { transform: rotate(180deg); }
+.cap-details[open] .cap-summary-toggle { color: #E11481; }
+.cap-toggle-open { display: none; }
+.cap-details[open] .cap-toggle-closed { display: none; }
+.cap-details[open] .cap-toggle-open { display: inline; }
+.cap-detail { padding-top: 1.1rem; margin-top: 1.1rem; border-top: 1px solid #1a1a1a; display: flex; flex-direction: column; gap: 1rem; }
+.cap-card-desc { font-size: 13.5px; line-height: 1.7; color: #999; font-weight: 300; font-family: 'Roboto', sans-serif; }
+.cap-card-cta { font-size: 11px; letter-spacing: 1px; text-transform: uppercase; text-decoration: none; font-weight: 700; display: inline-block; font-family: 'Roboto', sans-serif; transition: opacity .2s; align-self: flex-start; }
 .cap-card-cta:hover { opacity: .7; }
 /* EQUIPO */
 .cap-team { padding: 0 2.5rem 5rem; max-width: 1120px; margin: 0 auto; }
 .cap-team-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 1px; background: #1a1a1a; border: 1px solid #1a1a1a; }
-.cap-team-card { background: #0a0a0a; padding: 1.75rem; border-top: 3px solid; }
+.cap-team-card { background: #0a0a0a; padding: 1.75rem; border-top: 3px solid; display: flex; flex-direction: column; align-items: flex-start; }
+.cap-team-avatar { width: 72px; height: 72px; border-radius: 50%; overflow: hidden; margin-bottom: 1rem; border: 2px solid; background: #111; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.cap-team-avatar img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.cap-team-avatar-placeholder { font-family: 'Bebas Neue', sans-serif; font-size: 20px; letter-spacing: 1px; }
 .cap-team-name { font-size: 12px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; margin-bottom: .6rem; font-family: 'Roboto', sans-serif; }
 .cap-team-desc { font-size: 12.5px; color: #777; font-weight: 300; line-height: 1.6; font-family: 'Roboto', sans-serif; }
 /* CTA FINAL */
@@ -130,10 +149,17 @@
     <div class="cap-tag">Formación y sensibilización</div>
     <h1 class="cap-title">CAPACITACIONES<br><span class="acc">Y TALLERES</span></h1>
     <p class="cap-lead">Diseñamos capacitaciones y talleres para empresas, organismos públicos, universidades e instituciones educativas que quieren construir equipos más inclusivos y respetuosos de la diversidad. Formación con perspectiva de género y diversidad sexual, dictada por un equipo activista con trayectoria en el sector público, privado y educativo.</p>
+    <nav class="cap-toc" aria-label="Navegación rápida dentro de la página">
+      <span class="cap-toc-label">Ir directo a:</span>
+      <a href="#cap-metodologia">Metodología</a>
+      <a href="#cap-propuestas">Propuestas</a>
+      <a href="#cap-equipo">Equipo</a>
+      <a href="#cap-contacto">Contacto</a>
+    </nav>
   </div>
 
   <!-- CÓMO TRABAJAMOS -->
-  <div class="cap-mod">
+  <div class="cap-mod" id="cap-metodologia">
     <div class="cap-section-header">
       <div class="cap-section-bar" style="background:#2497D1"></div>
       <div class="cap-section-title">Cómo trabajamos</div>
@@ -164,7 +190,7 @@
   </div>
 
   <!-- PROPUESTAS -->
-  <div class="cap-props">
+  <div class="cap-props" id="cap-propuestas">
     <div class="cap-section-header">
       <div class="cap-section-bar" style="background:#E11481"></div>
       <div class="cap-section-title">Nuestras propuestas</div>
@@ -174,69 +200,121 @@
 
       <article class="cap-card">
         <div class="cap-card-bar" style="background:#E11481"></div>
-        <div class="cap-card-type" style="color:#E11481">Capacitación general</div>
-        <h3 class="cap-card-title">Diversidad sexual, ¿qué es eso?</h3>
-        <div class="cap-card-alt">También conocida como "101 sobre Diversidad Sexual y de Género"</div>
-        <p class="cap-card-desc">Una introducción integral a conceptos esenciales como orientación sexo-afectiva, identidad y expresión de género, pensada para desmantelar estereotipos y transformar tu empresa en un espacio más inclusivo. Aborda también temáticas estructurales como la discriminación, la interseccionalidad y las normas sociales que impactan en el clima organizacional, brindando herramientas prácticas para construir ambientes laborales libres de violencia y discriminación.</p>
-        <a class="cap-card-cta" style="color:#E11481" href="mailto:hola@zonaigualdad.com.ar?subject=Quiero%20coordinar:%20Diversidad%20sexual,%20%C2%BFqu%C3%A9%20es%20eso%3F">Quiero esta capacitación →</a>
+        <details class="cap-details">
+          <summary class="cap-summary">
+            <div class="cap-card-type" style="color:#E11481">Capacitación general</div>
+            <h3 class="cap-card-title">Diversidad sexual, ¿qué es eso?</h3>
+            <p class="cap-card-teaser">Conceptos esenciales para construir equipos de trabajo más inclusivos y respetuosos de la diversidad.</p>
+            <span class="cap-summary-toggle"><span class="cap-toggle-closed">Ver detalle</span><span class="cap-toggle-open">Ocultar detalle</span> <span class="cap-chevron">⌄</span></span>
+          </summary>
+          <div class="cap-detail">
+            <p class="cap-card-desc">Una introducción integral a conceptos esenciales como orientación sexo-afectiva, identidad y expresión de género, pensada para desmantelar estereotipos y transformar tu empresa en un espacio más inclusivo. Aborda también temáticas estructurales como la discriminación, la interseccionalidad y las normas sociales que impactan en el clima organizacional, brindando herramientas prácticas para construir ambientes laborales libres de violencia y discriminación.</p>
+            <a class="cap-card-cta" style="color:#E11481" href="mailto:hola@zonaigualdad.com.ar?subject=Me%20interesa%20saber%20m%C3%A1s%20sobre:%20Diversidad%20sexual,%20%C2%BFqu%C3%A9%20es%20eso%3F">Quiero esta capacitación →</a>
+          </div>
+        </details>
       </article>
 
       <article class="cap-card">
         <div class="cap-card-bar" style="background:#DF062C"></div>
-        <div class="cap-card-type" style="color:#DF062C">Capacitación para RRHH</div>
-        <h3 class="cap-card-title">Cultivando la diversidad</h3>
-        <div class="cap-card-alt">También conocida como "Buenas prácticas para la igualdad"</div>
-        <p class="cap-card-desc">Un espacio para identificar los sesgos y las barreras inconscientes que condicionan el juicio, el liderazgo y la selección de talento en los ámbitos laborales. Brindamos las herramientas necesarias para eliminar sesgos y planificar estrategias que atraigan y retengan al mejor talento, trabajando con conceptos clave de diversidad sexual y de género para que el respeto y la convivencia sean una práctica concreta y cotidiana.</p>
-        <a class="cap-card-cta" style="color:#DF062C" href="mailto:hola@zonaigualdad.com.ar?subject=Quiero%20coordinar:%20Cultivando%20la%20diversidad">Quiero esta capacitación →</a>
+        <details class="cap-details">
+          <summary class="cap-summary">
+            <div class="cap-card-type" style="color:#DF062C">Capacitación para RRHH</div>
+            <h3 class="cap-card-title">Cultivando la diversidad</h3>
+            <p class="cap-card-teaser">Identificá los sesgos que condicionan el liderazgo y la selección de talento en tu equipo.</p>
+            <span class="cap-summary-toggle"><span class="cap-toggle-closed">Ver detalle</span><span class="cap-toggle-open">Ocultar detalle</span> <span class="cap-chevron">⌄</span></span>
+          </summary>
+          <div class="cap-detail">
+            <p class="cap-card-desc">Un espacio para identificar los sesgos y las barreras inconscientes que condicionan el juicio, el liderazgo y la selección de talento en los ámbitos laborales. Brindamos las herramientas necesarias para eliminar sesgos y planificar estrategias que atraigan y retengan al mejor talento, trabajando con conceptos clave de diversidad sexual y de género para que el respeto y la convivencia sean una práctica concreta y cotidiana.</p>
+            <a class="cap-card-cta" style="color:#DF062C" href="mailto:hola@zonaigualdad.com.ar?subject=Me%20interesa%20saber%20m%C3%A1s%20sobre:%20Cultivando%20la%20diversidad">Quiero esta capacitación →</a>
+          </div>
+        </details>
       </article>
 
       <article class="cap-card">
         <div class="cap-card-bar" style="background:#EC8D0B"></div>
-        <div class="cap-card-type" style="color:#EC8D0B">Taller de comunicación</div>
-        <h3 class="cap-card-title">Comunicación por la igualdad</h3>
-        <div class="cap-card-alt">También conocido como "Más allá de las palabras: Comunicación diversa"</div>
-        <p class="cap-card-desc">Repensamos la comunicación desde una perspectiva de género y diversidad, trabajando con sesgos, prejuicios y conceptos clave para reflexionar sobre cómo hablamos, qué decimos y el impacto de nuestros mensajes en la vida cotidiana de las personas. El objetivo es brindar herramientas concretas para que equipos y organizaciones construyan una comunicación consciente, respetuosa y alineada con los valores de igualdad, fortaleciendo además la imagen y responsabilidad social de la empresa.</p>
-        <a class="cap-card-cta" style="color:#EC8D0B" href="mailto:hola@zonaigualdad.com.ar?subject=Quiero%20coordinar:%20Comunicaci%C3%B3n%20por%20la%20igualdad">Quiero esta capacitación →</a>
+        <details class="cap-details">
+          <summary class="cap-summary">
+            <div class="cap-card-type" style="color:#EC8D0B">Taller de comunicación</div>
+            <h3 class="cap-card-title">Comunicación por la igualdad</h3>
+            <p class="cap-card-teaser">Una comunicación consciente, respetuosa y alineada con los valores de igualdad.</p>
+            <span class="cap-summary-toggle"><span class="cap-toggle-closed">Ver detalle</span><span class="cap-toggle-open">Ocultar detalle</span> <span class="cap-chevron">⌄</span></span>
+          </summary>
+          <div class="cap-detail">
+            <p class="cap-card-desc">Repensamos la comunicación desde una perspectiva de género y diversidad, trabajando con sesgos, prejuicios y conceptos clave para reflexionar sobre cómo hablamos, qué decimos y el impacto de nuestros mensajes en la vida cotidiana de las personas. El objetivo es brindar herramientas concretas para que equipos y organizaciones construyan una comunicación consciente, respetuosa y alineada con los valores de igualdad, fortaleciendo además la imagen y responsabilidad social de la empresa.</p>
+            <a class="cap-card-cta" style="color:#EC8D0B" href="mailto:hola@zonaigualdad.com.ar?subject=Me%20interesa%20saber%20m%C3%A1s%20sobre:%20Comunicaci%C3%B3n%20por%20la%20igualdad">Quiero esta capacitación →</a>
+          </div>
+        </details>
       </article>
 
       <article class="cap-card">
         <div class="cap-card-bar" style="background:#FCCC1C"></div>
-        <div class="cap-card-type" style="color:#FCCC1C">Capacitación legal y de género</div>
-        <h3 class="cap-card-title">La libertad de ser une misme: identidad de género</h3>
-        <div class="cap-card-alt">También conocida como "Ley de Identidad de Género (101)"</div>
-        <p class="cap-card-desc">Brinda a los equipos un marco legal y conceptual sobre la Ley de Identidad de Género, orientado a garantizar entornos laborales inclusivos y libres de discriminación. Construí una comprensión profunda de la identidad y expresión de género, el uso correcto de los pronombres y los derechos que respaldan a la comunidad trans, reduciendo riesgos institucionales y promoviendo el trato digno hacia todas las personas.</p>
-        <a class="cap-card-cta" style="color:#FCCC1C" href="mailto:hola@zonaigualdad.com.ar?subject=Quiero%20coordinar:%20La%20libertad%20de%20ser%20une%20misme">Quiero esta capacitación →</a>
+        <details class="cap-details">
+          <summary class="cap-summary">
+            <div class="cap-card-type" style="color:#FCCC1C">Capacitación legal y de género</div>
+            <h3 class="cap-card-title">La libertad de ser une misme: identidad de género</h3>
+            <p class="cap-card-teaser">Marco legal y conceptual sobre la Ley de Identidad de Género para equipos de trabajo.</p>
+            <span class="cap-summary-toggle"><span class="cap-toggle-closed">Ver detalle</span><span class="cap-toggle-open">Ocultar detalle</span> <span class="cap-chevron">⌄</span></span>
+          </summary>
+          <div class="cap-detail">
+            <p class="cap-card-desc">Brinda a los equipos un marco legal y conceptual sobre la Ley de Identidad de Género, orientado a garantizar entornos laborales inclusivos y libres de discriminación. Construí una comprensión profunda de la identidad y expresión de género, el uso correcto de los pronombres y los derechos que respaldan a la comunidad trans, reduciendo riesgos institucionales y promoviendo el trato digno hacia todas las personas.</p>
+            <a class="cap-card-cta" style="color:#FCCC1C" href="mailto:hola@zonaigualdad.com.ar?subject=Me%20interesa%20saber%20m%C3%A1s%20sobre:%20La%20libertad%20de%20ser%20une%20misme:%20identidad%20de%20g%C3%A9nero">Quiero esta capacitación →</a>
+          </div>
+        </details>
       </article>
 
       <article class="cap-card">
         <div class="cap-card-bar" style="background:#27A237"></div>
-        <div class="cap-card-type" style="color:#27A237">Instituciones educativas</div>
-        <h3 class="cap-card-title">¿Qué es la ESI?</h3>
-        <p class="cap-card-desc">Capacitación sobre la Ley de Educación Sexual Integral pensada para la comunidad educativa. Aborda el marco legislativo vigente y conceptos comunitarios sobre diversidad de género, orientación sexual, trato digno, respeto y empatía: qué dice la ley, qué implica su implementación efectiva en las aulas y cómo acompañar situaciones vinculadas a la identidad de género y la diversidad sexual desde un enfoque de derechos.</p>
-        <a class="cap-card-cta" style="color:#27A237" href="mailto:hola@zonaigualdad.com.ar?subject=Quiero%20coordinar:%20%C2%BFQu%C3%A9%20es%20la%20ESI%3F">Quiero esta capacitación →</a>
+        <details class="cap-details">
+          <summary class="cap-summary">
+            <div class="cap-card-type" style="color:#27A237">Instituciones educativas</div>
+            <h3 class="cap-card-title">¿Qué es la ESI?</h3>
+            <p class="cap-card-teaser">La Ley de Educación Sexual Integral, pensada para la comunidad educativa.</p>
+            <span class="cap-summary-toggle"><span class="cap-toggle-closed">Ver detalle</span><span class="cap-toggle-open">Ocultar detalle</span> <span class="cap-chevron">⌄</span></span>
+          </summary>
+          <div class="cap-detail">
+            <p class="cap-card-desc">Capacitación sobre la Ley de Educación Sexual Integral pensada para la comunidad educativa. Aborda el marco legislativo vigente y conceptos comunitarios sobre diversidad de género, orientación sexual, trato digno, respeto y empatía: qué dice la ley, qué implica su implementación efectiva en las aulas y cómo acompañar situaciones vinculadas a la identidad de género y la diversidad sexual desde un enfoque de derechos.</p>
+            <a class="cap-card-cta" style="color:#27A237" href="mailto:hola@zonaigualdad.com.ar?subject=Me%20interesa%20saber%20m%C3%A1s%20sobre:%20%C2%BFQu%C3%A9%20es%20la%20ESI%3F">Quiero esta capacitación →</a>
+          </div>
+        </details>
       </article>
 
       <article class="cap-card">
         <div class="cap-card-bar" style="background:#2497D1"></div>
-        <div class="cap-card-type" style="color:#2497D1">Taller de masculinidades</div>
-        <h3 class="cap-card-title">Reimaginar la masculinidad</h3>
-        <p class="cap-card-desc">Invitamos a tu equipo a repensar roles de género, expectativas y estereotipos masculinos, promoviendo masculinidades más inclusivas y equitativas. Un espacio que fomenta un entorno donde el respeto y la igualdad son la norma, contribuyendo al bienestar y la cohesión del equipo y apoyando un cambio social necesario.</p>
-        <a class="cap-card-cta" style="color:#2497D1" href="mailto:hola@zonaigualdad.com.ar?subject=Quiero%20coordinar:%20Reimaginar%20la%20masculinidad">Quiero esta capacitación →</a>
+        <details class="cap-details">
+          <summary class="cap-summary">
+            <div class="cap-card-type" style="color:#2497D1">Taller de masculinidades</div>
+            <h3 class="cap-card-title">Reimaginar la masculinidad</h3>
+            <p class="cap-card-teaser">Masculinidades más inclusivas y equitativas en tu espacio de trabajo.</p>
+            <span class="cap-summary-toggle"><span class="cap-toggle-closed">Ver detalle</span><span class="cap-toggle-open">Ocultar detalle</span> <span class="cap-chevron">⌄</span></span>
+          </summary>
+          <div class="cap-detail">
+            <p class="cap-card-desc">Invitamos a tu equipo a repensar roles de género, expectativas y estereotipos masculinos, promoviendo masculinidades más inclusivas y equitativas. Un espacio que fomenta un entorno donde el respeto y la igualdad son la norma, contribuyendo al bienestar y la cohesión del equipo y apoyando un cambio social necesario.</p>
+            <a class="cap-card-cta" style="color:#2497D1" href="mailto:hola@zonaigualdad.com.ar?subject=Me%20interesa%20saber%20m%C3%A1s%20sobre:%20Reimaginar%20la%20masculinidad">Quiero esta capacitación →</a>
+          </div>
+        </details>
       </article>
 
       <article class="cap-card">
         <div class="cap-card-bar" style="background:#7F217B"></div>
-        <div class="cap-card-type" style="color:#7F217B">Capacitación introductoria</div>
-        <h3 class="cap-card-title">Pensar el género</h3>
-        <p class="cap-card-desc">Una invitación a abrir la conversación sobre uno de los temas que más está transformando el mundo del trabajo: el género. A través de un recorrido claro, sin tecnicismos y con espacio para las preguntas, los equipos adquieren herramientas concretas para relacionarse con mayor respeto y conciencia, construyendo un clima laboral donde cada persona pueda desarrollarse plenamente.</p>
-        <a class="cap-card-cta" style="color:#7F217B" href="mailto:hola@zonaigualdad.com.ar?subject=Quiero%20coordinar:%20Pensar%20el%20g%C3%A9nero">Quiero esta capacitación →</a>
+        <details class="cap-details">
+          <summary class="cap-summary">
+            <div class="cap-card-type" style="color:#7F217B">Capacitación introductoria</div>
+            <h3 class="cap-card-title">Pensar el género</h3>
+            <p class="cap-card-teaser">Una conversación clara y sin tecnicismos sobre uno de los temas que más transforma el mundo del trabajo.</p>
+            <span class="cap-summary-toggle"><span class="cap-toggle-closed">Ver detalle</span><span class="cap-toggle-open">Ocultar detalle</span> <span class="cap-chevron">⌄</span></span>
+          </summary>
+          <div class="cap-detail">
+            <p class="cap-card-desc">Una invitación a abrir la conversación sobre uno de los temas que más está transformando el mundo del trabajo: el género. A través de un recorrido claro, sin tecnicismos y con espacio para las preguntas, los equipos adquieren herramientas concretas para relacionarse con mayor respeto y conciencia, construyendo un clima laboral donde cada persona pueda desarrollarse plenamente.</p>
+            <a class="cap-card-cta" style="color:#7F217B" href="mailto:hola@zonaigualdad.com.ar?subject=Me%20interesa%20saber%20m%C3%A1s%20sobre:%20Pensar%20el%20g%C3%A9nero">Quiero esta capacitación →</a>
+          </div>
+        </details>
       </article>
 
     </div>
   </div>
 
   <!-- EQUIPO -->
-  <div class="cap-team">
+  <div class="cap-team" id="cap-equipo">
     <div class="cap-section-header">
       <div class="cap-section-bar" style="background:#7F217B"></div>
       <div class="cap-section-title">Quiénes facilitan</div>
@@ -244,18 +322,30 @@
     </div>
     <div class="cap-team-grid">
       <div class="cap-team-card" style="border-color:#E11481">
+        <div class="cap-team-avatar" style="border-color:#E11481">
+          <img src="https://zonaigualdad.com.ar/wp-content/uploads/2026/07/Marito.jpeg" alt="Marian Spagnuolo" loading="lazy">
+        </div>
         <div class="cap-team-name" style="color:#E11481">Marian Spagnuolo</div>
         <p class="cap-team-desc">Activista por los derechos de las mujeres y la diversidad sexual desde 2012. Se formó como capacitadora en la Defensoría LGBT+ de la Defensoría del Pueblo de la Ciudad de Buenos Aires, facilitando talleres en universidades, organismos públicos, municipios, clubes deportivos, empresas e instituciones educativas.</p>
       </div>
       <div class="cap-team-card" style="border-color:#EC8D0B">
+        <div class="cap-team-avatar" style="border-color:#EC8D0B">
+          <span class="cap-team-avatar-placeholder" style="color:#EC8D0B">TA</span>
+        </div>
         <div class="cap-team-name" style="color:#EC8D0B">Tomás Astesiano</div>
         <p class="cap-team-desc">Activista por los derechos de la diversidad sexual desde 2018. Licenciado en Trabajo Social (UBA). Coordinó capacitaciones en instituciones educativas sobre género, diversidad sexual e implementación de la ESI con docentes, equipos directivos y estudiantes.</p>
       </div>
       <div class="cap-team-card" style="border-color:#27A237">
+        <div class="cap-team-avatar" style="border-color:#27A237">
+          <img src="https://zonaigualdad.com.ar/wp-content/uploads/2026/07/Euge.jpg" alt="Eugenia Lucchelli" loading="lazy">
+        </div>
         <div class="cap-team-name" style="color:#27A237">Eugenia Lucchelli</div>
         <p class="cap-team-desc">Activista por los derechos de la diversidad sexual desde 2021. Licenciada en Nutrición, con más de siete años facilitando capacitaciones para equipos de salud y fuerza de ventas, hoy al servicio de la formación en género, diversidad y derechos humanos.</p>
       </div>
       <div class="cap-team-card" style="border-color:#2497D1">
+        <div class="cap-team-avatar" style="border-color:#2497D1">
+          <img src="https://zonaigualdad.com.ar/wp-content/uploads/2026/07/Bel.jpg" alt="Belén Méndez" loading="lazy">
+        </div>
         <div class="cap-team-name" style="color:#2497D1">Belén Méndez</div>
         <p class="cap-team-desc">Activista por los derechos de las mujeres y la diversidad sexual desde 2017. Docente de Inglés y estudiante de Filosofía (UBA). Facilitó talleres en escuelas medias sobre deconstrucción de género, literatura de la diversidad y lenguaje inclusivo.</p>
       </div>
@@ -263,7 +353,7 @@
   </div>
 
   <!-- CTA FINAL -->
-  <section class="cap-cta">
+  <section class="cap-cta" id="cap-contacto">
     <div class="cap-cta-inner">
       <h2 class="cap-cta-title">CONSTRUIR EQUIPOS MÁS INCLUSIVOS<br>EMPIEZA CON <span class="acc">UNA CONVERSACIÓN</span></h2>
       <p class="cap-cta-p">Nosotres te ayudamos a tenerla. Contanos qué necesita tu equipo y armamos una propuesta a medida.</p>
