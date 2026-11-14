@@ -49,32 +49,32 @@
 /* HERO */
 .nm-hero{min-height:100vh;position:relative;overflow:hidden;background:#F4E9DC;display:grid;grid-template-columns:1fr 1fr;padding-top:66px}
 .nm-hero-left{position:relative;z-index:2;padding:4rem 3rem 4rem 4rem;display:flex;flex-direction:column;justify-content:center}
-.nm-hero-right{
-  position:relative;
-  min-height:calc(100vh - 66px);
-  background-image:url('https://zonaigualdad.com.ar/wp-content/uploads/2026/03/Logo-ilustracion.png');
-  background-size:contain;
-  background-repeat:no-repeat;
-  background-position:center center;
-}
-.nm-hero-nudo{
-  position:absolute;
-  inset:0;
-  width:500%;
-  height:500%;
-  object-fit:cover;
-  opacity:.15;
-}
-.nm-hero-ilustracion{display:none}
+/* Recorte por CSS: las imágenes de la campaña son lienzos de 1920x1080 con mucho espacio vacío;
+   cada .nm-crop-* muestra solo el dibujo (x, y, ancho, alto medidos sobre el PNG). */
+.nm-crop{position:relative;display:block;width:100%;overflow:hidden}
+.nm-crop>img{position:absolute;max-width:none!important;height:auto!important;display:block;margin:0!important}
+.nm-crop-logo{aspect-ratio:1571/499}.nm-crop-logo>img{width:122.215%;left:-10.630%;top:-53.507%}
+.nm-crop-eslogan{aspect-ratio:805/320}.nm-crop-eslogan>img{width:238.509%;left:-67.205%;top:-118.438%}
+.nm-crop-orgas{aspect-ratio:1126/164}.nm-crop-orgas>img{width:170.515%;left:-37.744%;top:-290.244%}
+.nm-crop-nudo{aspect-ratio:844/855}.nm-crop-nudo>img{width:227.488%;left:-49.526%;top:-11.228%}
+.nm-crop-ilus{aspect-ratio:833/778}.nm-crop-ilus>img{width:230.492%;left:-48.499%;top:-19.409%}
+.nm-hero-right{position:relative;min-height:calc(100vh - 66px);display:flex;align-items:center;justify-content:center;padding:3rem 4rem 3rem 2rem}
+.nm-hero-art{position:relative;width:100%;max-width:500px}
+.nm-hero-art-nudo{position:absolute!important;left:-12%;top:-10%;width:124%!important;opacity:.14}
+.nm-hero-art-ilus{position:relative}
 .nm-hero-tag-wrap{margin-bottom:1.5rem}
 .nm-hero-tag-main{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:#CD1022;font-weight:700;display:block;font-family:'Inter',sans-serif;margin-bottom:.4rem}
 .nm-hero-tag-orgas{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:rgba(0,8,20,0.4);font-weight:400;display:block;font-family:'Inter',sans-serif}
-.nm-hero-logo{width:100%;display:block;margin-bottom:1.5rem}
-.nm-hero-eslogan{width:100%;display:block;margin-bottom:2rem}
-.nm-orgas{display:flex;align-items:center;gap:2rem;margin-bottom:2rem}
+.nm-hero-h1 .nm-crop-logo{max-width:580px;margin-bottom:2rem}
+.nm-hero-eslogan{width:62%!important;max-width:340px;margin-bottom:2.25rem}
+.nm-orgas{margin-bottom:2.25rem}
+.nm-orgas .nm-crop-orgas{max-width:360px}
+.nm-sumate-nudo{max-width:380px;margin:0 auto;opacity:.15}
+.nm-campana-img .nm-crop{max-width:440px;margin:0 auto}
 .nm-btn-firma{background:#CD1022;color:#F4E9DC!important;border:none;padding:16px 40px;font-size:12px;letter-spacing:3px;text-transform:uppercase;font-family:'Inter',sans-serif;font-weight:700;cursor:pointer;text-decoration:none;display:inline-block;transition:all .2s}
 .nm-btn-firma:hover{background:#000814!important;color:#F4E9DC!important}
 .nm-btn-firma-light{background:#F4E9DC;color:#CD1022!important;border:2px solid #F4E9DC;padding:16px 40px;font-size:12px;letter-spacing:3px;text-transform:uppercase;font-family:'Inter',sans-serif;font-weight:700;cursor:pointer;text-decoration:none;display:inline-block;transition:all .2s}
+.nm-page a.nm-btn-firma, .nm-page a.nm-btn-firma-light{font-family:'Inter',sans-serif;font-weight:700}
 .nm-btn-firma-light:hover{background:#CD1022!important;color:#F4E9DC!important;border-color:#CD1022!important}
 
 .nm-divider{height:1px;background:rgba(0,8,20,0.12)}
@@ -87,10 +87,11 @@
 .nm-sec-title .red,.nm-sec-title-light .red{color:#CD1022}
 
 .nm-campana{background:#F4E9DC}
-.nm-campana-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
+.nm-campana-grid{display:grid;grid-template-columns:1fr;gap:5rem;align-items:center;max-width:760px}
+/* La ilustración ya está en el encabezado: no se repite acá */
+.nm-campana-img{display:none}
 .nm-campana-text p{font-size:16px;line-height:1.9;color:rgba(0,8,20,0.65);font-weight:300;font-family:'Inter',sans-serif;margin-bottom:1.25rem}
 .nm-campana-text p strong{color:#000814;font-weight:700}
-.nm-campana-img img{width:100%;display:block}
 
 .nm-urgente{background:#000814}
 .nm-urgente-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start}
@@ -130,7 +131,8 @@
 
 @media(max-width:1024px){
   .nm-hero{grid-template-columns:1fr;min-height:auto}
-  .nm-hero-right{min-height:70vw}
+  .nm-hero-right{min-height:0;padding:0 2rem 4rem}
+  .nm-hero-art{max-width:420px}
   .nm-hero-left{padding:5rem 2rem 3rem}
 }
 @media(max-width:768px){
@@ -139,7 +141,11 @@
   .nm-hero-left{padding:4rem 1.5rem 2rem}
   .nm-campana-grid,.nm-urgente-grid,.nm-sumate-grid,.nm-adherir-box{grid-template-columns:1fr;gap:3rem}
   .nm-sec-wrap,.nm-adherir-wrap{padding:4rem 1.5rem}
-  .nm-campana-img{order:-1}
+  .znav-sumate,.znav-dona{font-size:11px;padding:10px 14px;letter-spacing:1.5px;white-space:nowrap}
+  .nm-hero-right{padding:0 1.5rem 3.5rem}
+  .nm-hero-eslogan{width:75%!important}
+  .nm-adherir-box{padding:2rem 1.5rem}
+  .nm-sumate-nudo{display:none}
   .nm-stat-num{font-size:52px}
 }
 /* Menú: hamburguesa por debajo de 1200px para que los 8 ítems no se superpongan */
@@ -202,15 +208,18 @@ h2.nm-sec-title, h2.nm-sec-title-light { margin-top: 0; }
       <span class="nm-hero-tag-main">Campaña nacional para visibilizar los discursos de odio</span>
       <span class="nm-hero-tag-orgas">Zona Igualdad · Conectando Derechos · Derechos Humanos y Diversidad</span>
     </div>
-    <h1 class="nm-hero-h1"><img class="nm-hero-logo" src="https://zonaigualdad.com.ar/wp-content/uploads/2026/03/Logo-tipografico.png" alt="Nombralo. Es odio — Campaña nacional contra los discursos de odio en Argentina"></h1>
-    <img class="nm-hero-eslogan" src="https://zonaigualdad.com.ar/wp-content/uploads/2026/03/Eslogan.png" alt="Frenarlo es defender la democracia">
+    <h1 class="nm-hero-h1"><span class="nm-crop nm-crop-logo"><img src="https://zonaigualdad.com.ar/wp-content/uploads/2026/03/Logo-tipografico.png" alt="Nombralo. Es odio — Campaña nacional contra los discursos de odio en Argentina"></span></h1>
+    <div class="nm-crop nm-crop-eslogan nm-hero-eslogan"><img src="https://zonaigualdad.com.ar/wp-content/uploads/2026/03/Eslogan.png" alt="Frenarlo es defender la democracia"></div>
     <div class="nm-orgas">
-      <img src="https://zonaigualdad.com.ar/wp-content/uploads/2026/03/Logos-orgas.png" alt="Organizaciones impulsoras" style="height:70px">
+      <div class="nm-crop nm-crop-orgas"><img src="https://zonaigualdad.com.ar/wp-content/uploads/2026/03/Logos-orgas.png" alt="Organizaciones impulsoras: Zona Igualdad, Derechos Humanos y Diversidad y Conectando Derechos"></div>
     </div>
     <a class="nm-btn-firma" href="https://action.allout.org/es/m/3362ba67/" target="_blank">Firmá la petición ahora</a>
   </div>
   <div class="nm-hero-right">
-    <img class="nm-hero-nudo" src="https://zonaigualdad.com.ar/wp-content/uploads/2026/03/nudo-nombralo.png" alt="">
+    <div class="nm-hero-art">
+      <div class="nm-crop nm-crop-nudo nm-hero-art-nudo" aria-hidden="true"><img src="https://zonaigualdad.com.ar/wp-content/uploads/2026/03/nudo-nombralo.png" alt=""></div>
+      <div class="nm-crop nm-crop-ilus nm-hero-art-ilus"><img src="https://zonaigualdad.com.ar/wp-content/uploads/2026/03/Logo-ilustracion.png" alt="Ilustración de la campaña: una cabeza que grita"></div>
+    </div>
   </div>
 </section>
 
@@ -230,7 +239,7 @@ h2.nm-sec-title, h2.nm-sec-title-light { margin-top: 0; }
         <a class="nm-btn-firma" href="https://action.allout.org/es/m/3362ba67/" target="_blank">Firmá ahora</a>
       </div>
       <div class="nm-campana-img">
-        <img src="https://zonaigualdad.com.ar/wp-content/uploads/2026/03/Logo-ilustracion.png" alt="Nombralo es Odio">
+        <div class="nm-crop nm-crop-ilus"><img src="https://zonaigualdad.com.ar/wp-content/uploads/2026/03/Logo-ilustracion.png" alt="Ilustración de la campaña Nombralo. Es odio" loading="lazy"></div>
       </div>
     </div>
   </div>
@@ -293,7 +302,7 @@ h2.nm-sec-title, h2.nm-sec-title-light { margin-top: 0; }
         <a class="nm-btn-firma" href="https://action.allout.org/es/m/3362ba67/" target="_blank">Firmá ahora</a>
       </div>
       <div>
-        <img src="https://zonaigualdad.com.ar/wp-content/uploads/2026/03/nudo-nombralo.png" alt="" style="opacity:.15;width:100%;display:block;margin:0 auto">
+        <div class="nm-crop nm-crop-nudo nm-sumate-nudo" aria-hidden="true"><img src="https://zonaigualdad.com.ar/wp-content/uploads/2026/03/nudo-nombralo.png" alt="" loading="lazy"></div>
       </div>
     </div>
   </div>
@@ -320,7 +329,7 @@ h2.nm-sec-title, h2.nm-sec-title-light { margin-top: 0; }
       <div>
         <p style="font-size:13px;color:rgba(0,8,20,0.45);line-height:1.75;font-family:'Inter',sans-serif;font-weight:300">Ya adhieren a esta campaña organizaciones de todo el país. Juntes construimos el límite social contra el odio.</p>
         <div style="margin-top:2rem">
-          <img src="https://zonaigualdad.com.ar/wp-content/uploads/2026/03/Logos-orgas.png" alt="Organizaciones aliadas" style="width:100%;display:block">
+          <div class="nm-crop nm-crop-orgas"><img src="https://zonaigualdad.com.ar/wp-content/uploads/2026/03/Logos-orgas.png" alt="Organizaciones aliadas: Zona Igualdad, Derechos Humanos y Diversidad y Conectando Derechos" loading="lazy"></div>
         </div>
       </div>
     </div>
