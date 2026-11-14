@@ -504,39 +504,6 @@ document.querySelectorAll('a[href^="#"]').forEach(function(a){
 </section>
 
 
-<!-- ===================== AMIGUES CTA ===================== -->
-
-<style>
-.amigues-cta { background: #080808; border-top: 1px solid #111; padding: 5rem 2.5rem; }
-.amigues-cta-inner { max-width: 1120px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 3rem; flex-wrap: wrap; }
-.amigues-cta-left { display: flex; align-items: center; gap: 1.75rem; }
-.amigues-cta-text h3 { font-family: 'Bebas Neue', sans-serif; font-size: 44px; letter-spacing: 2px; line-height: 1; color: #fff; margin-bottom: .5rem; }
-.amigues-cta-text p { font-size: 14px; color: #666; font-weight: 300; max-width: 420px; line-height: 1.7; font-family: 'Roboto', sans-serif; }
-.btn-amigues { background: #E11481; color: #fff !important; border: none; padding: 16px 10px; font-size: 13px; letter-spacing: 2px; text-transform: uppercase; font-family: 'Roboto', sans-serif; font-weight: 700; cursor: pointer; white-space: nowrap; text-decoration: none; display: inline-block; }
-.btn-amigues:hover { background: #c5116f; }
-@media (max-width: 768px) {
-  .amigues-cta { padding: 3rem 1.5rem; }
-  .amigues-cta-inner { flex-direction: column; align-items: flex-start; }
-  .amigues-cta-left { flex-direction: column; align-items: flex-start; gap: 1rem; }
-  .amigues-cta-text h3 { font-size: 32px; }
-  .btn-amigues { width: 100%; text-align: center; }
-}
-</style>
-
-<section class="amigues-cta" aria-label="Amigues por la Igualdad — financiamiento colectivo">
-  <div class="amigues-cta-inner">
-    <div class="amigues-cta-left">
-      <img src="https://zonaigualdad.com.ar/wp-content/uploads/2026/03/Amigues-por-la-igualdad.-posteo-en-redes.png" alt="Campaña Amigues por la Igualdad — financiamiento colectivo para Zona Igualdad" style="height:200px;display:block" loading="lazy">
-      <div class="amigues-cta-text">
-        <h3>AMIGUES POR LA IGUALDAD</h3>
-        <p>Sumate a nuestra comunidad de financiamiento colectivo y hacé posible el trabajo de Zona Igualdad.</p>
-      </div>
-    </div>
-    <a class="btn-amigues" href="/amigues">Quiero ser amigue →</a>
-  </div>
-</section>
-
-
 <!-- ===================== ZONA EN ACCIÓN ===================== -->
 
 <style>
@@ -714,6 +681,66 @@ document.querySelectorAll('[data-slider]').forEach(slider => {
 </script>
 
 
+<!-- ===================== REDES Y ALIANZAS ===================== -->
+
+<style>
+.redes { background: #000; border-top: 1px solid #111; padding: 5rem 2.5rem; }
+.redes-inner { max-width: 1120px; margin: 0 auto; }
+.redes-label { font-size: 10px; letter-spacing: 4px; text-transform: uppercase; color: #444; margin-bottom: 1rem; font-family: 'Roboto', sans-serif; }
+.redes-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(44px, 5vw, 64px); letter-spacing: 2px; color: #fff; line-height: .95; margin-bottom: 3rem; }
+.redes-title .acc { color: #E11481; }
+.redes-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: #1a1a1a; border: 1px solid #1a1a1a; }
+.red-card { background: #000; padding: 2.5rem; display: flex; align-items: center; gap: 2.5rem; text-decoration: none; transition: background .2s; }
+.red-card:hover { background: #080808; }
+.red-logo { width: 160px; height: 90px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; overflow: visible; }
+.red-logo img { max-width: 100%; max-height: 100%; width: auto; display: block; filter: brightness(0) invert(1); opacity: .85; transition: opacity .2s; }
+.red-logo img.red-logo-raci { max-height: none; max-width: none; height: 150px; }
+.red-card:hover .red-logo img { opacity: 1; }
+.red-name { font-size: 12px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: #fff; margin-bottom: .5rem; font-family: 'Roboto', sans-serif; }
+.red-desc { font-size: 13px; color: #777; line-height: 1.6; font-weight: 300; font-family: 'Roboto', sans-serif; }
+.red-link { display: inline-block; margin-top: .75rem; font-size: 11px; letter-spacing: 1px; text-transform: uppercase; color: #E11481; font-weight: 700; font-family: 'Roboto', sans-serif; }
+@media (max-width: 1024px) {
+  .redes-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 768px) {
+  .redes { padding: 4rem 1.5rem; }
+  .redes-title { margin-bottom: 2rem; }
+  .red-card { flex-direction: column; align-items: flex-start; gap: 1.5rem; padding: 2rem 1.5rem; }
+  .red-logo { width: 130px; height: 74px; justify-content: flex-start; }
+  .red-logo img.red-logo-raci { height: 124px; margin-left: -41px; }
+}
+</style>
+
+<section class="redes" id="redes" aria-label="Redes internacionales y nacionales de las que forma parte Zona Igualdad">
+  <div class="redes-inner">
+    <div class="redes-label">Redes y alianzas</div>
+    <h2 class="redes-title">FORMAMOS<br><span class="acc">PARTE DE</span></h2>
+    <div class="redes-grid">
+      <a class="red-card" href="https://ilga.org" target="_blank" rel="noopener noreferrer">
+        <div class="red-logo">
+          <img src="https://zonaigualdad.com.ar/wp-content/uploads/2026/11/319575.png" alt="Logo de ILGA World" loading="lazy">
+        </div>
+        <div>
+          <div class="red-name">ILGA World</div>
+          <p class="red-desc">Asociación Internacional de Lesbianas, Gays, Bisexuales, Trans e Intersex. Federación mundial de organizaciones LGBTI.</p>
+          <span class="red-link">ilga.org →</span>
+        </div>
+      </a>
+      <a class="red-card" href="https://raci.org.ar" target="_blank" rel="noopener noreferrer">
+        <div class="red-logo">
+          <img class="red-logo-raci" src="https://zonaigualdad.com.ar/wp-content/uploads/2026/11/raci-logo-1.png" alt="Logo de RACI" loading="lazy">
+        </div>
+        <div>
+          <div class="red-name">RACI</div>
+          <p class="red-desc">Red Argentina para la Cooperación Internacional. Red de organizaciones de la sociedad civil de todo el país.</p>
+          <span class="red-link">raci.org.ar →</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+
 <!-- ===================== QUÉ ESTAMOS HACIENDO (Instagram) ===================== -->
 
 <style>
@@ -736,68 +763,6 @@ document.querySelectorAll('[data-slider]').forEach(slider => {
     <div class="acciones-label">Últimas acciones</div>
     <h2 class="acciones-title">LO QUE ESTAMOS<br><span class="acc">HACIENDO</span></h2>
     [instagram-feed feed=1]
-  </div>
-</section>
-
-
-<!-- ===================== BIBLIOTECA ===================== -->
-
-<style>
-.bib { background: #030405; border-top: 1px solid #111; padding: 6rem 2.5rem; }
-.bib-inner { max-width: 1120px; margin: 0 auto; }
-.bib-label { font-size: 10px; letter-spacing: 4px; text-transform: uppercase; color: #444; margin-bottom: 1rem; font-family: 'Roboto', sans-serif; }
-.bib-title { font-family: 'Bebas Neue', sans-serif; font-size: 80px; letter-spacing: 2px; color: #fff; line-height: .95; margin-bottom: 3.5rem; }
-.bib-title .acc { color: #E11481; }
-.bib-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: #1a1a1a; }
-.bib-item { background: #030405; padding: 2.5rem; display: flex; gap: 2rem; }
-.bib-cover { width: 150px; flex-shrink: 0; aspect-ratio: 3/4; background: #111; border: 1px solid #1e1e1e; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; }
-.bib-c { flex: 1; }
-.bib-type { font-size: 9px; letter-spacing: 3px; text-transform: uppercase; color: #444; margin-bottom: .75rem; font-family: 'Roboto', sans-serif; }
-.bib-name { font-size: 16px; color: #ddd; line-height: 1.4; margin-bottom: .75rem; font-family: 'Roboto', sans-serif; }
-.bib-desc { font-size: 13px; color: #666; line-height: 1.6; font-weight: 300; font-family: 'Roboto', sans-serif; }
-.bib-link { font-size: 11px; letter-spacing: 1px; text-transform: uppercase; color: #E11481; text-decoration: none; margin-top: 1rem; display: inline-block; font-weight: 700; font-family: 'Roboto', sans-serif; }
-.bib-more { margin-top: 2.5rem; }
-.bib-more a { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: #E11481; text-decoration: none; font-weight: 700; border-bottom: 1px solid #E11481; padding-bottom: 2px; font-family: 'Roboto', sans-serif; }
-@media (max-width: 768px) {
-  .bib { padding: 4rem 1.5rem; }
-  .bib-title { font-size: 52px; margin-bottom: 2rem; }
-  .bib-grid { grid-template-columns: 1fr; }
-  .bib-item { padding: 1.75rem; gap: 1.25rem; }
-  .bib-cover { width: 60px; }
-}
-</style>
-
-<section class="bib" aria-label="Biblioteca virtual con recursos LGBTIQ+ de Zona Igualdad">
-  <div class="bib-inner">
-    <div class="bib-label">Biblioteca virtual</div>
-    <h2 class="bib-title">Nuestros<br><span class="acc">RECURSOS</span></h2>
-    <div class="bib-grid">
-      <article class="bib-item">
-        <div class="bib-cover">
-          <img src="https://drive.google.com/thumbnail?id=1jb4I6-_g_0pUdrp7fCRF7qVqlbKnaeCy&sz=w400" style="width:100%;height:100%;object-fit:cover" alt="Portada del relevamiento nacional sobre situación de juventudes LGBTIQ+ en Argentina por Zona Igualdad" loading="lazy">
-        </div>
-        <div class="bib-c">
-          <div class="bib-type">Relevamiento nacional</div>
-          <h3 class="bib-name">Situación de las juventudes LGBTIQ+ en Argentina</h3>
-          <p class="bib-desc">Primer relevamiento con alcance nacional sobre condiciones de vida y acceso a derechos.</p>
-          <a class="bib-link" href="https://drive.google.com/file/d/1jb4I6-_g_0pUdrp7fCRF7qVqlbKnaeCy/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Descargar →</a>
-        </div>
-      </article>
-      <article class="bib-item">
-        <div class="bib-cover">
-          <img src="https://drive.google.com/thumbnail?id=1U1NaxDcpTsHfrtSLjunWPVDLrcejgqLx&sz=w400" style="width:100%;height:100%;object-fit:cover" alt="Portada de la guía práctica de Derechos Trans en Argentina por Zona Igualdad" loading="lazy">
-        </div>
-        <div class="bib-c">
-          <div class="bib-type">Guía de derechos</div>
-          <h3 class="bib-name">Derechos Trans en Argentina: guía práctica</h3>
-          <p class="bib-desc">Ley de Identidad de Género, cupo laboral trans y derechos vigentes en Argentina.</p>
-          <a class="bib-link" href="https://drive.google.com/file/d/1U1NaxDcpTsHfrtSLjunWPVDLrcejgqLx/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Leer →</a>
-        </div>
-      </article>
-    </div>
-    <div class="bib-more">
-      <a href="/biblioteca">Ver toda la biblioteca →</a>
-    </div>
   </div>
 </section>
 
@@ -903,20 +868,11 @@ document.querySelectorAll('[data-slider]').forEach(slider => {
 .footer-inner { max-width: 1120px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1.5rem; }
 .footer-logo img { height: 36px; opacity: .5; }
 .footer-copy { font-size: 12px; color: #666; letter-spacing: 1px; font-family: 'Roboto', sans-serif; }
-.footer-redes { max-width: 1120px; margin: 0 auto 2.5rem; padding-bottom: 2.5rem; border-bottom: 1px solid #111; display: flex; align-items: center; gap: 2.5rem; flex-wrap: wrap; }
-.footer-redes-label { font-size: 10px; letter-spacing: 4px; text-transform: uppercase; color: #666; font-family: 'Roboto', sans-serif; }
-.footer-redes-logos { display: flex; align-items: center; gap: 3rem; flex-wrap: wrap; }
-.footer-redes-logos a { display: block; opacity: .6; transition: opacity .2s; }
-.footer-redes-logos a:hover { opacity: 1; }
-.footer-redes-logos img { height: 48px; width: auto; display: block; filter: brightness(0) invert(1); }
 .footer-btn { background: #E11481; color: #fff !important; border: none; padding: 10px 20px; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; font-family: 'Roboto', sans-serif; font-weight: 700; cursor: pointer; text-decoration: none; display: inline-block; }
 @media (max-width: 768px) {
   .footer { padding: 2rem 1.5rem; }
   .footer-inner { flex-direction: column; align-items: flex-start; gap: 1rem; }
   .footer-copy { font-size: 10px; }
-  .footer-redes { flex-direction: column; align-items: flex-start; gap: 1.25rem; }
-  .footer-redes-logos { gap: 2rem; }
-  .footer-redes-logos img { height: 40px; }
 }
 </style>
 
@@ -930,18 +886,6 @@ document.querySelectorAll('[data-slider]').forEach(slider => {
     <div style="background:#2497D1"></div>
     <div style="background:#0B6DA8"></div>
     <div style="background:#7F217B"></div>
-  </div>
-  <!-- REDES A LAS QUE PERTENECEMOS · reemplazar las dos URLs de imagen por las de la Biblioteca de medios -->
-  <div class="footer-redes">
-    <span class="footer-redes-label">Formamos parte de</span>
-    <div class="footer-redes-logos">
-      <a href="https://ilga.org" target="_blank" rel="noopener noreferrer" title="ILGA World">
-        <img src="URL-LOGO-ILGA" alt="ILGA World — Asociación Internacional de Lesbianas, Gays, Bisexuales, Trans e Intersex" loading="lazy">
-      </a>
-      <a href="https://raci.org.ar" target="_blank" rel="noopener noreferrer" title="RACI — Red Argentina para la Cooperación Internacional">
-        <img src="URL-LOGO-RACI" alt="RACI — Red Argentina para la Cooperación Internacional" loading="lazy">
-      </a>
-    </div>
   </div>
   <div class="footer-inner">
     <div class="footer-logo">
