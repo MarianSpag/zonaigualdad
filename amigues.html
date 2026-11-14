@@ -1,0 +1,177 @@
+<style>
+.amigues-page { background: #030405; min-height: 100vh; font-family: 'Roboto', sans-serif; }
+
+.znav { position: sticky; top: 0; z-index: 200; background: rgba(3,4,5,0.96); backdrop-filter: blur(12px); border-bottom: 1px solid #1a1a1a; display: flex; align-items: center; justify-content: space-between; padding: 0 2.5rem; height: 66px; }
+.znav-logo img { height: 40px; display: block; }
+.znav-links { display: flex; gap: 1.75rem; list-style: none; margin: 0; padding: 0; }
+.znav-links a { color: #777; text-decoration: none; font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; transition: color .2s; font-family: 'Roboto', sans-serif; }
+.znav-links a:hover { color: #fff; }
+.znav-btns { display: flex; gap: 10px; }
+.znav-sumate { background: transparent; color: #fff !important; border: 1px solid #444; padding: 10px 20px; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; font-family: 'Roboto', sans-serif; cursor: pointer; text-decoration: none; display: inline-block; }
+.znav-dona { background: #E11481; color: #fff !important; border: none; padding: 10px 20px; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; font-family: 'Roboto', sans-serif; font-weight: 700; cursor: pointer; text-decoration: none; display: inline-block; }
+.znav-sumate:hover { background: #E11481; border-color: #E11481; color: #fff !important; }
+.znav-dona:hover { background: #fff !important; color: #E11481 !important; }
+.znav-hamburger { display: none; background: transparent; border: none; cursor: pointer; flex-direction: column; gap: 5px; padding: 5px; }
+.znav-hamburger span { display: block; width: 24px; height: 2px; background: #fff; }
+.znav-mobile { display: none; position: fixed; inset: 0; top: 66px; background: #030405; z-index: 199; flex-direction: column; padding: 2rem 2.5rem; gap: 1.5rem; }
+.znav-mobile.open { display: flex; }
+.znav-mobile a { color: #777; text-decoration: none; font-size: 16px; letter-spacing: 2px; text-transform: uppercase; font-family: 'Roboto', sans-serif; border-bottom: 1px solid #111; padding-bottom: 1.5rem; }
+.znav-mobile-btns { display: flex; flex-direction: column; gap: 10px; margin-top: 1rem; }
+
+.amigues-hero { padding: 6rem 2.5rem 4rem; max-width: 1120px; margin: 0 auto; }
+.amigues-hero-tag { font-size: 10px; letter-spacing: 4px; text-transform: uppercase; color: #444; margin-bottom: 1.5rem; }
+.amigues-hero-row { display: flex; align-items: center; gap: 1.5rem; margin-bottom: 2rem; flex-wrap: wrap; }
+.amigues-hero-row img { height: 250px; }
+.amigues-hero-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(48px,7vw,80px); letter-spacing: 2px; line-height: .95; color: #fff; }
+.amigues-hero-title .acc { color: #E11481; }
+.amigues-hero-desc { font-size: 16px; line-height: 1.85; color: #888; font-weight: 300; max-width: 600px; margin-bottom: 4rem; }
+.amigues-hero-desc strong { color: #fff; }
+
+.amigues-tiers-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(32px,4vw,52px); letter-spacing: 2px; color: #fff; margin-bottom: 2rem; }
+.amigues-tiers-title .acc { color: #E11481; }
+.tiers-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 1px; background: #1a1a1a; margin-bottom: 5rem; }
+.tier-card { background: #0a0a0a; padding: 2.5rem; border-top: 3px solid; display: flex; flex-direction: column; }
+.tier-name { font-family: 'Bebas Neue', sans-serif; font-size: 24px; letter-spacing: 1px; margin-bottom: .5rem; }
+.tier-price { font-family: 'Bebas Neue', sans-serif; font-size: 52px; line-height: 1; margin-bottom: 1rem; }
+.tier-price span { font-size: 16px; color: #333; }
+.tier-desc { font-size: 12px; color: #666; line-height: 1.6; font-weight: 300; flex: 1; }
+.tbtn { display: inline-block; margin-top: 1.25rem; padding: 10px 20px; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; font-family: 'Roboto', sans-serif; font-weight: 700; text-decoration: none; text-align: center; transition: background .2s, color .2s, border .2s; border: 1px solid transparent; }
+.tbtn-pink { background: #E11481 !important; color: #fff !important; }
+.tbtn-pink:hover { background: #030405 !important; color: #E11481 !important; border-color: #E11481 !important; }
+.tbtn-yellow { background: #FCCC1C !important; color: #030405 !important; }
+.tbtn-yellow:hover { background: #030405 !important; color: #FCCC1C !important; border-color: #FCCC1C !important; }
+.tbtn-green { background: #27A237 !important; color: #fff !important; }
+.tbtn-green:hover { background: #030405 !important; color: #27A237 !important; border-color: #27A237 !important; }
+.tbtn-blue { background: #2497D1 !important; color: #fff !important; }
+.tbtn-blue:hover { background: #030405 !important; color: #2497D1 !important; border-color: #2497D1 !important; }
+
+.amigues-fotos { padding: 0 2.5rem 6rem; max-width: 1120px; margin: 0 auto; }
+.amigues-fotos-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(32px,4vw,52px); letter-spacing: 2px; color: #fff; margin-bottom: 2rem; }
+.amigues-fotos-title .acc { color: #E11481; }
+.fotos-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 3px; }
+.foto-item { aspect-ratio: 4/3; background: #000; overflow: hidden; }
+.foto-item img { width: 100%; height: 100%; object-fit: cover; transition: transform .3s; }
+.foto-item:hover img { transform: scale(1.03); }
+
+.rainbow-bar { display: flex; height: 2px; width: 100%; }
+.rainbow-bar div { flex: 1; }
+.footer-p { background: #000; padding: 2rem 2.5rem; }
+.footer-p-inner { max-width: 1120px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+.footer-p-copy { font-size: 11px; color: #2a2a2a; letter-spacing: 1px; font-family: 'Roboto', sans-serif; }
+
+@media (max-width: 1024px) {
+  .tiers-grid { grid-template-columns: repeat(2,1fr); }
+  .fotos-grid { grid-template-columns: repeat(2,1fr); }
+}
+@media (max-width: 768px) {
+  .amigues-hero { padding: 4rem 1.5rem 3rem; }
+  .amigues-fotos { padding: 0 1.5rem 4rem; }
+  .tiers-grid { grid-template-columns: 1fr; }
+  .fotos-grid { grid-template-columns: 1fr; }
+  .znav-links { display: none; }
+  .znav-hamburger { display: flex; }
+}
+</style>
+
+<div class="amigues-page">
+
+  <nav class="znav">
+    <a href="https://zonaigualdad.com.ar" style="text-decoration:none">
+      <img src="https://zonaigualdad.com.ar/wp-content/uploads/2026/03/Logo-Zona-blanco-sin-fondo-1.png" alt="Zona Igualdad" style="height:40px;display:block">
+    </a>
+    <ul class="znav-links">
+      <li><a href="https://zonaigualdad.com.ar/#quienes">Quiénes somos</a></li>
+      <li><a href="https://zonaigualdad.com.ar/#ejes">Trabajo</a></li>
+      <li><a href="https://action.allout.org/es/m/3362ba67/" target="_blank">Nombralo</a></li>
+      <li><a href="https://zonaigualdad.com.ar/#actividades">Actividades</a></li>
+      <li><a href="https://zonaigualdad.com.ar/biblioteca">Biblioteca</a></li>
+      <li><a href="https://zonaigualdad.com.ar/#contacto">Contacto</a></li>
+    </ul>
+    <div class="znav-btns">
+      <a class="znav-sumate" href="https://zonaigualdad.com.ar/sumate">Sumate</a>
+      <a class="znav-dona" href="https://zonaigualdad.com.ar/amigues">&#9825; Dona</a>
+      <button class="znav-hamburger" onclick="document.querySelector('.znav-mobile').classList.toggle('open')">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="znav-mobile">
+    <a href="https://zonaigualdad.com.ar/#quienes">Quiénes somos</a>
+    <a href="https://zonaigualdad.com.ar/#ejes">Trabajo</a>
+    <a href="https://action.allout.org/es/m/3362ba67/" target="_blank">Nombralo</a>
+    <a href="https://zonaigualdad.com.ar/#actividades">Actividades</a>
+    <a href="https://zonaigualdad.com.ar/biblioteca">Biblioteca</a>
+    <a href="https://zonaigualdad.com.ar/#contacto">Contacto</a>
+    <div class="znav-mobile-btns">
+      <a class="znav-sumate" href="https://zonaigualdad.com.ar/sumate" style="text-align:center">Sumate</a>
+      <a class="znav-dona" href="https://zonaigualdad.com.ar/amigues" style="text-align:center">&#9825; Dona</a>
+    </div>
+  </div>
+
+  <div class="amigues-hero">
+    <div class="amigues-hero-tag">Comunidad de financiamiento colectivo</div>
+    <div class="amigues-hero-row">
+      <img src="https://zonaigualdad.com.ar/wp-content/uploads/2026/03/Amigues-por-la-igualdad.-posteo-en-redes.png" alt="Amigues por la Igualdad">
+      <div class="amigues-hero-title">AMIGUES POR<br>LA <span class="acc">IGUALDAD</span></div>
+    </div>
+    <p class="amigues-hero-desc">Nuestra comunidad de personas que bancan el trabajo de Zona Igualdad mes a mes. Con tu apoyo sostenemos la investigación, la cultura y la construcción comunitaria. <strong> No podemos hacerlo sin vos.</strong></p>
+
+    <div class="amigues-tiers-title">ELEGÍ TU <span class="acc">NIVEL</span></div>
+    <div class="tiers-grid">
+      <div class="tier-card" style="border-color:#E11481">
+        <div class="tier-name" style="color:#E11481">Amigue Orgullo</div>
+        <div class="tier-price" style="color:#E11481">$5.000<span>/mes</span></div>
+        <div class="tier-desc">Apoyás el trabajo cotidiano de Zona Igualdad y hacés posible que sigamos.</div>
+     <a class="tbtn tbtn-pink" href="https://www.mercadopago.com.ar/subscriptions/checkout?preapproval_plan_id=3d11a370d352450394849aae3c9a9d15" target="_blank">Suscribirme →</a>
+
+      </div>
+      <div class="tier-card" style="border-color:#FCCC1C">
+        <div class="tier-name" style="color:#FCCC1C">Amigue Zona</div>
+        <div class="tier-price" style="color:#FCCC1C">$10.000<span>/mes</span></div>
+        <div class="tier-desc">Sostenés nuestras actividades territoriales, culturales y de formación.</div>
+      <a class="tbtn tbtn-yellow" href="https://www.mercadopago.com.ar/subscriptions/checkout?preapproval_plan_id=fa9ce976e9c84c1ba32c400de78ba758" target="_blank">Suscribirme →</a>
+
+
+      </div>
+      <div class="tier-card" style="border-color:#27A237">
+        <div class="tier-name" style="color:#27A237">Amigue Igualdad</div>
+        <div class="tier-price" style="color:#27A237">$15.000<span>/mes</span></div>
+        <div class="tier-desc">Financiás la producción de informes y relevamientos propios.</div>
+<a class="tbtn tbtn-green" href="https://www.mercadopago.com.ar/subscriptions/checkout?preapproval_plan_id=ef39d90da995472b818e63e665796b77" target="_blank">Suscribirme →</a>
+
+      </div>
+      <div class="tier-card" style="border-color:#2497D1">
+        <div class="tier-name" style="color:#2497D1">Amigue Activiste</div>
+        <div class="tier-price" style="color:#2497D1">LIBRE<span>/mes</span></div>
+        <div class="tier-desc">Contribuís lo que podés. Todo aporte suma y hace la diferencia.</div>
+     <a class="tbtn tbtn-blue" href="https://www.mercadopago.com.ar/subscriptions/checkout?preapproval_plan_id=5a55fbc5b0df4bd1a788e28e1505a03b" target="_blank">Suscribirme →</a>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="amigues-fotos">
+    <div class="amigues-fotos-title">MIRÁ TODO LO QUE HACEMOS<br>CON <span class="acc">TU APORTE</span></div>
+    <div class="fotos-grid">
+      <div class="foto-item"><img src="https://zonaigualdad.com.ar/wp-content/uploads/2026/03/Actividad-Amigues-4.png" alt="Actividad"></div>
+      <div class="foto-item"><img src="https://zonaigualdad.com.ar/wp-content/uploads/2026/03/Actividad-Amigues-5.png" alt="Actividad"></div>
+      <div class="foto-item"><img src="https://zonaigualdad.com.ar/wp-content/uploads/2026/03/Actividad-Amigues-6.png" alt="Actividad"></div>
+      <div class="foto-item"><img src="https://zonaigualdad.com.ar/wp-content/uploads/2026/03/Actividad-Amigues-1.png" alt="Actividad"></div>
+      <div class="foto-item"><img src="https://zonaigualdad.com.ar/wp-content/uploads/2026/03/Actividad-Amigues-2.png" alt="Actividad"></div>
+      <div class="foto-item"><img src="https://zonaigualdad.com.ar/wp-content/uploads/2026/03/Actividad-Amigues-3.png" alt="Actividad"></div>
+    </div>
+  </div>
+
+  <div class="rainbow-bar">
+    <div style="background:#E11481"></div><div style="background:#DF062C"></div><div style="background:#EC8D0B"></div><div style="background:#FCCC1C"></div><div style="background:#27A237"></div><div style="background:#2497D1"></div><div style="background:#0B6DA8"></div><div style="background:#7F217B"></div>
+  </div>
+  <footer class="footer-p">
+    <div class="footer-p-inner">
+      <img src="https://zonaigualdad.com.ar/wp-content/uploads/2026/03/Logo-Zona-blanco-sin-fondo-1.png" alt="Zona Igualdad" style="height:36px;opacity:.5">
+      <div class="footer-p-copy">© 2026 Zona Igualdad · Organización civil sin fines de lucro · CABA, Argentina</div>
+      <div class="footer-p-copy">Sitio web creado por <a href="https://www.instagram.com/arche.latam/" target="_blank" style="color:#E11481;text-decoration:none;font-weight:700">Ar.ché</a> · <a href="https://www.linkedin.com/company/ar-ch%C3%A9-latam" target="_blank" style="color:#E11481;text-decoration:none;font-weight:700">LinkedIn</a></div>
+    </div>
+  </footer>
+
+</div>
