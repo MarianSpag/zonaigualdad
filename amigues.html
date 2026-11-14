@@ -1,3 +1,30 @@
+<!-- ===================== SCHEMA JSON-LD (Amigues) ===================== -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://zonaigualdad.com.ar/amigues/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Inicio",
+          "item": "https://zonaigualdad.com.ar/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Amigues por la Igualdad",
+          "item": "https://zonaigualdad.com.ar/amigues/"
+        }
+      ]
+    }
+  ]
+}
+</script>
+
 <style>
 .amigues-page { background: #030405; min-height: 100vh; font-family: 'Roboto', sans-serif; }
 
@@ -78,6 +105,10 @@
 /* Menú: hamburguesa por debajo de 1200px para que los 8 ítems no se superpongan */
 @media (max-width: 1199px) { .znav-links { display: none; } .znav-hamburger { display: flex; } }
 .znav-mobile { overflow-y: auto; }
+
+/* SEO: títulos convertidos a etiquetas de encabezado; se neutralizan los estilos del tema */
+h1.amigues-hero-title { margin: 0; font-weight: 400; }
+h2.amigues-tiers-title, h2.amigues-fotos-title { margin-top: 0; font-weight: 400; line-height: inherit; }
 </style>
 
 <div class="amigues-page">
@@ -124,11 +155,11 @@
     <div class="amigues-hero-tag">Comunidad de financiamiento colectivo</div>
     <div class="amigues-hero-row">
       <img src="https://zonaigualdad.com.ar/wp-content/uploads/2026/03/Amigues-por-la-igualdad.-posteo-en-redes.png" alt="Amigues por la Igualdad">
-      <div class="amigues-hero-title">AMIGUES POR<br>LA <span class="acc">IGUALDAD</span></div>
+      <h1 class="amigues-hero-title">AMIGUES POR<br>LA <span class="acc">IGUALDAD</span></h1>
     </div>
     <p class="amigues-hero-desc">Nuestra comunidad de personas que bancan el trabajo de Zona Igualdad mes a mes. Con tu apoyo sostenemos la investigación, la cultura y la construcción comunitaria. <strong> No podemos hacerlo sin vos.</strong></p>
 
-    <div class="amigues-tiers-title">ELEGÍ TU <span class="acc">NIVEL</span></div>
+    <h2 class="amigues-tiers-title">ELEGÍ TU <span class="acc">NIVEL</span></h2>
     <div class="tiers-grid">
       <div class="tier-card" style="border-color:#E11481">
         <div class="tier-name" style="color:#E11481">Amigue Orgullo</div>
@@ -163,7 +194,7 @@
   </div>
 
   <div class="amigues-fotos">
-    <div class="amigues-fotos-title">MIRÁ TODO LO QUE HACEMOS<br>CON <span class="acc">TU APORTE</span></div>
+    <h2 class="amigues-fotos-title">MIRÁ TODO LO QUE HACEMOS<br>CON <span class="acc">TU APORTE</span></h2>
     <div class="fotos-grid">
       <div class="foto-item wide"><img src="https://zonaigualdad.com.ar/wp-content/uploads/2026/11/DSC09402-768x513.jpg" alt="Activista de Zona Igualdad armando una instalación con ladrillos en la Marcha del Orgullo" loading="lazy"></div>
       <div class="foto-item"><img src="https://zonaigualdad.com.ar/wp-content/uploads/2026/11/IMG_3322-768x1152.jpg" alt="Activistas de Zona Igualdad preparando la intervención en la Marcha del Orgullo" loading="lazy"></div>

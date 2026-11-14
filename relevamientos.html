@@ -1,3 +1,60 @@
+<!-- ===================== SCHEMA JSON-LD (Relevamientos) ===================== -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://zonaigualdad.com.ar/relevamiento-sobre-la-situacion-de-las-personas-lgbtiq-en-argentina/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Inicio",
+          "item": "https://zonaigualdad.com.ar/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Relevamientos LGBTIQ+",
+          "item": "https://zonaigualdad.com.ar/relevamiento-sobre-la-situacion-de-las-personas-lgbtiq-en-argentina/"
+        }
+      ]
+    },
+    {
+      "@type": "Report",
+      "@id": "https://zonaigualdad.com.ar/relevamiento-sobre-la-situacion-de-las-personas-lgbtiq-en-argentina/#informe-2",
+      "name": "Situación de las juventudes LGBTIQ+ en Argentina — 2do Relevamiento",
+      "url": "https://drive.google.com/file/d/1KaEuWdcaJlG2kPJjE0r9gDE3LavwS1mx/view",
+      "datePublished": "2026",
+      "image": "https://zonaigualdad.com.ar/wp-content/uploads/2026/06/INFORME-2026-Relevamiento-2025-sobre-la-situacion-de-las-personas-lgbt-en-Argentina.png",
+      "inLanguage": "es-AR",
+      "author": {
+        "@id": "https://zonaigualdad.com.ar/#organization"
+      },
+      "publisher": {
+        "@id": "https://zonaigualdad.com.ar/#organization"
+      },
+      "isAccessibleForFree": true
+    },
+    {
+      "@type": "Report",
+      "@id": "https://zonaigualdad.com.ar/relevamiento-sobre-la-situacion-de-las-personas-lgbtiq-en-argentina/#informe-1",
+      "name": "Situación de las juventudes LGBTIQ+ en Argentina — 1er Relevamiento",
+      "url": "https://drive.google.com/file/d/1-9BR48lDwdZjN3ffh23z_EKOPJdno8p6/view",
+      "inLanguage": "es-AR",
+      "author": {
+        "@id": "https://zonaigualdad.com.ar/#organization"
+      },
+      "publisher": {
+        "@id": "https://zonaigualdad.com.ar/#organization"
+      },
+      "isAccessibleForFree": true
+    }
+  ]
+}
+</script>
+
 <style>
 .rel-page { background: #030405; min-height: 100vh; font-family: 'Roboto', sans-serif; color: #fff; }
 .znav { position: sticky; top: 0; z-index: 200; background: rgba(3,4,5,0.96); backdrop-filter: blur(12px); border-bottom: 1px solid #1a1a1a; display: flex; align-items: center; justify-content: space-between; padding: 0 2.5rem; height: 66px; }
@@ -88,6 +145,9 @@
 /* Menú: hamburguesa por debajo de 1200px para que los 8 ítems no se superpongan */
 @media (max-width: 1199px) { .znav-links { display: none; } .znav-hamburger { display: flex; } }
 .znav-mobile { overflow-y: auto; }
+
+/* SEO: títulos convertidos a etiquetas de encabezado; se neutralizan los estilos del tema */
+h2.rel-section-title { margin: 0; font-weight: 400; line-height: inherit; }
 </style>
 <div class="rel-page">
   <nav class="znav">
@@ -168,7 +228,7 @@
   <div class="rel-section">
     <div class="rel-section-header">
       <div class="rel-section-bar" style="background:#E11481"></div>
-      <div class="rel-section-title">Informes anteriores</div>
+      <h2 class="rel-section-title">Informes anteriores</h2>
       <div class="rel-section-desc">Resultados de los relevamientos previos</div>
     </div>
     <div class="rel-grid">

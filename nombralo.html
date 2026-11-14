@@ -1,3 +1,30 @@
+<!-- ===================== SCHEMA JSON-LD (Nombralo) ===================== -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://zonaigualdad.com.ar/nombralo/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Inicio",
+          "item": "https://zonaigualdad.com.ar/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Nombralo. Es odio",
+          "item": "https://zonaigualdad.com.ar/nombralo/"
+        }
+      ]
+    }
+  ]
+}
+</script>
+
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
 <style>
 .nm-page{background:#F4E9DC;font-family:'Inter',sans-serif;color:#000814}
@@ -119,6 +146,13 @@
 @media (max-width: 1199px) { .znav-links { display: none; } .znav-hamburger { display: flex; } }
 .znav-mobile { overflow-y: auto; }
 @media (min-width: 1200px) and (max-width: 1365px) { .znav-links { gap: 1.1rem; } .znav-links a { font-size: 11px; letter-spacing: 1px; } .znav-sumate, .znav-dona { padding: 10px 16px; } }
+
+/* SEO: títulos convertidos a etiquetas de encabezado; se neutralizan los estilos del tema */
+h1.nm-hero-h1 { margin: 0; padding: 0; font-size: inherit; line-height: 0; }
+h2.nm-sec-title, h2.nm-sec-title-light { margin-top: 0; }
+/* Le gana al estilo global de Elementor (.elementor-kit-6 h2 { color:#fff; font-family:Bebas Neue }) */
+.nm-page h2.nm-sec-title { color: #000814; font-family: 'Inter', sans-serif; }
+.nm-page h2.nm-sec-title-light { color: #F4E9DC; font-family: 'Inter', sans-serif; }
 </style>
 
 <div class="nm-page">
@@ -168,7 +202,7 @@
       <span class="nm-hero-tag-main">Campaña nacional para visibilizar los discursos de odio</span>
       <span class="nm-hero-tag-orgas">Zona Igualdad · Conectando Derechos · Derechos Humanos y Diversidad</span>
     </div>
-    <img class="nm-hero-logo" src="https://zonaigualdad.com.ar/wp-content/uploads/2026/03/Logo-tipografico.png" alt="Nombralo es Odio">
+    <h1 class="nm-hero-h1"><img class="nm-hero-logo" src="https://zonaigualdad.com.ar/wp-content/uploads/2026/03/Logo-tipografico.png" alt="Nombralo. Es odio — Campaña nacional contra los discursos de odio en Argentina"></h1>
     <img class="nm-hero-eslogan" src="https://zonaigualdad.com.ar/wp-content/uploads/2026/03/Eslogan.png" alt="Frenarlo es defender la democracia">
     <div class="nm-orgas">
       <img src="https://zonaigualdad.com.ar/wp-content/uploads/2026/03/Logos-orgas.png" alt="Organizaciones impulsoras" style="height:70px">
@@ -188,7 +222,7 @@
     <div class="nm-campana-grid">
       <div class="nm-campana-text">
         <span class="nm-sec-label">La campaña</span>
-        <span class="nm-sec-title">NOMBRALO.<br><span class="red">ES ODIO.</span></span>
+        <h2 class="nm-sec-title">NOMBRALO.<br><span class="red">ES ODIO.</span></h2>
         <p>"Nombralo. Es odio" es una campaña de comunicación y acción colectiva que busca <strong>visibilizar, denunciar y frenar el avance de los discursos de odio en Argentina.</strong></p>
         <p>Impulsada por <strong>Zona Igualdad, Conectando Derechos y Derechos Humanos y Diversidad</strong>, la iniciativa combina intervenciones en vía pública, activaciones digitales, alianzas con medios e influencers, y una acción en la Marcha del Orgullo 2025.</p>
         <p>El eje central es simple y contundente: <strong>ponerle nombre al odio, desnaturalizarlo y construir un límite social que defienda la democracia y los derechos humanos.</strong></p>
@@ -208,7 +242,7 @@
 <section class="nm-sec-wrap nm-urgente" id="urgente">
   <div class="nm-sec-inner">
     <span class="nm-sec-label">Por qué es urgente</span>
-    <span class="nm-sec-title-light">LOS NÚMEROS<br><span class="red">NO MIENTEN.</span></span>
+    <h2 class="nm-sec-title-light">LOS NÚMEROS<br><span class="red">NO MIENTEN.</span></h2>
     <div class="nm-urgente-grid">
       <div class="nm-stats-col">
         <div class="nm-stat-block">
@@ -249,7 +283,7 @@
     <div class="nm-sumate-grid">
       <div>
         <span class="nm-sec-label">Sumate</span>
-        <span class="nm-sec-title">HACÉ<br><span class="red">ALGO.</span></span>
+        <h2 class="nm-sec-title">HACÉ<br><span class="red">ALGO.</span></h2>
         <div class="nm-sumate-acciones">
           <div class="nm-sumate-accion">FIRMÁ LA PETICIÓN</div>
           <div class="nm-sumate-accion">COMPARTÍ</div>
@@ -271,7 +305,7 @@
 <section class="nm-adherir-wrap" id="adherir">
   <div class="nm-adherir-inner">
     <span class="nm-sec-label">Aliades</span>
-    <span class="nm-sec-title" style="margin-bottom:2rem">SUMÁ TU<br><span class="red">ORGANIZACIÓN.</span></span>
+    <h2 class="nm-sec-title" style="margin-bottom:2rem">SUMÁ TU<br><span class="red">ORGANIZACIÓN.</span></h2>
     <div class="nm-adherir-box">
       <div>
         <h4>¿Querés adherir tu organización, institución o empresa?</h4>

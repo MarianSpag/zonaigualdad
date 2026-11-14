@@ -1,3 +1,47 @@
+<!-- ===================== SCHEMA JSON-LD (Biblioteca) ===================== -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://zonaigualdad.com.ar/biblioteca/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Inicio",
+          "item": "https://zonaigualdad.com.ar/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Biblioteca",
+          "item": "https://zonaigualdad.com.ar/biblioteca/"
+        }
+      ]
+    },
+    {
+      "@type": "Report",
+      "@id": "https://zonaigualdad.com.ar/biblioteca/#relevamiento-2026",
+      "name": "Situación actual de las juventudes LGBTIQ+ en Argentina — 2do Relevamiento",
+      "description": "Segundo relevamiento de Zona Igualdad sobre la situación de las juventudes LGBTIQ+ en Argentina.",
+      "url": "https://drive.google.com/file/d/1KaEuWdcaJlG2kPJjE0r9gDE3LavwS1mx/view",
+      "image": "https://zonaigualdad.com.ar/wp-content/uploads/2026/06/INFORME-2026-Relevamiento-2025-sobre-la-situacion-de-las-personas-lgbt-en-Argentina.png",
+      "datePublished": "2026",
+      "inLanguage": "es-AR",
+      "author": {
+        "@id": "https://zonaigualdad.com.ar/#organization"
+      },
+      "publisher": {
+        "@id": "https://zonaigualdad.com.ar/#organization"
+      },
+      "isAccessibleForFree": true
+    }
+  ]
+}
+</script>
+
 <style>
 .bib-page { background: #030405; min-height: 100vh; font-family: 'Roboto', sans-serif; }
 .znav { position: sticky; top: 0; z-index: 200; background: rgba(3,4,5,0.96); backdrop-filter: blur(12px); border-bottom: 1px solid #1a1a1a; display: flex; align-items: center; justify-content: space-between; padding: 0 2.5rem; height: 66px; }
@@ -81,6 +125,10 @@
 /* Menú: hamburguesa por debajo de 1200px para que los 8 ítems no se superpongan */
 @media (max-width: 1199px) { .znav-links { display: none; } .znav-hamburger { display: flex; } }
 .znav-mobile { overflow-y: auto; }
+
+/* SEO: títulos convertidos a etiquetas de encabezado; se neutralizan los estilos del tema */
+h1.bib-title { margin-top: 0; font-weight: 400; }
+h2.bib-section-title { margin: 0; font-weight: 400; line-height: inherit; }
 </style>
 <div class="bib-page">
   <nav class="znav">
@@ -121,7 +169,7 @@
   </div>
   <div class="bib-hero">
     <div class="bib-tag">Recursos</div>
-    <div class="bib-title">BIBLIOTECA<br><span class="acc">VIRTUAL</span></div>
+    <h1 class="bib-title">BIBLIOTECA<br><span class="acc">VIRTUAL</span></h1>
   </div>
   <!-- ============ NUEVO LANZAMIENTO ============ -->
   <div class="bib-featured-wrap">
@@ -146,7 +194,7 @@
   <div class="bib-section">
     <div class="bib-section-header">
       <div class="bib-section-bar" style="background:#E11481"></div>
-      <div class="bib-section-title">Investigaciones y relevamientos</div>
+      <h2 class="bib-section-title">Investigaciones y relevamientos</h2>
       <div class="bib-section-desc">Producción propia de datos e investigación</div>
     </div>
     <div class="bib-grid">
@@ -198,7 +246,7 @@
   <div class="bib-section">
     <div class="bib-section-header">
       <div class="bib-section-bar" style="background:#EC8D0B"></div>
-      <div class="bib-section-title">Producciones propias</div>
+      <h2 class="bib-section-title">Producciones propias</h2>
       <div class="bib-section-desc">Ensayos y reflexiones de producción propia</div>
     </div>
     <div class="bib-grid">
@@ -220,7 +268,7 @@
   <div class="bib-section">
     <div class="bib-section-header">
       <div class="bib-section-bar" style="background:#2497D1"></div>
-      <div class="bib-section-title">Guías de derechos</div>
+      <h2 class="bib-section-title">Guías de derechos</h2>
       <div class="bib-section-desc">Materiales educativos y de consulta</div>
     </div>
     <div class="bib-grid">
@@ -290,7 +338,7 @@
   <div class="bib-section">
     <div class="bib-section-header">
       <div class="bib-section-bar" style="background:#7F217B"></div>
-      <div class="bib-section-title">Fanzine "La bandera no se plancha"</div>
+      <h2 class="bib-section-title">Fanzine "La bandera no se plancha"</h2>
       <div class="bib-section-desc">Publicación cultural propia</div>
     </div>
     <div class="bib-grid">
