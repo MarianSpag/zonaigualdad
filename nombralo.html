@@ -1,0 +1,314 @@
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+.nm-page{background:#F4E9DC;font-family:'Inter',sans-serif;color:#000814}
+
+.znav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(3,4,5,0.96);backdrop-filter:blur(12px);border-bottom:1px solid #222;display:flex;align-items:center;justify-content:space-between;padding:0 2.5rem;height:66px}
+.znav-logo img{height:40px;display:block}
+.znav-links{display:flex;gap:1.75rem;list-style:none;margin:0;padding:0}
+.znav-links a{color:#999;text-decoration:none;font-size:12px;letter-spacing:1.5px;text-transform:uppercase;transition:color .2s;font-family:'Roboto',sans-serif}
+.znav-links a:hover{color:#fff}
+.znav-btns{display:flex;gap:10px}
+.znav-sumate{background:transparent;color:#fff!important;border:1px solid #666;padding:10px 20px;font-size:12px;letter-spacing:2px;text-transform:uppercase;font-family:'Roboto',sans-serif;cursor:pointer;text-decoration:none;display:inline-block;transition:all .2s}
+.znav-dona{background:#E11481;color:#fff!important;border:1px solid #E11481;padding:10px 20px;font-size:12px;letter-spacing:2px;text-transform:uppercase;font-family:'Roboto',sans-serif;font-weight:700;cursor:pointer;text-decoration:none;display:inline-block;transition:all .2s}
+.znav-sumate:hover{background:#7F217B!important;border-color:#7F217B!important;color:#fff!important}
+.znav-dona:hover{background:#fff!important;border-color:#fff!important;color:#E11481!important}
+.znav-hamburger{display:none;background:transparent;border:none;cursor:pointer;flex-direction:column;gap:5px;padding:5px}
+.znav-hamburger span{display:block;width:24px;height:2px;background:#fff}
+.znav-mobile{display:none;position:fixed;inset:0;top:66px;background:#030405;z-index:199;flex-direction:column;padding:2rem 2.5rem;gap:1.5rem;overflow-y:auto}
+.znav-mobile.open{display:flex}
+.znav-mobile a{color:#999;text-decoration:none;font-size:17px;letter-spacing:2px;text-transform:uppercase;font-family:'Roboto',sans-serif;border-bottom:1px solid #222;padding-bottom:1.5rem}
+.znav-mobile-btns{display:flex;flex-direction:column;gap:10px;margin-top:1rem}
+
+/* HERO */
+.nm-hero{min-height:100vh;position:relative;overflow:hidden;background:#F4E9DC;display:grid;grid-template-columns:1fr 1fr;padding-top:66px}
+.nm-hero-left{position:relative;z-index:2;padding:4rem 3rem 4rem 4rem;display:flex;flex-direction:column;justify-content:center}
+.nm-hero-right{
+  position:relative;
+  min-height:calc(100vh - 66px);
+  background-image:url('https://zonaigualdad.com.ar/wp-content/uploads/2026/03/Logo-ilustracion.png');
+  background-size:contain;
+  background-repeat:no-repeat;
+  background-position:center center;
+}
+.nm-hero-nudo{
+  position:absolute;
+  inset:0;
+  width:500%;
+  height:500%;
+  object-fit:cover;
+  opacity:.15;
+}
+.nm-hero-ilustracion{display:none}
+.nm-hero-tag-wrap{margin-bottom:1.5rem}
+.nm-hero-tag-main{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:#CD1022;font-weight:700;display:block;font-family:'Inter',sans-serif;margin-bottom:.4rem}
+.nm-hero-tag-orgas{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:rgba(0,8,20,0.4);font-weight:400;display:block;font-family:'Inter',sans-serif}
+.nm-hero-logo{width:100%;display:block;margin-bottom:1.5rem}
+.nm-hero-eslogan{width:100%;display:block;margin-bottom:2rem}
+.nm-orgas{display:flex;align-items:center;gap:2rem;margin-bottom:2rem}
+.nm-btn-firma{background:#CD1022;color:#F4E9DC!important;border:none;padding:16px 40px;font-size:12px;letter-spacing:3px;text-transform:uppercase;font-family:'Inter',sans-serif;font-weight:700;cursor:pointer;text-decoration:none;display:inline-block;transition:all .2s}
+.nm-btn-firma:hover{background:#000814!important;color:#F4E9DC!important}
+.nm-btn-firma-light{background:#F4E9DC;color:#CD1022!important;border:2px solid #F4E9DC;padding:16px 40px;font-size:12px;letter-spacing:3px;text-transform:uppercase;font-family:'Inter',sans-serif;font-weight:700;cursor:pointer;text-decoration:none;display:inline-block;transition:all .2s}
+.nm-btn-firma-light:hover{background:#CD1022!important;color:#F4E9DC!important;border-color:#CD1022!important}
+
+.nm-divider{height:1px;background:rgba(0,8,20,0.12)}
+
+.nm-sec-wrap{padding:5rem 2.5rem}
+.nm-sec-inner{max-width:1120px;margin:0 auto}
+.nm-sec-label{font-size:11px;letter-spacing:4px;text-transform:uppercase;color:#CD1022;margin-bottom:1.25rem;display:block;font-weight:700;font-family:'Inter',sans-serif}
+.nm-sec-title{font-size:clamp(38px,5vw,68px);font-weight:900;line-height:.95;color:#000814;margin-bottom:2rem;display:block;letter-spacing:-1px;font-family:'Inter',sans-serif}
+.nm-sec-title-light{font-size:clamp(38px,5vw,68px);font-weight:900;line-height:.95;color:#F4E9DC;margin-bottom:2rem;display:block;letter-spacing:-1px;font-family:'Inter',sans-serif}
+.nm-sec-title .red,.nm-sec-title-light .red{color:#CD1022}
+
+.nm-campana{background:#F4E9DC}
+.nm-campana-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
+.nm-campana-text p{font-size:16px;line-height:1.9;color:rgba(0,8,20,0.65);font-weight:300;font-family:'Inter',sans-serif;margin-bottom:1.25rem}
+.nm-campana-text p strong{color:#000814;font-weight:700}
+.nm-campana-img img{width:100%;display:block}
+
+.nm-urgente{background:#000814}
+.nm-urgente-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start}
+.nm-stats-col{display:flex;flex-direction:column;gap:1px;background:rgba(244,233,220,0.06)}
+.nm-stat-block{background:#000814;padding:2rem 2.5rem;border-left:4px solid #CD1022}
+.nm-stat-num{font-size:64px;font-weight:900;line-height:1;display:block;font-family:'Inter',sans-serif;margin-bottom:.4rem;color:#CD1022}
+.nm-stat-label{font-size:11px;letter-spacing:.5px;text-transform:uppercase;color:rgba(244,233,220,0.45);font-family:'Inter',sans-serif;line-height:1.5;display:block}
+.nm-urgente-text p{font-size:15px;line-height:1.85;color:rgba(244,233,220,0.7);font-weight:300;font-family:'Inter',sans-serif;margin-bottom:1.25rem}
+.nm-urgente-text p strong{color:#F4E9DC;font-weight:700}
+.nm-quote{border-left:3px solid #CD1022;padding-left:1.5rem;margin:2rem 0}
+.nm-quote p{font-size:15px;line-height:1.75;color:#F4E9DC;font-style:italic;font-family:'Inter',sans-serif}
+.nm-quote span{font-size:11px;color:rgba(244,233,220,0.35);display:block;margin-top:.5rem;font-family:'Inter',sans-serif}
+.nm-source{font-size:11px;color:rgba(244,233,220,0.3);font-family:'Inter',sans-serif;margin-top:1.5rem;display:block;font-style:italic}
+.nm-source a{color:#CD1022;text-decoration:none}
+
+.nm-sumate{background:#F4E9DC}
+.nm-sumate-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
+.nm-sumate-acciones{display:flex;flex-direction:column;gap:.25rem;margin-bottom:2rem}
+.nm-sumate-accion{font-size:clamp(26px,3.5vw,46px);font-weight:900;color:rgba(0,8,20,0.1);letter-spacing:-1px;font-family:'Inter',sans-serif;line-height:1.1;transition:color .2s;cursor:default}
+.nm-sumate-accion:first-child{color:#000814}
+.nm-sumate-accion:hover{color:#CD1022}
+
+.nm-adherir-wrap{background:#ece3d5;padding:5rem 2.5rem}
+.nm-adherir-inner{max-width:1120px;margin:0 auto}
+.nm-adherir-box{border:1px solid rgba(0,8,20,0.1);border-left:4px solid #CD1022;background:#F4E9DC;padding:3rem;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start}
+.nm-adherir-box h4{font-size:20px;font-weight:700;color:#000814;margin-bottom:1rem;font-family:'Inter',sans-serif}
+.nm-adherir-box p{font-size:14px;color:rgba(0,8,20,0.55);line-height:1.75;font-weight:300;font-family:'Inter',sans-serif;margin-bottom:1.25rem}
+.nm-adherir-box ul{list-style:none;padding:0;margin-bottom:2rem}
+.nm-adherir-box ul li{font-size:14px;color:rgba(0,8,20,0.55);line-height:1.75;padding-left:1.25rem;position:relative;font-family:'Inter',sans-serif;font-weight:300}
+.nm-adherir-box ul li::before{content:'→';position:absolute;left:0;color:#CD1022;font-size:12px}
+
+.nm-footer{background:#000;border-top:1px solid #111;padding:3rem 2.5rem}
+.nm-footer-rainbow{display:flex;height:2px;width:100%;margin-bottom:2rem}
+.nm-footer-rainbow div{flex:1}
+.nm-footer-inner{max-width:1120px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+.nm-footer-copy{font-size:12px;color:#555;letter-spacing:1px;font-family:'Roboto',sans-serif}
+
+@media(max-width:1024px){
+  .nm-hero{grid-template-columns:1fr;min-height:auto}
+  .nm-hero-right{min-height:70vw}
+  .nm-hero-left{padding:5rem 2rem 3rem}
+}
+@media(max-width:768px){
+  .znav-links{display:none}
+  .znav-hamburger{display:flex}
+  .nm-hero-left{padding:4rem 1.5rem 2rem}
+  .nm-campana-grid,.nm-urgente-grid,.nm-sumate-grid,.nm-adherir-box{grid-template-columns:1fr;gap:3rem}
+  .nm-sec-wrap,.nm-adherir-wrap{padding:4rem 1.5rem}
+  .nm-campana-img{order:-1}
+  .nm-stat-num{font-size:52px}
+}
+</style>
+
+<div class="nm-page">
+
+<nav class="znav">
+  <a href="https://zonaigualdad.com.ar" style="text-decoration:none">
+    <img src="https://zonaigualdad.com.ar/wp-content/uploads/2026/03/Logo-Zona-blanco-sin-fondo-1.png" style="height:40px;display:block" alt="Zona Igualdad">
+  </a>
+  <ul class="znav-links">
+    <li><a href="https://zonaigualdad.com.ar/#quienes">Quiénes somos</a></li>
+    <li><a href="https://zonaigualdad.com.ar/#ejes">Trabajo</a></li>
+    <li><a href="https://zonaigualdad.com.ar/nombralo" style="color:#CD1022!important">Nombralo</a></li>
+    <li><a href="https://zonaigualdad.com.ar/#actividades">Actividades</a></li>
+    <li><a href="https://zonaigualdad.com.ar/biblioteca">Biblioteca</a></li>
+    <li><a href="https://zonaigualdad.com.ar/#contacto">Contacto</a></li>
+  </ul>
+  <div class="znav-btns">
+    <a class="znav-sumate" href="https://zonaigualdad.com.ar/sumate">Sumate</a>
+    <a class="znav-dona" href="https://zonaigualdad.com.ar/amigues">&#9825; Dona</a>
+    <button class="znav-hamburger" onclick="document.querySelector('.znav-mobile').classList.toggle('open')">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<div class="znav-mobile">
+  <a href="https://zonaigualdad.com.ar/#quienes">Quiénes somos</a>
+  <a href="https://zonaigualdad.com.ar/#ejes">Trabajo</a>
+  <a href="https://zonaigualdad.com.ar/nombralo">Nombralo</a>
+  <a href="https://zonaigualdad.com.ar/#actividades">Actividades</a>
+  <a href="https://zonaigualdad.com.ar/biblioteca">Biblioteca</a>
+  <a href="https://zonaigualdad.com.ar/#contacto">Contacto</a>
+  <div class="znav-mobile-btns">
+    <a class="znav-sumate" href="https://zonaigualdad.com.ar/sumate" style="text-align:center">Sumate</a>
+    <a class="znav-dona" href="https://zonaigualdad.com.ar/amigues" style="text-align:center">&#9825; Dona</a>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="nm-hero">
+  <div class="nm-hero-left">
+    <div class="nm-hero-tag-wrap">
+      <span class="nm-hero-tag-main">Campaña nacional para visibilizar los discursos de odio</span>
+      <span class="nm-hero-tag-orgas">Zona Igualdad · Conectando Derechos · Derechos Humanos y Diversidad</span>
+    </div>
+    <img class="nm-hero-logo" src="https://zonaigualdad.com.ar/wp-content/uploads/2026/03/Logo-tipografico.png" alt="Nombralo es Odio">
+    <img class="nm-hero-eslogan" src="https://zonaigualdad.com.ar/wp-content/uploads/2026/03/Eslogan.png" alt="Frenarlo es defender la democracia">
+    <div class="nm-orgas">
+      <img src="https://zonaigualdad.com.ar/wp-content/uploads/2026/03/Logos-orgas.png" alt="Organizaciones impulsoras" style="height:70px">
+    </div>
+    <a class="nm-btn-firma" href="https://action.allout.org/es/m/3362ba67/" target="_blank">Firmá la petición ahora</a>
+  </div>
+  <div class="nm-hero-right">
+    <img class="nm-hero-nudo" src="https://zonaigualdad.com.ar/wp-content/uploads/2026/03/nudo-nombralo.png" alt="">
+  </div>
+</section>
+
+<div class="nm-divider"></div>
+
+<!-- LA CAMPAÑA -->
+<section class="nm-sec-wrap nm-campana" id="campana">
+  <div class="nm-sec-inner">
+    <div class="nm-campana-grid">
+      <div class="nm-campana-text">
+        <span class="nm-sec-label">La campaña</span>
+        <span class="nm-sec-title">NOMBRALO.<br><span class="red">ES ODIO.</span></span>
+        <p>"Nombralo. Es odio" es una campaña de comunicación y acción colectiva que busca <strong>visibilizar, denunciar y frenar el avance de los discursos de odio en Argentina.</strong></p>
+        <p>Impulsada por <strong>Zona Igualdad, Conectando Derechos y Derechos Humanos y Diversidad</strong>, la iniciativa combina intervenciones en vía pública, activaciones digitales, alianzas con medios e influencers, y una acción en la Marcha del Orgullo 2025.</p>
+        <p>El eje central es simple y contundente: <strong>ponerle nombre al odio, desnaturalizarlo y construir un límite social que defienda la democracia y los derechos humanos.</strong></p>
+        <br>
+        <a class="nm-btn-firma" href="https://action.allout.org/es/m/3362ba67/" target="_blank">Firmá ahora</a>
+      </div>
+      <div class="nm-campana-img">
+        <img src="https://zonaigualdad.com.ar/wp-content/uploads/2026/03/Logo-ilustracion.png" alt="Nombralo es Odio">
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="nm-divider"></div>
+
+<!-- POR QUÉ -->
+<section class="nm-sec-wrap nm-urgente" id="urgente">
+  <div class="nm-sec-inner">
+    <span class="nm-sec-label">Por qué es urgente</span>
+    <span class="nm-sec-title-light">LOS NÚMEROS<br><span class="red">NO MIENTEN.</span></span>
+    <div class="nm-urgente-grid">
+      <div class="nm-stats-col">
+        <div class="nm-stat-block">
+          <span class="nm-stat-num">227</span>
+          <span class="nm-stat-label">Crímenes de odio contra personas LGBTIQ+ en 2025 — cifra récord del Observatorio Nacional</span>
+        </div>
+        <div class="nm-stat-block">
+          <span class="nm-stat-num">+62%</span>
+          <span class="nm-stat-label">De aumento respecto al año anterior — un crimen cada 38 horas</span>
+        </div>
+        <div class="nm-stat-block">
+          <span class="nm-stat-num">80</span>
+          <span class="nm-stat-label">Lesiones al derecho a la vida — 16 asesinatos, 53 muertes por violencia estructural y 11 suicidios</span>
+        </div>
+        <div class="nm-stat-block">
+          <span class="nm-stat-num">64</span>
+          <span class="nm-stat-label">Casos de violencia por fuerzas de seguridad en 2025 — frente a 17 en 2024</span>
+        </div>
+      </div>
+      <div class="nm-urgente-text">
+        <p>Los discursos de odio no son meras opiniones: <strong>habilitan violencias, legitiman exclusiones</strong> y, en muchos casos, derivan en crímenes que ponen en riesgo vidas.</p>
+        <p>Estos discursos, impulsados desde las más altas esferas del poder político, <strong>erosionan los consensos democráticos</strong> y atacan no solo a la comunidad LGBT+, sino también a periodistas, mujeres, personas con discapacidad, jubilados y opositores.</p>
+        <p>La mayor proporción de víctimas corresponde a <strong>mujeres trans y travestis (62,5% de los casos)</strong>. El 32% de los crímenes ocurrieron en comisarías y establecimientos penales.</p>
+        <div class="nm-quote">
+        </div>
+        <p>La campaña surge como una respuesta urgente y colectiva para frenar esta escalada y reinstalar en la conversación pública <strong>la defensa de la igualdad, la justicia y la democracia.</strong></p>
+        <span class="nm-source">Fuente: <a href="https://agenciapresentes.org/2026/03/19/aumento-y-record-de-crimenes-de-odio-en-argentina-uno-cada-38-horas/" target="_blank">Agencia Presentes, marzo 2026</a> · Observatorio Nacional de Crímenes de Odio LGBT+</span>
+        <br><br>
+        <a class="nm-btn-firma-light" href="https://action.allout.org/es/m/3362ba67/" target="_blank">Firmá ahora</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="nm-divider"></div>
+
+<!-- SUMATE -->
+<section class="nm-sec-wrap nm-sumate" id="sumate">
+  <div class="nm-sec-inner">
+    <div class="nm-sumate-grid">
+      <div>
+        <span class="nm-sec-label">Sumate</span>
+        <span class="nm-sec-title">HACÉ<br><span class="red">ALGO.</span></span>
+        <div class="nm-sumate-acciones">
+          <div class="nm-sumate-accion">FIRMÁ LA PETICIÓN</div>
+          <div class="nm-sumate-accion">COMPARTÍ</div>
+          <div class="nm-sumate-accion">DIFUNDÍ</div>
+          <div class="nm-sumate-accion">MILITÁ</div>
+        </div>
+        <a class="nm-btn-firma" href="https://action.allout.org/es/m/3362ba67/" target="_blank">Firmá ahora</a>
+      </div>
+      <div>
+        <img src="https://zonaigualdad.com.ar/wp-content/uploads/2026/03/nudo-nombralo.png" alt="" style="opacity:.15;width:100%;display:block;margin:0 auto">
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="nm-divider"></div>
+
+<!-- ADHERÍ -->
+<section class="nm-adherir-wrap" id="adherir">
+  <div class="nm-adherir-inner">
+    <span class="nm-sec-label">Aliades</span>
+    <span class="nm-sec-title" style="margin-bottom:2rem">SUMÁ TU<br><span class="red">ORGANIZACIÓN.</span></span>
+    <div class="nm-adherir-box">
+      <div>
+        <h4>¿Querés adherir tu organización, institución o empresa?</h4>
+        <p>Adherir a la campaña implica:</p>
+        <ul>
+          <li>Sumar el logo de tu organización a los materiales de la campaña</li>
+          <li>Recibir materiales y lineamientos para difusión responsable</li>
+          <li>Participar, según disponibilidad, de acciones públicas y educativas</li>
+        </ul>
+        <a class="nm-btn-firma" href="mailto:info@nombraloesodio.org.ar">Escribinos</a>
+      </div>
+      <div>
+        <p style="font-size:13px;color:rgba(0,8,20,0.45);line-height:1.75;font-family:'Inter',sans-serif;font-weight:300">Ya adhieren a esta campaña organizaciones de todo el país. Juntes construimos el límite social contra el odio.</p>
+        <div style="margin-top:2rem">
+          <img src="https://zonaigualdad.com.ar/wp-content/uploads/2026/03/Logos-orgas.png" alt="Organizaciones aliadas" style="width:100%;display:block">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="nm-footer">
+  <div class="nm-footer-rainbow">
+    <div style="background:#E11481"></div><div style="background:#DF062C"></div><div style="background:#EC8D0B"></div><div style="background:#FCCC1C"></div><div style="background:#27A237"></div><div style="background:#2497D1"></div><div style="background:#0B6DA8"></div><div style="background:#7F217B"></div>
+  </div>
+  <div class="nm-footer-inner">
+    <img src="https://zonaigualdad.com.ar/wp-content/uploads/2026/03/Logo-Zona-blanco-sin-fondo-1.png" alt="Zona Igualdad" style="height:36px;opacity:.5">
+    <div class="nm-footer-copy">© 2026 Zona Igualdad · Organización civil sin fines de lucro · CABA, Argentina</div>
+    <div class="nm-footer-copy">Sitio web creado por <a href="https://www.instagram.com/arche.latam/" target="_blank" style="color:#E11481;text-decoration:none;font-weight:700">Ar.ché</a> · <a href="https://www.linkedin.com/company/ar-ch%C3%A9-latam" target="_blank" style="color:#E11481;text-decoration:none;font-weight:700">LinkedIn</a></div>
+  </div>
+</footer>
+
+</div>
+
+<script>
+document.querySelectorAll('a[href^="#"]').forEach(function(a){
+  a.addEventListener('click',function(e){
+    var h=a.getAttribute('href');
+    if(h==='#')return;
+    e.preventDefault();
+    var t=document.querySelector(h);
+    if(t)t.scrollIntoView({behavior:'smooth'});
+  });
+});
+</script>
