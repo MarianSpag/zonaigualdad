@@ -71,6 +71,9 @@
   .znav-links { display: none; }
   .znav-hamburger { display: flex; }
 }
+/* Menú: hamburguesa por debajo de 1200px para que los 8 ítems no se superpongan */
+@media (max-width: 1199px) { .znav-links { display: none; } .znav-hamburger { display: flex; } }
+.znav-mobile { overflow-y: auto; }
 </style>
 
 <div class="amigues-page">
@@ -82,9 +85,11 @@
     <ul class="znav-links">
       <li><a href="https://zonaigualdad.com.ar/#quienes">Quiénes somos</a></li>
       <li><a href="https://zonaigualdad.com.ar/#ejes">Trabajo</a></li>
-      <li><a href="https://action.allout.org/es/m/3362ba67/" target="_blank">Nombralo</a></li>
+      <li><a href="https://zonaigualdad.com.ar/nombralo">Nombralo</a></li>
       <li><a href="https://zonaigualdad.com.ar/#actividades">Actividades</a></li>
+      <li><a href="https://zonaigualdad.com.ar/relevamiento-sobre-la-situacion-de-las-personas-lgbtiq-en-argentina/">Relevamiento</a></li>
       <li><a href="https://zonaigualdad.com.ar/biblioteca">Biblioteca</a></li>
+      <li><a href="https://zonaigualdad.com.ar/capacitaciones">Capacitaciones</a></li>
       <li><a href="https://zonaigualdad.com.ar/#contacto">Contacto</a></li>
     </ul>
     <div class="znav-btns">
@@ -99,9 +104,11 @@
   <div class="znav-mobile">
     <a href="https://zonaigualdad.com.ar/#quienes">Quiénes somos</a>
     <a href="https://zonaigualdad.com.ar/#ejes">Trabajo</a>
-    <a href="https://action.allout.org/es/m/3362ba67/" target="_blank">Nombralo</a>
+    <a href="https://zonaigualdad.com.ar/nombralo">Nombralo</a>
     <a href="https://zonaigualdad.com.ar/#actividades">Actividades</a>
+    <a href="https://zonaigualdad.com.ar/relevamiento-sobre-la-situacion-de-las-personas-lgbtiq-en-argentina/">Relevamiento</a>
     <a href="https://zonaigualdad.com.ar/biblioteca">Biblioteca</a>
+    <a href="https://zonaigualdad.com.ar/capacitaciones">Capacitaciones</a>
     <a href="https://zonaigualdad.com.ar/#contacto">Contacto</a>
     <div class="znav-mobile-btns">
       <a class="znav-sumate" href="https://zonaigualdad.com.ar/sumate" style="text-align:center">Sumate</a>

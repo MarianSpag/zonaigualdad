@@ -85,6 +85,9 @@
   .rel-card { grid-template-columns: 100px 1fr; padding: 1.5rem; gap: 1rem; }
   .rel-card-title { font-size: 18px; }
 }
+/* Menú: hamburguesa por debajo de 1200px para que los 8 ítems no se superpongan */
+@media (max-width: 1199px) { .znav-links { display: none; } .znav-hamburger { display: flex; } }
+.znav-mobile { overflow-y: auto; }
 </style>
 <div class="rel-page">
   <nav class="znav">
@@ -94,8 +97,9 @@
     <ul class="znav-links">
       <li><a href="https://zonaigualdad.com.ar/#quienes">Quiénes somos</a></li>
       <li><a href="https://zonaigualdad.com.ar/#ejes">Trabajo</a></li>
-      <li><a href="https://action.allout.org/es/m/3362ba67/" target="_blank">Nombralo</a></li>
+      <li><a href="https://zonaigualdad.com.ar/nombralo">Nombralo</a></li>
       <li><a href="https://zonaigualdad.com.ar/#actividades">Actividades</a></li>
+      <li><a href="https://zonaigualdad.com.ar/relevamiento-sobre-la-situacion-de-las-personas-lgbtiq-en-argentina/">Relevamiento</a></li>
       <li><a href="https://zonaigualdad.com.ar/biblioteca">Biblioteca</a></li>
       <li><a href="https://zonaigualdad.com.ar/capacitaciones">Capacitaciones</a></li>
       <li><a href="https://zonaigualdad.com.ar/#contacto">Contacto</a></li>
@@ -111,8 +115,9 @@
   <div class="znav-mobile">
     <a href="https://zonaigualdad.com.ar/#quienes">Quiénes somos</a>
     <a href="https://zonaigualdad.com.ar/#ejes">Trabajo</a>
-    <a href="https://action.allout.org/es/m/3362ba67/" target="_blank">Nombralo</a>
+    <a href="https://zonaigualdad.com.ar/nombralo">Nombralo</a>
     <a href="https://zonaigualdad.com.ar/#actividades">Actividades</a>
+    <a href="https://zonaigualdad.com.ar/relevamiento-sobre-la-situacion-de-las-personas-lgbtiq-en-argentina/">Relevamiento</a>
     <a href="https://zonaigualdad.com.ar/biblioteca">Biblioteca</a>
     <a href="https://zonaigualdad.com.ar/capacitaciones">Capacitaciones</a>
     <a href="https://zonaigualdad.com.ar/#contacto">Contacto</a>
@@ -154,7 +159,7 @@
       <h2 class="rel-form-h">3er RELEVAMIENTO <span class="acc">2026</span></h2>
       <p class="rel-form-p">Estamos lanzando el tercer relevamiento sobre la situación actual de las juventudes LGBTIQ+ en Argentina. Si tenés entre 16 y 35 años y formás parte de la comunidad, completá la encuesta. Es anónima y lleva pocos minutos. Tu participación nos ayuda a seguir construyendo datos propios para la incidencia.</p>
       <div class="rel-form-iframe-wrap">
-        <iframe src="https://forms.gle/cWXRmxdQZ6eqBvvt7" loading="lazy" title="3er Relevamiento Juventudes LGBTIQ+ Argentina">Cargando…</iframe>
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSexHRid_xRAQ7MPocCde7NjFUyggG8vAb-sv1QOq5RpH1YpUw/viewform?embedded=true" loading="lazy" title="3er Relevamiento Juventudes LGBTIQ+ Argentina">Cargando…</iframe>
       </div>
       <p class="rel-form-fallback">¿No se ve el formulario? <a href="https://forms.gle/cWXRmxdQZ6eqBvvt7" target="_blank">Abrir la encuesta en una nueva pestaña →</a></p>
     </div>

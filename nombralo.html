@@ -115,6 +115,10 @@
   .nm-campana-img{order:-1}
   .nm-stat-num{font-size:52px}
 }
+/* Menú: hamburguesa por debajo de 1200px para que los 8 ítems no se superpongan */
+@media (max-width: 1199px) { .znav-links { display: none; } .znav-hamburger { display: flex; } }
+.znav-mobile { overflow-y: auto; }
+@media (min-width: 1200px) and (max-width: 1365px) { .znav-links { gap: 1.1rem; } .znav-links a { font-size: 11px; letter-spacing: 1px; } .znav-sumate, .znav-dona { padding: 10px 16px; } }
 </style>
 
 <div class="nm-page">
@@ -128,7 +132,9 @@
     <li><a href="https://zonaigualdad.com.ar/#ejes">Trabajo</a></li>
     <li><a href="https://zonaigualdad.com.ar/nombralo" style="color:#CD1022!important">Nombralo</a></li>
     <li><a href="https://zonaigualdad.com.ar/#actividades">Actividades</a></li>
+    <li><a href="https://zonaigualdad.com.ar/relevamiento-sobre-la-situacion-de-las-personas-lgbtiq-en-argentina/">Relevamiento</a></li>
     <li><a href="https://zonaigualdad.com.ar/biblioteca">Biblioteca</a></li>
+    <li><a href="https://zonaigualdad.com.ar/capacitaciones">Capacitaciones</a></li>
     <li><a href="https://zonaigualdad.com.ar/#contacto">Contacto</a></li>
   </ul>
   <div class="znav-btns">
@@ -145,7 +151,9 @@
   <a href="https://zonaigualdad.com.ar/#ejes">Trabajo</a>
   <a href="https://zonaigualdad.com.ar/nombralo">Nombralo</a>
   <a href="https://zonaigualdad.com.ar/#actividades">Actividades</a>
+  <a href="https://zonaigualdad.com.ar/relevamiento-sobre-la-situacion-de-las-personas-lgbtiq-en-argentina/">Relevamiento</a>
   <a href="https://zonaigualdad.com.ar/biblioteca">Biblioteca</a>
+  <a href="https://zonaigualdad.com.ar/capacitaciones">Capacitaciones</a>
   <a href="https://zonaigualdad.com.ar/#contacto">Contacto</a>
   <div class="znav-mobile-btns">
     <a class="znav-sumate" href="https://zonaigualdad.com.ar/sumate" style="text-align:center">Sumate</a>
@@ -224,8 +232,6 @@
         <p>Los discursos de odio no son meras opiniones: <strong>habilitan violencias, legitiman exclusiones</strong> y, en muchos casos, derivan en crímenes que ponen en riesgo vidas.</p>
         <p>Estos discursos, impulsados desde las más altas esferas del poder político, <strong>erosionan los consensos democráticos</strong> y atacan no solo a la comunidad LGBT+, sino también a periodistas, mujeres, personas con discapacidad, jubilados y opositores.</p>
         <p>La mayor proporción de víctimas corresponde a <strong>mujeres trans y travestis (62,5% de los casos)</strong>. El 32% de los crímenes ocurrieron en comisarías y establecimientos penales.</p>
-        <div class="nm-quote">
-        </div>
         <p>La campaña surge como una respuesta urgente y colectiva para frenar esta escalada y reinstalar en la conversación pública <strong>la defensa de la igualdad, la justicia y la democracia.</strong></p>
         <span class="nm-source">Fuente: <a href="https://agenciapresentes.org/2026/03/19/aumento-y-record-de-crimenes-de-odio-en-argentina-uno-cada-38-horas/" target="_blank">Agencia Presentes, marzo 2026</a> · Observatorio Nacional de Crímenes de Odio LGBT+</span>
         <br><br>

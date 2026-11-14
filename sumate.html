@@ -73,6 +73,9 @@
   .znav-links { display: none; }
   .znav-hamburger { display: flex; }
 }
+/* Menú: hamburguesa por debajo de 1200px para que los 8 ítems no se superpongan */
+@media (max-width: 1199px) { .znav-links { display: none; } .znav-hamburger { display: flex; } }
+.znav-mobile { overflow-y: auto; }
 </style>
 
 <div class="sumate-page">
@@ -84,9 +87,9 @@
     <ul class="znav-links">
       <li><a href="https://zonaigualdad.com.ar/#quienes">Quiénes somos</a></li>
       <li><a href="https://zonaigualdad.com.ar/#ejes">Trabajo</a></li>
-      <li><a href="https://action.allout.org/es/m/3362ba67/" target="_blank" rel="noopener noreferrer">Nombralo</a></li>
+      <li><a href="https://zonaigualdad.com.ar/nombralo">Nombralo</a></li>
       <li><a href="https://zonaigualdad.com.ar/#actividades">Actividades</a></li>
-      <li><a href="https://zonaigualdad.com.ar/relevamiento-sobre-la-situacion-de-las-personas-lgbtiq-en-argentina/">Relevamiento Juventudes LGBTIQ+</a></li>
+      <li><a href="https://zonaigualdad.com.ar/relevamiento-sobre-la-situacion-de-las-personas-lgbtiq-en-argentina/">Relevamiento</a></li>
       <li><a href="https://zonaigualdad.com.ar/biblioteca">Biblioteca</a></li>
       <li><a href="https://zonaigualdad.com.ar/capacitaciones">Capacitaciones</a></li>
       <li><a href="https://zonaigualdad.com.ar/#contacto">Contacto</a></li>
@@ -103,9 +106,9 @@
   <nav class="znav-mobile" aria-label="Navegación móvil">
     <a href="https://zonaigualdad.com.ar/#quienes">Quiénes somos</a>
     <a href="https://zonaigualdad.com.ar/#ejes">Trabajo</a>
-    <a href="https://action.allout.org/es/m/3362ba67/" target="_blank" rel="noopener noreferrer">Nombralo</a>
+    <a href="https://zonaigualdad.com.ar/nombralo">Nombralo</a>
     <a href="https://zonaigualdad.com.ar/#actividades">Actividades</a>
-    <a href="https://zonaigualdad.com.ar/relevamiento-sobre-la-situacion-de-las-personas-lgbtiq-en-argentina/">Relevamiento Juventudes LGBTIQ+</a>
+    <a href="https://zonaigualdad.com.ar/relevamiento-sobre-la-situacion-de-las-personas-lgbtiq-en-argentina/">Relevamiento</a>
     <a href="https://zonaigualdad.com.ar/biblioteca">Biblioteca</a>
     <a href="https://zonaigualdad.com.ar/capacitaciones">Capacitaciones</a>
     <a href="https://zonaigualdad.com.ar/#contacto">Contacto</a>
