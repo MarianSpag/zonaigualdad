@@ -48,10 +48,13 @@
 .amigues-fotos { padding: 0 2.5rem 6rem; max-width: 1120px; margin: 0 auto; }
 .amigues-fotos-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(32px,4vw,52px); letter-spacing: 2px; color: #fff; margin-bottom: 2rem; }
 .amigues-fotos-title .acc { color: #E11481; }
-.fotos-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 3px; }
+.fotos-grid { display: grid; grid-template-columns: repeat(3,1fr); grid-auto-flow: dense; gap: 3px; }
 .foto-item { aspect-ratio: 4/3; background: #000; overflow: hidden; }
 .foto-item img { width: 100%; height: 100%; object-fit: cover; transition: transform .3s; }
 .foto-item:hover img { transform: scale(1.03); }
+/* Fotos anchas: ocupan 2 columnas para que la grilla de 10 cierre en filas completas */
+.foto-item.wide { grid-column: span 2; aspect-ratio: 8/3; }
+.foto-item.wide img { object-position: center 25%; }
 
 .rainbow-bar { display: flex; height: 2px; width: 100%; }
 .rainbow-bar div { flex: 1; }
@@ -68,6 +71,7 @@
   .amigues-fotos { padding: 0 1.5rem 4rem; }
   .tiers-grid { grid-template-columns: 1fr; }
   .fotos-grid { grid-template-columns: 1fr; }
+  .foto-item.wide { grid-column: auto; aspect-ratio: 4/3; }
   .znav-links { display: none; }
   .znav-hamburger { display: flex; }
 }
@@ -161,10 +165,14 @@
   <div class="amigues-fotos">
     <div class="amigues-fotos-title">MIRÁ TODO LO QUE HACEMOS<br>CON <span class="acc">TU APORTE</span></div>
     <div class="fotos-grid">
+      <div class="foto-item wide"><img src="https://zonaigualdad.com.ar/wp-content/uploads/2026/11/DSC09402-768x513.jpg" alt="Activista de Zona Igualdad armando una instalación con ladrillos en la Marcha del Orgullo" loading="lazy"></div>
+      <div class="foto-item"><img src="https://zonaigualdad.com.ar/wp-content/uploads/2026/11/IMG_3322-768x1152.jpg" alt="Activistas de Zona Igualdad preparando la intervención en la Marcha del Orgullo" loading="lazy"></div>
+      <div class="foto-item"><img src="https://zonaigualdad.com.ar/wp-content/uploads/2026/11/IMG_3326-768x1152.jpg" alt="Chaleco naranja de Zona Igualdad con los colores del orgullo" loading="lazy"></div>
       <div class="foto-item"><img src="https://zonaigualdad.com.ar/wp-content/uploads/2026/03/Actividad-Amigues-4.png" alt="Actividad"></div>
       <div class="foto-item"><img src="https://zonaigualdad.com.ar/wp-content/uploads/2026/03/Actividad-Amigues-5.png" alt="Actividad"></div>
       <div class="foto-item"><img src="https://zonaigualdad.com.ar/wp-content/uploads/2026/03/Actividad-Amigues-6.png" alt="Actividad"></div>
       <div class="foto-item"><img src="https://zonaigualdad.com.ar/wp-content/uploads/2026/03/Actividad-Amigues-1.png" alt="Actividad"></div>
+      <div class="foto-item wide"><img src="https://zonaigualdad.com.ar/wp-content/uploads/2026/11/DSC09398-768x513.jpg" alt="Integrantes de Zona Igualdad en la Marcha del Orgullo" loading="lazy"></div>
       <div class="foto-item"><img src="https://zonaigualdad.com.ar/wp-content/uploads/2026/03/Actividad-Amigues-2.png" alt="Actividad"></div>
       <div class="foto-item"><img src="https://zonaigualdad.com.ar/wp-content/uploads/2026/03/Actividad-Amigues-3.png" alt="Actividad"></div>
     </div>
