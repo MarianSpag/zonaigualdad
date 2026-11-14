@@ -27,6 +27,10 @@
         "name": "Argentina"
       },
       "knowsAbout": ["Derechos LGBTIQ+", "Juventudes", "Derechos humanos", "Activismo", "Diversidad sexual"],
+      "memberOf": [
+        { "@type": "Organization", "name": "ILGA World", "url": "https://ilga.org" },
+        { "@type": "Organization", "name": "RACI — Red Argentina para la Cooperación Internacional", "url": "https://raci.org.ar" }
+      ],
       "sameAs": [
         "https://www.instagram.com/zonaigualdad/",
         "https://twitter.com/zonaigualdad",
@@ -899,11 +903,20 @@ document.querySelectorAll('[data-slider]').forEach(slider => {
 .footer-inner { max-width: 1120px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1.5rem; }
 .footer-logo img { height: 36px; opacity: .5; }
 .footer-copy { font-size: 12px; color: #666; letter-spacing: 1px; font-family: 'Roboto', sans-serif; }
+.footer-redes { max-width: 1120px; margin: 0 auto 2.5rem; padding-bottom: 2.5rem; border-bottom: 1px solid #111; display: flex; align-items: center; gap: 2.5rem; flex-wrap: wrap; }
+.footer-redes-label { font-size: 10px; letter-spacing: 4px; text-transform: uppercase; color: #666; font-family: 'Roboto', sans-serif; }
+.footer-redes-logos { display: flex; align-items: center; gap: 3rem; flex-wrap: wrap; }
+.footer-redes-logos a { display: block; opacity: .6; transition: opacity .2s; }
+.footer-redes-logos a:hover { opacity: 1; }
+.footer-redes-logos img { height: 48px; width: auto; display: block; filter: brightness(0) invert(1); }
 .footer-btn { background: #E11481; color: #fff !important; border: none; padding: 10px 20px; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; font-family: 'Roboto', sans-serif; font-weight: 700; cursor: pointer; text-decoration: none; display: inline-block; }
 @media (max-width: 768px) {
   .footer { padding: 2rem 1.5rem; }
   .footer-inner { flex-direction: column; align-items: flex-start; gap: 1rem; }
   .footer-copy { font-size: 10px; }
+  .footer-redes { flex-direction: column; align-items: flex-start; gap: 1.25rem; }
+  .footer-redes-logos { gap: 2rem; }
+  .footer-redes-logos img { height: 40px; }
 }
 </style>
 
@@ -917,6 +930,18 @@ document.querySelectorAll('[data-slider]').forEach(slider => {
     <div style="background:#2497D1"></div>
     <div style="background:#0B6DA8"></div>
     <div style="background:#7F217B"></div>
+  </div>
+  <!-- REDES A LAS QUE PERTENECEMOS · reemplazar las dos URLs de imagen por las de la Biblioteca de medios -->
+  <div class="footer-redes">
+    <span class="footer-redes-label">Formamos parte de</span>
+    <div class="footer-redes-logos">
+      <a href="https://ilga.org" target="_blank" rel="noopener noreferrer" title="ILGA World">
+        <img src="URL-LOGO-ILGA" alt="ILGA World — Asociación Internacional de Lesbianas, Gays, Bisexuales, Trans e Intersex" loading="lazy">
+      </a>
+      <a href="https://raci.org.ar" target="_blank" rel="noopener noreferrer" title="RACI — Red Argentina para la Cooperación Internacional">
+        <img src="URL-LOGO-RACI" alt="RACI — Red Argentina para la Cooperación Internacional" loading="lazy">
+      </a>
+    </div>
   </div>
   <div class="footer-inner">
     <div class="footer-logo">
